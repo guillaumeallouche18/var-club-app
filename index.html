@@ -253,8 +253,8 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 <script type="text/babel">
 
 const EXPERT_API = "https://var-club-expert.vercel.app";
-const FAMILY_DATA = {"clubs": [{"id": "real_madrid", "nom": "Real Madrid", "ville": "Madrid", "pays": "Espagne", "continent": "Europe", "stade": "Santiago Bernabéu", "surnom": "Les Merengues"}, {"id": "psg", "nom": "Paris Saint-Germain", "ville": "Paris", "pays": "France", "continent": "Europe", "stade": "Parc des Princes", "surnom": "Les Rouge et Bleu"}, {"id": "alnassr", "nom": "Al-Nassr", "ville": "Riyad", "pays": "Arabie Saoudite", "continent": "Asie", "stade": "Al-Awwal Park", "surnom": "Les Jaune et Bleu"}]};
-
+const [familyData, setFamilyData] = React.useState({clubs:[]});
+  
 const QUESTIONS=[
   {id:1,cat:"nat",short:"Joueurs Français",full:"Citez des joueurs Français passés par ce club."},
   {id:2,cat:"nat",short:"Joueurs Espagnols",full:"Citez des joueurs Espagnols passés par ce club."},
@@ -290,7 +290,7 @@ const CAT_META={
 const CATS=["nat","pal","pro","sta"];
 
 function FamilyMode({onBack}) {
-  const clubs=FAMILY_DATA.clubs;
+  const clubs=familyData.clubs;
   const [selected,setSelected]=React.useState(null);
   const [revealed,setRevealed]=React.useState({});
   const allRevealed=selected&&["ville","pays","continent","stade","surnom"].every(f=>revealed[f]);
@@ -577,7 +577,7 @@ function App() {
         <div className="live-pill"><div className="live-dot"/>LIVE</div>
       </div>
       {!mode&&<Home onSelect={setMode}/>}
-      {mode==="family"&&<FamilyMode onBack={()=>setMode(null)}/>}
+      {mode==="family"&&<FamilyMode onBack={()=>setMode(null)} familyData={familyData} setFamilyData={setFamilyData}/>}
       {mode==="inter"&&<InterMode onBack={()=>setMode(null)}/>}
       {mode==="expert"&&<ExpertMode onBack={()=>setMode(null)}/>}
     </div>
