@@ -24,10 +24,8 @@
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes scanDown{0%{top:0;opacity:1}100%{top:100%;opacity:0}}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes tagIn{0%{opacity:0;transform:scale(.8) translateY(6px)}100%{opacity:1;transform:scale(1) translateY(0)}}
-@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
-@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
 html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif;min-height:100vh;}
 
@@ -40,7 +38,6 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 .live-pill{display:flex;align-items:center;gap:6px;background:var(--coral);padding:4px 12px;border-radius:20px;font-family:"Barlow Condensed",sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;color:#fff;box-shadow:0 2px 10px rgba(231,76,60,.4);}
 .live-dot{width:6px;height:6px;background:#fff;border-radius:50%;animation:blink 1.1s ease-in-out infinite;}
 
-/* HOME */
 .home{min-height:calc(100vh - 60px);display:flex;flex-direction:column;align-items:center;padding:48px 20px 60px;background:linear-gradient(180deg,#e8f5e8 0%,#f0f7f0 100%);}
 .home-mascot{font-size:80px;animation:float 3s ease-in-out infinite;margin-bottom:4px;line-height:1;}
 .home-title{font-family:"Bebas Neue",cursive;font-size:clamp(56px,10vw,96px);letter-spacing:8px;text-align:center;line-height:.95;color:var(--green);animation:fadeUp .5s ease .1s both;}
@@ -70,7 +67,6 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 .badge-inter{background:#e8f5e8;color:var(--green);border:1px solid rgba(45,122,45,.2);}
 .badge-expert{background:#fce4ec;color:var(--coral);border:1px solid rgba(231,76,60,.2);}
 
-/* SHARED */
 .page{max-width:1080px;margin:0 auto;padding:28px 20px 80px;}
 .back-btn{display:inline-flex;align-items:center;gap:8px;font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;color:var(--slate);cursor:pointer;margin-bottom:24px;transition:color .15s;animation:fadeIn .3s ease both;}
 .back-btn:hover{color:var(--green);}
@@ -78,17 +74,16 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 .spinner{width:36px;height:36px;border:3px solid rgba(45,122,45,.15);border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite;}
 .loading-text{font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;color:var(--slate);}
 
-/* FAMILY */
 .family-page{background:linear-gradient(180deg,#e8f5e8,#f0f7f0);min-height:calc(100vh - 60px);padding:24px 20px 60px;}
 .family-wrap{max-width:480px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px;}
 .family-hero{text-align:center;margin-bottom:4px;}
-.family-hero-icon{font-size:64px;animation:bounce 2s ease-in-out infinite;line-height:1;}
+.family-hero-icon{font-size:64px;animation:float 2s ease-in-out infinite;line-height:1;}
 .family-hero-title{font-family:"Bebas Neue",cursive;font-size:32px;letter-spacing:3px;color:var(--gold);margin-top:4px;}
 .family-select-wrap{width:100%;}
 .family-select{width:100%;padding:14px 20px;background:#fff;color:var(--dark);border:2px solid rgba(45,122,45,.25);border-radius:var(--r);font-family:"Barlow Condensed",sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;cursor:pointer;outline:none;transition:border-color .2s;box-shadow:var(--shadow);appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232d7a2d' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;}
 .family-select:focus{border-color:var(--green);}
 .family-card{width:100%;background:#fff;border:2px solid rgba(232,168,0,.25);border-radius:20px;overflow:hidden;box-shadow:var(--shadow2);animation:fadeUp .4s ease both;}
-.family-card-header{background:linear-gradient(135deg,#fff8e1,#fff3cd);padding:18px 22px;border-bottom:2px solid rgba(232,168,0,.15);display:flex;align-items:center;gap:10px;}
+.family-card-header{background:linear-gradient(135deg,#fff8e1,#fff3cd);padding:18px 22px;border-bottom:2px solid rgba(232,168,0,.15);}
 .family-club-name{font-family:"Bebas Neue",cursive;font-size:26px;letter-spacing:2px;color:var(--gold);}
 .family-rows{display:flex;flex-direction:column;}
 .family-row{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid rgba(45,122,45,.08);animation:fadeUp .3s ease both;}
@@ -98,9 +93,8 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 .btn-reveal{background:linear-gradient(135deg,var(--gold),#f5c518);border:none;color:#fff;padding:8px 18px;border-radius:8px;font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:800;letter-spacing:1px;cursor:pointer;transition:all .15s;box-shadow:0 2px 10px rgba(232,168,0,.3);}
 .btn-reveal:hover{transform:scale(1.05);}
 .btn-next{padding:14px 40px;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border:none;border-radius:var(--r);font-family:"Barlow Condensed",sans-serif;font-size:16px;font-weight:800;letter-spacing:2px;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(45,122,45,.3);}
-.btn-next:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,122,45,.4);}
+.btn-next:hover{transform:translateY(-2px);}
 
-/* INTER */
 .inter-page{background:var(--bg);min-height:calc(100vh - 60px);}
 .sh{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
 .sh-num{font-family:"Bebas Neue",cursive;font-size:30px;color:var(--green);line-height:1;}
@@ -131,7 +125,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 .status-club-name{font-family:"Bebas Neue",cursive;font-size:24px;letter-spacing:2px;color:var(--dark);margin-bottom:2px;}
 .status-q-text{font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;color:var(--green);margin-bottom:12px;}
 .btn-launch{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:8px;border:none;font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:800;letter-spacing:1px;cursor:pointer;transition:all .2s;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;box-shadow:0 4px 16px rgba(45,122,45,.3);}
-.btn-launch:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,122,45,.4);}
+.btn-launch:hover{transform:translateY(-2px);}
 .btn-launch:disabled{background:rgba(0,0,0,.08);color:var(--slate);box-shadow:none;transform:none;cursor:not-allowed;}
 .btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:8px;font-family:"Barlow Condensed",sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .15s;background:transparent;border:1.5px solid rgba(45,122,45,.2);color:var(--slate);}
 .btn-ghost:hover{border-color:var(--green);color:var(--green);}
@@ -195,8 +189,6 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 .step-reset{margin-left:auto;padding-right:14px;}
 .reset-btn{background:none;border:none;font-size:11px;font-weight:600;color:var(--slate);cursor:pointer;text-decoration:underline;transition:color .15s;}
 .reset-btn:hover{color:var(--coral);}
-
-/* EXPERT */
 .expert-hero{text-align:center;padding:28px 0 20px;animation:fadeUp .5s ease both;}
 .expert-title{font-family:"Bebas Neue",cursive;font-size:clamp(40px,7vw,68px);letter-spacing:6px;line-height:1;color:var(--dark);margin-bottom:6px;}
 .expert-title span{color:var(--coral);}
@@ -209,7 +201,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 .picker-label{font-family:"Barlow Condensed",sans-serif;font-size:10px;font-weight:800;letter-spacing:3px;color:var(--slate);text-transform:uppercase;margin-bottom:7px;}
 .launch-wrap{display:flex;justify-content:center;margin-bottom:28px;animation:fadeUp .5s ease .15s both;}
 .btn-launch-expert{display:inline-flex;align-items:center;gap:10px;padding:14px 44px;border-radius:10px;border:none;font-family:"Barlow Condensed",sans-serif;font-size:16px;font-weight:800;letter-spacing:2px;cursor:pointer;transition:all .2s;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;box-shadow:0 4px 18px rgba(45,122,45,.35);}
-.btn-launch-expert:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 10px 28px rgba(45,122,45,.45);}
+.btn-launch-expert:hover:not(:disabled){transform:translateY(-3px);}
 .btn-launch-expert:disabled{background:rgba(0,0,0,.08);color:var(--slate);box-shadow:none;cursor:not-allowed;}
 .score-banner{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1.5px solid rgba(45,122,45,.15);border-radius:var(--r);padding:16px 22px;margin-bottom:20px;box-shadow:var(--shadow);animation:fadeUp .4s ease both;}
 .score-club{font-family:"Bebas Neue",cursive;font-size:18px;letter-spacing:2px;color:var(--dark);display:flex;align-items:center;gap:8px;}
@@ -231,7 +223,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 .section-desc{font-size:11px;color:var(--slate);margin-left:auto;}
 .players-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:10px;margin-bottom:26px;}
 .player-card{background:#fff;border:1.5px solid rgba(45,122,45,.1);border-radius:10px;padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:7px;animation:tagIn .3s ease both;transition:all .15s;box-shadow:0 2px 8px rgba(0,0,0,.06);}
-.player-card:hover{border-color:rgba(45,122,45,.3);transform:translateY(-2px);box-shadow:var(--shadow);}
+.player-card:hover{border-color:rgba(45,122,45,.3);transform:translateY(-2px);}
 .player-card.direct{border-color:rgba(45,122,45,.2);}
 .player-photo{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid rgba(45,122,45,.15);}
 .player-photo-placeholder{width:48px;height:48px;border-radius:50%;background:var(--bg);border:2px solid rgba(45,122,45,.1);display:flex;align-items:center;justify-content:center;font-size:18px;}
@@ -253,8 +245,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 <script type="text/babel">
 
 const EXPERT_API = "https://var-club-expert.vercel.app";
-const [familyData, setFamilyData] = React.useState({clubs:[]});
-  
+
 const QUESTIONS=[
   {id:1,cat:"nat",short:"Joueurs Français",full:"Citez des joueurs Français passés par ce club."},
   {id:2,cat:"nat",short:"Joueurs Espagnols",full:"Citez des joueurs Espagnols passés par ce club."},
@@ -290,14 +281,23 @@ const CAT_META={
 const CATS=["nat","pal","pro","sta"];
 
 function FamilyMode({onBack}) {
-  const clubs=familyData.clubs;
+  const [clubs,setClubs]=React.useState([]);
   const [selected,setSelected]=React.useState(null);
   const [revealed,setRevealed]=React.useState({});
+
+  React.useEffect(()=>{
+    fetch("./dataFamily.json")
+      .then(r=>r.json())
+      .then(d=>setClubs(d.clubs||[]))
+      .catch(()=>{});
+  },[]);
+
   const allRevealed=selected&&["ville","pays","continent","stade","surnom"].every(f=>revealed[f]);
   const pickClub=(id)=>{setSelected(clubs.find(c=>c.id===id)||null);setRevealed({});};
   const reveal=(field)=>setRevealed(p=>({...p,[field]:true}));
   const next=()=>{setSelected(null);setRevealed({});};
   const fields=[{key:"ville",label:"VILLE"},{key:"pays",label:"PAYS"},{key:"continent",label:"CONTINENT"},{key:"stade",label:"STADE"},{key:"surnom",label:"SURNOM"}];
+
   return(
     <div className="family-page">
       <div style={{maxWidth:480,margin:"0 auto",padding:"24px 20px 60px"}}>
@@ -309,7 +309,7 @@ function FamilyMode({onBack}) {
           </div>
           <div className="family-select-wrap">
             <select className="family-select" value={selected?.id||""} onChange={e=>pickClub(e.target.value)}>
-              <option value="">— CHOISIR UN CLUB —</option>
+              <option value="">— CHOISIR UN CLUB ({clubs.length}) —</option>
               {clubs.map(c=><option key={c.id} value={c.id}>{c.nom}</option>)}
             </select>
           </div>
@@ -506,27 +506,24 @@ function ExpertMode({onBack}) {
             :<button className="btn-launch-expert" style={{background:"rgba(0,0,0,.08)",color:"var(--slate)",boxShadow:"none"}} onClick={()=>setResults(null)}>↺ Nouvelle recherche</button>
           }
         </div>
-        {results&&(
-          <>
-            <div className="score-banner">
-              <div className="score-club"><span>{club1.flag}</span>{club1.name}</div>
-              <div className="score-stats">
-                <div className="score-stat"><div className="score-stat-num direct">{totalDirect}</div><div className="score-stat-label">Directs · 2 pts</div></div>
-                <div className="score-stat"><div className="score-stat-num indirect">{totalIndirect}</div><div className="score-stat-label">Passages · 1 pt</div></div>
-                <div className="score-stat"><div className="score-stat-num total">{totalPoints}</div><div className="score-stat-label">Total</div></div>
-              </div>
-              <div className="score-club"><span>{club2.flag}</span>{club2.name}</div>
+        {results&&(<>
+          <div className="score-banner">
+            <div className="score-club"><span>{club1.flag}</span>{club1.name}</div>
+            <div className="score-stats">
+              <div className="score-stat"><div className="score-stat-num direct">{totalDirect}</div><div className="score-stat-label">Directs · 2 pts</div></div>
+              <div className="score-stat"><div className="score-stat-num indirect">{totalIndirect}</div><div className="score-stat-label">Passages · 1 pt</div></div>
+              <div className="score-stat"><div className="score-stat-num total">{totalPoints}</div><div className="score-stat-label">Total</div></div>
             </div>
-            {totalDirect===0&&totalIndirect===0?(
-              <div className="empty"><div className="empty-badge">🔍</div><div className="empty-t">Aucune connexion</div><div className="empty-s">Aucun joueur commun trouvé</div></div>
-            ):(
-              <div className="results-section">
-                {totalDirect>0&&(<><div className="section-header"><span className="section-badge badge-direct">Transferts directs</span><span className="section-count direct">{totalDirect}</span><span className="section-desc">2 points chacun</span></div><div className="players-grid">{results.direct.map((p,i)=><PlayerCard key={i} player={p} type="direct"/>)}</div></>)}
-                {totalIndirect>0&&(<><div className="section-header"><span className="section-badge badge-indirect">Passages communs</span><span className="section-count indirect">{totalIndirect}</span><span className="section-desc">1 point chacun</span></div><div className="players-grid">{results.indirect.map((p,i)=><PlayerCard key={i} player={p} type="indirect"/>)}</div></>)}
-              </div>
-            )}
-          </>
-        )}
+            <div className="score-club"><span>{club2.flag}</span>{club2.name}</div>
+          </div>
+          {totalDirect===0&&totalIndirect===0
+            ?<div className="empty"><div className="empty-badge">🔍</div><div className="empty-t">Aucune connexion</div><div className="empty-s">Aucun joueur commun trouvé</div></div>
+            :<div className="results-section">
+              {totalDirect>0&&(<><div className="section-header"><span className="section-badge badge-direct">Transferts directs</span><span className="section-count direct">{totalDirect}</span><span className="section-desc">2 points chacun</span></div><div className="players-grid">{results.direct.map((p,i)=><PlayerCard key={i} player={p} type="direct"/>)}</div></>)}
+              {totalIndirect>0&&(<><div className="section-header"><span className="section-badge badge-indirect">Passages communs</span><span className="section-count indirect">{totalIndirect}</span><span className="section-desc">1 point chacun</span></div><div className="players-grid">{results.indirect.map((p,i)=><PlayerCard key={i} player={p} type="indirect"/>)}</div></>)}
+            </div>
+          }
+        </>)}
         {!results&&!scanning&&(<div className="empty"><div className="empty-badge">⚽</div><div className="empty-t">Choisissez deux clubs</div><div className="empty-s">Sélectionnez deux clubs et lancez la VAR</div></div>)}
         <div className="footer">VAR CLUB · Pro Mercato · {clubs.length} clubs</div>
       </div>
@@ -538,7 +535,7 @@ function Home({onSelect}) {
   return(
     <div className="home">
       <div className="home-mascot">⚽</div>
-      <div className="home-title" style={{animation:"fadeUp .5s ease .1s both"}}>VAR<br/><span>CLUB</span></div>
+      <div className="home-title">VAR<br/><span>CLUB</span></div>
       <div className="home-sub">Choisissez votre mode de jeu</div>
       <div className="mode-cards">
         <div className="mode-card family" onClick={()=>onSelect("family")}>
@@ -577,7 +574,7 @@ function App() {
         <div className="live-pill"><div className="live-dot"/>LIVE</div>
       </div>
       {!mode&&<Home onSelect={setMode}/>}
-      {mode==="family"&&<FamilyMode onBack={()=>setMode(null)} familyData={familyData} setFamilyData={setFamilyData}/>}
+      {mode==="family"&&<FamilyMode onBack={()=>setMode(null)}/>}
       {mode==="inter"&&<InterMode onBack={()=>setMode(null)}/>}
       {mode==="expert"&&<ExpertMode onBack={()=>setMode(null)}/>}
     </div>
