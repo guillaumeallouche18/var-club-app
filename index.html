@@ -255,18 +255,18 @@ const QUESTIONS=[
   {id:6,cat:"nat",short:"Brésiliens / Argentins",full:"Citez des joueurs Brésiliens ou Argentins passés par ce club."},
   {id:7,cat:"nat",short:"Joueurs Algériens",full:"Citez des joueurs Algériens passés par ce club."},
   {id:8,cat:"nat",short:"Joueurs Marocains",full:"Citez des joueurs Marocains passés par ce club."},
-  {id:9,cat:"pal",short:"Champions du Monde",full:"Citez un maximum de Champions du Monde passés par ce club."},
-  {id:10,cat:"pal",short:"Vainqueurs de l'Euro",full:"Citez un maximum de Vainqueurs de l'Euro passés par ce club."},
-  {id:11,cat:"pal",short:"Vainqueurs Champions League",full:"Citez un maximum de Vainqueurs de la Champions League passés par ce club."},
-  {id:12,cat:"pal",short:"Ballons d'Or / Podium",full:"Citez un maximum de Ballons d'Or (ou podium) passés par ce club."},
-  {id:13,cat:"pal",short:"Vainqueurs Coupe de France",full:"Citez des joueurs ayant gagné la Coupe de France avec ce club."},
-  {id:14,cat:"pal",short:"Meilleur Buteur",full:"Citez des joueurs ayant fini Meilleur Buteur du championnat avec ce club."},
-  {id:15,cat:"pro",short:"+50 sélections",full:"Citez des joueurs ayant plus de 50 sélections nationales (tous pays confondus)."},
+  {id:9,cat:"pal",hidden:true,short:"Champions du Monde",full:"Citez un maximum de Champions du Monde passés par ce club."},
+  {id:10,cat:"pal",hidden:true,short:"Vainqueurs de l'Euro",full:"Citez un maximum de Vainqueurs de l'Euro passés par ce club."},
+  {id:11,cat:"pal",hidden:true,short:"Vainqueurs Champions League",full:"Citez un maximum de Vainqueurs de la Champions League passés par ce club."},
+  {id:12,cat:"pal",hidden:true,short:"Ballons d'Or / Podium",full:"Citez un maximum de Ballons d'Or (ou podium) passés par ce club."},
+  {id:13,cat:"pal",hidden:true,short:"Vainqueurs Coupe de France",full:"Citez des joueurs ayant gagné la Coupe de France avec ce club."},
+  {id:14,cat:"pal",hidden:true,short:"Meilleur Buteur",full:"Citez des joueurs ayant fini Meilleur Buteur du championnat avec ce club."},
+  {id:15,cat:"pro",hidden:true,short:"+50 sélections",full:"Citez des joueurs ayant plus de 50 sélections nationales (tous pays confondus)."},
   {id:16,cat:"pro",short:"Gardiens de but",full:"Citez des gardiens de but passés par ce club."},
   {id:17,cat:"pro",short:"Transferts +50M€",full:"Citez des joueurs achetés ou vendus pour plus de 50M€."},
   {id:18,cat:"pro",short:"Recrutés libres",full:"Citez des joueurs recrutés gratuitement par ce club."},
   {id:19,cat:"pro",short:"Prêtés puis achetés",full:"Citez des joueurs d'abord prêtés puis achetés définitivement."},
-  {id:20,cat:"pro",short:"Sud-Américains",full:"Citez des joueurs sud-américains passés par ce club."},
+  {id:20,cat:"pro",hidden:true,short:"Sud-Américains",full:"Citez des joueurs sud-américains passés par ce club."},
   {id:21,cat:"sta",short:"+300 matchs",full:"Citez des joueurs avec plus de 300 matchs sous ce maillot."},
   {id:22,cat:"sta",short:"+100 buts",full:"Citez des joueurs avec plus de 100 buts pour ce club."},
   {id:23,cat:"sta",short:"+5 saisons",full:"Citez des joueurs restés plus de 5 saisons consécutives au club."},
@@ -403,7 +403,7 @@ function InterMode({onBack}) {
         </div>
         <div className="q-section">
           <div className="sh"><span className="sh-num">②</span><span className="sh-label">Choisir une question</span></div>
-          {CATS.map(cat=>{const meta=CAT_META[cat];const qs=QUESTIONS.filter(q=>q.cat===cat);return(<div key={cat} className="cat-block"><div className="cat-header"><span className={meta.badgeCls}>{meta.label}</span><span className="cat-count">{qs.length} questions</span></div><div className="q-grid">{qs.map(q=>(<div key={q.id} className={"q-card"+(question?.id===q.id?" on "+cat:"")} onClick={()=>pickQ(q)}><div className="q-num">Q{q.id}</div><div className="q-text">{q.short}</div></div>))}</div></div>);})}
+          {CATS.map(cat=>{const meta=CAT_META[cat];const qs=QUESTIONS.filter(q=>q.cat===cat&&!q.hidden);return(<div key={cat} className="cat-block"><div className="cat-header"><span className={meta.badgeCls}>{meta.label}</span><span className="cat-count">{qs.length} questions</span></div><div className="q-grid">{qs.map(q=>(<div key={q.id} className={"q-card"+(question?.id===q.id?" on "+cat:"")} onClick={()=>pickQ(q)}><div className="q-num">Q{q.id}</div><div className="q-text">{q.short}</div></div>))}</div></div>);})}
         </div>
         {club&&question?(
           <div className="verdict-wrap" ref={verdictRef}>
