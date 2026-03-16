@@ -107,7 +107,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 .search-inp{width:100%;background:var(--bg);border:1.5px solid rgba(45,122,45,.15);border-radius:8px;padding:10px 14px 10px 35px;font-family:"Barlow",sans-serif;font-size:14px;color:var(--text);outline:none;transition:border-color .2s;}
 .search-inp:focus{border-color:var(--green);}
 .search-inp::placeholder{color:var(--slate);}
-.dropdown{position:absolute;top:calc(100% + 4px);left:0;width:100%;background:#fff;border:1.5px solid rgba(45,122,45,.2);border-radius:var(--r);max-height:200px;overflow-y:auto;z-index:9999;box-shadow:0 20px 50px rgba(0,0,0,.15);}
+.dropdown{position:absolute;top:calc(100% + 4px);left:0;width:100%;background:#fff;border:1.5px solid rgba(45,122,45,.2);border-radius:var(--r);max-height:200px;overflow-y:auto;z-index:99999;box-shadow:0 20px 50px rgba(0,0,0,.15);}
 .dropdown::-webkit-scrollbar{width:4px;}
 .dropdown::-webkit-scrollbar-thumb{background:rgba(45,122,45,.2);border-radius:4px;}
 .dg-label{padding:6px 14px 3px;font-size:9px;font-weight:800;letter-spacing:2px;color:var(--slate);text-transform:uppercase;border-bottom:1px solid rgba(45,122,45,.08);}
@@ -199,7 +199,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 .vs-badge{display:flex;align-items:center;justify-content:center;padding-top:42px;}
 .vs-inner{font-family:"Bebas Neue",cursive;font-size:36px;letter-spacing:3px;color:var(--green);}
 .picker-label{font-family:"Barlow Condensed",sans-serif;font-size:10px;font-weight:800;letter-spacing:3px;color:var(--slate);text-transform:uppercase;margin-bottom:7px;}
-.launch-wrap{display:flex;justify-content:center;margin-bottom:28px;animation:fadeUp .5s ease .15s both;position:relative;z-index:1;}
+.launch-wrap{display:flex;justify-content:center;margin-bottom:28px;animation:fadeUp .5s ease .15s both;position:relative;z-index:0;}
 .btn-launch-expert{display:inline-flex;align-items:center;gap:10px;padding:14px 44px;border-radius:10px;border:none;font-family:"Barlow Condensed",sans-serif;font-size:16px;font-weight:800;letter-spacing:2px;cursor:pointer;transition:all .2s;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;box-shadow:0 4px 18px rgba(45,122,45,.35);}
 .btn-launch-expert:hover:not(:disabled){transform:translateY(-3px);}
 .btn-launch-expert:disabled{background:rgba(0,0,0,.08);color:var(--slate);box-shadow:none;cursor:not-allowed;}
@@ -447,10 +447,8 @@ function ExpertMode({onBack}) {
   const ref2=React.useRef(null);
   React.useEffect(()=>{fetch(`${EXPERT_API}/api/clubs`).then(r=>r.json()).then(d=>{setClubs(d.clubs||[]);setLoading(false);}).catch(e=>{setError(e.message);setLoading(false);});},[]);
   React.useEffect(()=>{const fn=e=>{if(ref1.current&&!ref1.current.contains(e.target))setDrop1(false);if(ref2.current&&!ref2.current.contains(e.target))setDrop2(false);};document.addEventListener("mousedown",fn);return()=>document.removeEventListener("mousedown",fn);},[]);
-  const KEEP_17=new Set(["Paris Saint-Germain","Olympique de Marseille","Olympique Lyonnais","Real Madrid CF","FC Barcelone","Atlético de Madrid","Liverpool FC","Arsenal FC","Chelsea FC","Manchester United","Manchester City","FC Bayern Munich","Borussia Dortmund","AC Milan","Inter Milan","Juventus FC","Napoli"]);
-  const clubs17=React.useMemo(()=>clubs.filter(c=>KEEP_17.has(c.name)),[clubs]);
-  const grouped=React.useMemo(()=>{const o={};clubs17.forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;},[clubs17]);
-  const filter=(s)=>{if(!s)return grouped;const q=s.toLowerCase();const o={};clubs17.filter(c=>c.name.toLowerCase().includes(q)||c.league.toLowerCase().includes(q)).forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;};
+  const grouped=React.useMemo(()=>{const o={};clubs.forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;},[clubs]);
+  const filter=(s)=>{if(!s)return grouped;const q=s.toLowerCase();const o={};clubs.filter(c=>c.name.toLowerCase().includes(q)||c.league.toLowerCase().includes(q)).forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;};
   const launch=async()=>{if(!club1||!club2)return;setScanning(true);setResults(null);try{const r=await fetch(`${EXPERT_API}/api/var?club1=${club1.id}&club2=${club2.id}`);const d=await r.json();setResults(d);}catch(e){setError(e.message);}setScanning(false);};
   if(loading)return<div className="page"><div className="back-btn" onClick={onBack}>← Retour</div><div className="loading"><div className="spinner"/><div className="loading-text">Chargement…</div></div></div>;
   const totalDirect=results?.direct?.length||0;
