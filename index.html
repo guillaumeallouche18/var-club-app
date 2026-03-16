@@ -477,7 +477,7 @@ function ExpertMode({onBack}) {
               </div>
             </div>
           </div>
-          <div className="vs-badge"><div className="vs-inner">VS</div></div>
+          <div className="vs-badge"><div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"16px"}}><div className="vs-inner">VS</div>{!results?<button className="btn-launch-expert" onClick={launch} disabled={!club1||!club2||scanning}>{scanning?"⏳ Analyse…":"▶ Lancer la VAR"}</button>:<button className="btn-launch-expert" style={{background:"rgba(0,0,0,.08)",color:"var(--slate)",boxShadow:"none"}} onClick={()=>setResults(null)}>↺ Nouvelle recherche</button>}</div></div>
           <div>
             <div className="picker-label">Club 2</div>
             <div className="picker-box" ref={ref2} style={{position:"relative",overflow:"visible"}}>
@@ -490,12 +490,7 @@ function ExpertMode({onBack}) {
             </div>
           </div>
         </div>
-        <div className="launch-wrap">
-          {!results
-            ?<button className="btn-launch-expert" onClick={launch} disabled={!club1||!club2||scanning}>{scanning?"⏳ Analyse…":"▶ Lancer la VAR"}</button>
-            :<button className="btn-launch-expert" style={{background:"rgba(0,0,0,.08)",color:"var(--slate)",boxShadow:"none"}} onClick={()=>setResults(null)}>↺ Nouvelle recherche</button>
-          }
-        </div>
+
         {results&&(<>
           <div className="score-banner">
             <div className="score-club"><span>{club1.flag}</span>{club1.name}</div>
