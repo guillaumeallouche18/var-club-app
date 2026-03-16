@@ -447,10 +447,8 @@ function ExpertMode({onBack}) {
   const ref2=React.useRef(null);
   React.useEffect(()=>{fetch(`${EXPERT_API}/api/clubs`).then(r=>r.json()).then(d=>{setClubs(d.clubs||[]);setLoading(false);}).catch(e=>{setError(e.message);setLoading(false);});},[]);
   React.useEffect(()=>{const fn=e=>{if(ref1.current&&!ref1.current.contains(e.target))setDrop1(false);if(ref2.current&&!ref2.current.contains(e.target))setDrop2(false);};document.addEventListener("mousedown",fn);return()=>document.removeEventListener("mousedown",fn);},[]);
-  const KEEP_IDS=new Set([583,244,1041,418,131,13,31,11,631,985,281,27,16,5,46,506,759]);
-  const clubs17=React.useMemo(()=>clubs.filter(c=>KEEP_IDS.has(Number(c.id))),[clubs]);
-  const grouped=React.useMemo(()=>{const o={};clubs17.forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;},[clubs17]);
-  const filter=(s)=>{if(!s)return grouped;const q=s.toLowerCase();const o={};clubs17.filter(c=>c.name.toLowerCase().includes(q)||c.league.toLowerCase().includes(q)).forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;};
+  const grouped=React.useMemo(()=>{const o={};clubs.forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;},[clubs]);
+  const filter=(s)=>{if(!s)return grouped;const q=s.toLowerCase();const o={};clubs.filter(c=>c.name.toLowerCase().includes(q)||c.league.toLowerCase().includes(q)).forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;};
   const launch=async()=>{if(!club1||!club2)return;setScanning(true);setResults(null);try{const r=await fetch(`${EXPERT_API}/api/var?club1=${club1.id}&club2=${club2.id}`);const d=await r.json();setResults(d);}catch(e){setError(e.message);}setScanning(false);};
   if(loading)return<div className="page"><div className="back-btn" onClick={onBack}>← Retour</div><div className="loading"><div className="spinner"/><div className="loading-text">Chargement…</div></div></div>;
   const totalDirect=results?.direct?.length||0;
