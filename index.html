@@ -111,7 +111,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 .dropdown::-webkit-scrollbar{width:4px;}
 .dropdown::-webkit-scrollbar-thumb{background:rgba(45,122,45,.2);border-radius:4px;}
 .dg-label{padding:6px 14px 3px;font-size:9px;font-weight:800;letter-spacing:2px;color:var(--slate);text-transform:uppercase;border-bottom:1px solid rgba(45,122,45,.08);}
-.di{padding:13px 14px;cursor:pointer;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(45,122,45,.05);transition:background .1s;color:var(--text);}
+.di{padding:16px 14px;cursor:pointer;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(45,122,45,.05);transition:background .1s;color:var(--text);min-height:52px;}
 .di:hover,.di.sel{background:rgba(45,122,45,.06);color:var(--green);}
 .club-chip{margin-top:10px;display:flex;align-items:center;gap:10px;background:rgba(45,122,45,.06);border:1.5px solid rgba(45,122,45,.2);border-radius:10px;padding:10px 14px;animation:fadeUp .2s ease both;}
 .chip-flag{font-size:20px;}
@@ -447,8 +447,10 @@ function ExpertMode({onBack}) {
   const ref2=React.useRef(null);
   React.useEffect(()=>{fetch(`${EXPERT_API}/api/clubs`).then(r=>r.json()).then(d=>{setClubs(d.clubs||[]);setLoading(false);}).catch(e=>{setError(e.message);setLoading(false);});},[]);
   React.useEffect(()=>{const fn=e=>{if(ref1.current&&!ref1.current.contains(e.target))setDrop1(false);if(ref2.current&&!ref2.current.contains(e.target))setDrop2(false);};document.addEventListener("mousedown",fn);return()=>document.removeEventListener("mousedown",fn);},[]);
-  const grouped=React.useMemo(()=>{const o={};clubs.forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;},[clubs]);
-  const filter=(s)=>{if(!s)return grouped;const q=s.toLowerCase();const o={};clubs.filter(c=>c.name.toLowerCase().includes(q)||c.league.toLowerCase().includes(q)).forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;};
+  const KEEP_IDS=new Set([583,244,1041,418,131,13,31,11,631,985,281,27,16,5,46,506,759]);
+  const clubs17=React.useMemo(()=>clubs.filter(c=>KEEP_IDS.has(Number(c.id))),[clubs]);
+  const grouped=React.useMemo(()=>{const o={};clubs17.forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;},[clubs17]);
+  const filter=(s)=>{if(!s)return grouped;const q=s.toLowerCase();const o={};clubs17.filter(c=>c.name.toLowerCase().includes(q)||c.league.toLowerCase().includes(q)).forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;};
   const launch=async()=>{if(!club1||!club2)return;setScanning(true);setResults(null);try{const r=await fetch(`${EXPERT_API}/api/var?club1=${club1.id}&club2=${club2.id}`);const d=await r.json();setResults(d);}catch(e){setError(e.message);}setScanning(false);};
   if(loading)return<div className="page"><div className="back-btn" onClick={onBack}>← Retour</div><div className="loading"><div className="spinner"/><div className="loading-text">Chargement…</div></div></div>;
   const totalDirect=results?.direct?.length||0;
