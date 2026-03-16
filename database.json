@@ -463,27 +463,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/7573-1694515823.jpg"
         }
       ],
-      "15": [
-        {
-          "name": "Mohamed Salah",
-          "tm_id": "148455",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/148455-1694515823.jpg",
-          "caps": 65
-        },
-        {
-          "name": "Alisson",
-          "tm_id": "105470",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/105470-1694515823.jpg",
-          "caps": 76
-        },
-        {
-          "name": "Federico Chiesa",
-          "tm_id": "341092",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/341092-1694515823.jpg",
-          "caps": 51
-        }
-      ],
-      "16": [
+      "9": [
         {
           "name": "Alisson",
           "tm_id": "105470",
@@ -775,324 +755,27 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1410632.jpg"
         }
       ],
-      "17": [
-        {
-          "name": "Jérémy Jacquet",
-          "tm_id": "1004301",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1004301.jpg"
-        },
-        {
-          "name": "Alexander Isak",
-          "tm_id": "349066",
-          "photo": "https://img.transfermarkt.com/portrait/medium/349066.jpg"
-        },
-        {
-          "name": "Florian Wirtz",
-          "tm_id": "598577",
-          "photo": "https://img.transfermarkt.com/portrait/medium/598577.jpg"
-        },
+      "15": [
         {
           "name": "Hugo Ekitiké",
           "tm_id": "709726",
-          "photo": "https://img.transfermarkt.com/portrait/medium/709726.jpg"
-        },
-        {
-          "name": "Dominik Szoboszlai",
-          "tm_id": "451276",
-          "photo": "https://img.transfermarkt.com/portrait/medium/451276.jpg"
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/709726-1694515823.jpg",
+          "fee": "95M€"
         },
         {
           "name": "Darwin Núñez",
           "tm_id": "546543",
-          "photo": "https://img.transfermarkt.com/portrait/medium/546543.jpg"
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/546543-1694515823.jpg",
+          "fee": "53M€"
         },
         {
-          "name": "Alisson",
-          "tm_id": "105470",
-          "photo": "https://img.transfermarkt.com/portrait/medium/105470.jpg"
-        },
-        {
-          "name": "Naby Keïta",
-          "tm_id": "302215",
-          "photo": "https://img.transfermarkt.com/portrait/medium/302215.jpg"
-        },
-        {
-          "name": "Virgil van Dijk",
-          "tm_id": "139208",
-          "photo": "https://img.transfermarkt.com/portrait/medium/139208.jpg"
-        },
-        {
-          "name": "Barry Jones",
-          "tm_id": "452998",
-          "photo": "https://img.transfermarkt.com/portrait/medium/452998.jpg"
-        },
-        {
-          "name": "John Durnin",
-          "tm_id": "175865",
-          "photo": "https://img.transfermarkt.com/portrait/medium/175865.jpg"
-        },
-        {
-          "name": "Jimmy Case",
-          "tm_id": "176085",
-          "photo": "https://img.transfermarkt.com/portrait/medium/176085.jpg"
-        },
-        {
-          "name": "Fred Howe",
-          "tm_id": "1369693",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1369693.jpg"
-        },
-        {
-          "name": "Fred Baron",
-          "tm_id": "1337759",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1337759.jpg"
-        },
-        {
-          "name": "Billy McDevitt",
-          "tm_id": "1349421",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1349421.jpg"
-        },
-        {
-          "name": "Cyril Gilhespy",
-          "tm_id": "1234979",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1234979.jpg"
-        },
-        {
-          "name": "Bill Cunningham",
-          "tm_id": "1352092",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1352092.jpg"
-        },
-        {
-          "name": "Fred Pagnam",
-          "tm_id": "1275288",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1275288.jpg"
-        },
-        {
-          "name": "Jackie Sheldon",
-          "tm_id": "1311474",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1311474.jpg"
-        },
-        {
-          "name": "Arthur Metcalf",
-          "tm_id": "1336379",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1336379.jpg"
-        },
-        {
-          "name": "Frank Grayer",
-          "tm_id": "1379507",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1379507.jpg"
-        },
-        {
-          "name": "Tom Miller",
-          "tm_id": "979861",
-          "photo": "https://img.transfermarkt.com/portrait/medium/979861.jpg"
-        },
-        {
-          "name": "Bob Pursell",
-          "tm_id": "1327541",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1327541.jpg"
-        },
-        {
-          "name": "Tom Gracie",
-          "tm_id": "1336420",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1336420.jpg"
-        },
-        {
-          "name": "Bill Lacey",
-          "tm_id": "585368",
-          "photo": "https://img.transfermarkt.com/portrait/medium/585368.jpg"
-        },
-        {
-          "name": "John McConnell",
-          "tm_id": "1338392",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1338392.jpg"
-        },
-        {
-          "name": "Ron Orr",
-          "tm_id": "977771",
-          "photo": "https://img.transfermarkt.com/portrait/medium/977771.jpg"
-        },
-        {
-          "name": "Jimmy Harrop",
-          "tm_id": "1311479",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1311479.jpg"
-        },
-        {
-          "name": "Sam Hardy",
-          "tm_id": "962667",
-          "photo": "https://img.transfermarkt.com/portrait/medium/962667.jpg"
-        },
-        {
-          "name": "Ned Doig",
-          "tm_id": "976341",
-          "photo": "https://img.transfermarkt.com/portrait/medium/976341.jpg"
-        },
-        {
-          "name": "Bobby Robinson",
-          "tm_id": "1338011",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1338011.jpg"
-        },
-        {
-          "name": "Alf West",
-          "tm_id": "1336301",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1336301.jpg"
-        },
-        {
-          "name": "Joe Hewitt",
-          "tm_id": "1341307",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1341307.jpg"
-        },
-        {
-          "name": "Joe Hoare",
-          "tm_id": "1401137",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1401137.jpg"
-        },
-        {
-          "name": "George Livingstone",
-          "tm_id": "978257",
-          "photo": "https://img.transfermarkt.com/portrait/medium/978257.jpg"
-        },
-        {
-          "name": "Arthur Goddard",
-          "tm_id": "1336378",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1336378.jpg"
-        },
-        {
-          "name": "Tom Robertson",
-          "tm_id": "1372707",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1372707.jpg"
-        },
-        {
-          "name": "John Glover",
-          "tm_id": "1355548",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1355548.jpg"
-        },
-        {
-          "name": "Sam Raybould",
-          "tm_id": "1340637",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1340637.jpg"
-        },
-        {
-          "name": "Peter Kyle",
-          "tm_id": "1355665",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1355665.jpg"
-        },
-        {
-          "name": "George Allan",
-          "tm_id": "705944",
-          "photo": "https://img.transfermarkt.com/portrait/medium/705944.jpg"
-        },
-        {
-          "name": "Alex Raisbeck",
-          "tm_id": "622373",
-          "photo": "https://img.transfermarkt.com/portrait/medium/622373.jpg"
-        },
-        {
-          "name": "Rab Howell",
-          "tm_id": "834079",
-          "photo": "https://img.transfermarkt.com/portrait/medium/834079.jpg"
-        },
-        {
-          "name": "Tommy Robertson",
-          "tm_id": "1012266",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1012266.jpg"
-        },
-        {
-          "name": "Johnny Walker",
-          "tm_id": "1011258",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1011258.jpg"
-        },
-        {
-          "name": "Jack Cox",
-          "tm_id": "834080",
-          "photo": "https://img.transfermarkt.com/portrait/medium/834080.jpg"
-        },
-        {
-          "name": "Harry Storer",
-          "tm_id": "834075",
-          "photo": "https://img.transfermarkt.com/portrait/medium/834075.jpg"
-        },
-        {
-          "name": "Fred Geary",
-          "tm_id": "974647",
-          "photo": "https://img.transfermarkt.com/portrait/medium/974647.jpg"
-        },
-        {
-          "name": "Frank Becton",
-          "tm_id": "796339",
-          "photo": "https://img.transfermarkt.com/portrait/medium/796339.jpg"
-        },
-        {
-          "name": "Billy Dunlop",
-          "tm_id": "834078",
-          "photo": "https://img.transfermarkt.com/portrait/medium/834078.jpg"
-        },
-        {
-          "name": "Luis Díaz",
-          "tm_id": "480692",
-          "photo": "https://img.transfermarkt.com/portrait/medium/480692.jpg"
-        },
-        {
-          "name": "Philippe Coutinho",
-          "tm_id": "80444",
-          "photo": "https://img.transfermarkt.com/portrait/medium/80444.jpg"
-        },
-        {
-          "name": "Raheem Sterling",
-          "tm_id": "134425",
-          "photo": "https://img.transfermarkt.com/portrait/medium/134425.jpg"
-        },
-        {
-          "name": "Luis Suárez",
-          "tm_id": "44352",
-          "photo": "https://img.transfermarkt.com/portrait/medium/44352.jpg"
-        },
-        {
-          "name": "Fernando Torres",
-          "tm_id": "7767",
-          "photo": "https://img.transfermarkt.com/portrait/medium/7767.jpg"
-        },
-        {
-          "name": "Bob Done",
-          "tm_id": "1046607",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1046607.jpg"
-        },
-        {
-          "name": "Alan Scott",
-          "tm_id": "1355804",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1355804.jpg"
-        },
-        {
-          "name": "Jimmy Kelly",
-          "tm_id": "318358",
-          "photo": "https://img.transfermarkt.com/portrait/medium/318358.jpg"
-        },
-        {
-          "name": "John Macdonald",
-          "tm_id": "1333436",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1333436.jpg"
-        },
-        {
-          "name": "Don Sloan",
-          "tm_id": "1345223",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1345223.jpg"
-        },
-        {
-          "name": "Charlie Hewitt",
-          "tm_id": "1343033",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1343033.jpg"
-        },
-        {
-          "name": "Andy McGuigan",
-          "tm_id": "1372098",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1372098.jpg"
-        },
-        {
-          "name": "John Hunter",
-          "tm_id": "1239468",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1239468.jpg"
+          "name": "Jarell Quansah",
+          "tm_id": "632349",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/632349-1694515823.jpg",
+          "fee": "35M€"
         }
       ],
-      "18": [
+      "10": [
         {
           "name": "Freddie Woodman",
           "tm_id": "226049",
@@ -1449,7 +1132,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1374769.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Fábio Carvalho",
           "tm_id": "559263",
@@ -1745,66 +1428,6 @@
           "tm_id": "827127",
           "photo": "https://img.transfermarkt.com/portrait/medium/827127.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [
-        {
-          "name": "Hugo Ekitiké",
-          "tm_id": "709726",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/709726-1694515823.jpg",
-          "fee": "95M€"
-        },
-        {
-          "name": "Darwin Núñez",
-          "tm_id": "546543",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/546543-1694515823.jpg",
-          "fee": "53M€"
-        },
-        {
-          "name": "Jarell Quansah",
-          "tm_id": "632349",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/632349-1694515823.jpg",
-          "fee": "35M€"
-        }
-      ],
-      "9": [
-        "Djimi Traoré (Mali)"
-      ],
-      "10": [
-        "Xabi Alonso",
-        "Fernando Torres",
-        "Álvaro Arbeloa"
-      ],
-      "11": [
-        "Steven Gerrard",
-        "Jamie Carragher",
-        "Fernando Torres",
-        "Philippe Coutinho",
-        "Luis Suárez",
-        "Jordan Henderson",
-        "Mohamed Salah",
-        "Roberto Firmino",
-        "Sadio Mané",
-        "Virgil van Dijk",
-        "Alisson",
-        "Trent Alexander-Arnold",
-        "Andy Robertson"
-      ],
-      "12": [
-        "Luis Suárez (podium 2010)",
-        "Mohamed Salah (podium 2018-19)",
-        "Michael Owen (Ballon d'Or 2001)"
-      ],
-      "13": [],
-      "14": [
-        "Mohamed Salah (4×)",
-        "Robbie Fowler (2×)",
-        "Ian Rush (4×)",
-        "Michael Owen (2×)",
-        "Luis Suárez"
       ]
     },
     "bayern": {
@@ -2051,27 +1674,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/2963-1694515823.jpg"
         }
       ],
-      "15": [
-        {
-          "name": "Harry Kane",
-          "tm_id": "132098",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/132098-1694515823.jpg",
-          "caps": 78
-        },
-        {
-          "name": "Manuel Neuer",
-          "tm_id": "17259",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/17259-1694515823.jpg",
-          "caps": 124
-        },
-        {
-          "name": "Raphaël Guerreiro",
-          "tm_id": "170986",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/170986-1694515823.jpg",
-          "caps": 65
-        }
-      ],
-      "16": [
+      "9": [
         {
           "name": "Manuel Neuer",
           "tm_id": "17259",
@@ -2278,44 +1881,8 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/223236.jpg"
         }
       ],
-      "17": [
-        {
-          "name": "Luis Díaz",
-          "tm_id": "480692",
-          "photo": "https://img.transfermarkt.com/portrait/medium/480692.jpg"
-        },
-        {
-          "name": "Michael Olise",
-          "tm_id": "566723",
-          "photo": "https://img.transfermarkt.com/portrait/medium/566723.jpg"
-        },
-        {
-          "name": "João Palhinha",
-          "tm_id": "257455",
-          "photo": "https://img.transfermarkt.com/portrait/medium/257455.jpg"
-        },
-        {
-          "name": "Harry Kane",
-          "tm_id": "132098",
-          "photo": "https://img.transfermarkt.com/portrait/medium/132098.jpg"
-        },
-        {
-          "name": "Min-jae Kim",
-          "tm_id": "503482",
-          "photo": "https://img.transfermarkt.com/portrait/medium/503482.jpg"
-        },
-        {
-          "name": "Matthijs de Ligt",
-          "tm_id": "326031",
-          "photo": "https://img.transfermarkt.com/portrait/medium/326031.jpg"
-        },
-        {
-          "name": "Lucas Hernández",
-          "tm_id": "281963",
-          "photo": "https://img.transfermarkt.com/portrait/medium/281963.jpg"
-        }
-      ],
-      "18": [
+      "15": [],
+      "10": [
         {
           "name": "Eric Dier",
           "tm_id": "175722",
@@ -2577,7 +2144,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1522242.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Bryan Zaragoza",
           "tm_id": "713644",
@@ -2618,56 +2185,6 @@
           "tm_id": "72351",
           "photo": "https://img.transfermarkt.com/portrait/medium/72351.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [],
-      "9": [
-        "Benjamin Pavard",
-        "Lucas Hernández",
-        "Kingsley Coman",
-        "Franck Ribéry",
-        "Raphaël Guerreiro"
-      ],
-      "10": [
-        "Thomas Müller",
-        "Manuel Neuer",
-        "Philipp Lahm",
-        "Bastian Schweinsteiger",
-        "Toni Kroos",
-        "Mats Hummels",
-        "Jerome Boateng",
-        "Mesut Özil (non)"
-      ],
-      "11": [
-        "Manuel Neuer",
-        "Thomas Müller",
-        "Philipp Lahm",
-        "Arjen Robben",
-        "Franck Ribéry",
-        "David Alaba",
-        "Robert Lewandowski",
-        "Joshua Kimmich",
-        "Thiago Alcântara",
-        "Karl-Heinz Rummenigge",
-        "Lothar Matthäus"
-      ],
-      "12": [
-        "Gerd Müller (1×)",
-        "Karl-Heinz Rummenigge (2×)",
-        "Franz Beckenbauer (1×)",
-        "Lothar Matthäus (1×)",
-        "Robert Lewandowski (podium)"
-      ],
-      "13": [],
-      "14": [
-        "Robert Lewandowski (5×)",
-        "Gerd Müller (7×)",
-        "Karl-Heinz Rummenigge",
-        "Luca Toni",
-        "Roy Makaay"
       ]
     },
     "atleti": {
@@ -2990,27 +2507,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/7978-1694515823.jpg"
         }
       ],
-      "15": [
-        {
-          "name": "Jan Oblak",
-          "tm_id": "121483",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/121483-1694515823.jpg",
-          "caps": 82
-        },
-        {
-          "name": "Antoine Griezmann",
-          "tm_id": "125781",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/125781-1694515823.jpg",
-          "caps": 137
-        },
-        {
-          "name": "Koke",
-          "tm_id": "74229",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/74229-1694515823.jpg",
-          "caps": 70
-        }
-      ],
-      "16": [
+      "9": [
         {
           "name": "Jan Oblak",
           "tm_id": "121483",
@@ -3382,94 +2879,21 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/671982.jpg"
         }
       ],
-      "17": [
+      "15": [
         {
-          "name": "Julián Alvarez",
-          "tm_id": "576024",
-          "photo": "https://img.transfermarkt.com/portrait/medium/576024.jpg"
+          "name": "Álex Baena",
+          "tm_id": "548111",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/548111-1694515823.jpg",
+          "fee": "42M€"
         },
         {
-          "name": "João Félix",
-          "tm_id": "462250",
-          "photo": "https://img.transfermarkt.com/portrait/medium/462250.jpg"
-        },
-        {
-          "name": "Thomas Lemar",
-          "tm_id": "205562",
-          "photo": "https://img.transfermarkt.com/portrait/medium/205562.jpg"
-        },
-        {
-          "name": "Diego Costa",
-          "tm_id": "44779",
-          "photo": "https://img.transfermarkt.com/portrait/medium/44779.jpg"
-        },
-        {
-          "name": "Antoine Griezmann",
-          "tm_id": "125781",
-          "photo": "https://img.transfermarkt.com/portrait/medium/125781.jpg"
-        },
-        {
-          "name": "Feliciano Rivilla",
-          "tm_id": "216075",
-          "photo": "https://img.transfermarkt.com/portrait/medium/216075.jpg"
-        },
-        {
-          "name": "Adrián Escudero",
-          "tm_id": "313825",
-          "photo": "https://img.transfermarkt.com/portrait/medium/313825.jpg"
-        },
-        {
-          "name": "Diego Lozano",
-          "tm_id": "313867",
-          "photo": "https://img.transfermarkt.com/portrait/medium/313867.jpg"
-        },
-        {
-          "name": "Juan Antonio Ipiña",
-          "tm_id": "348603",
-          "photo": "https://img.transfermarkt.com/portrait/medium/348603.jpg"
-        },
-        {
-          "name": "Francisco Arencibia",
-          "tm_id": "347133",
-          "photo": "https://img.transfermarkt.com/portrait/medium/347133.jpg"
-        },
-        {
-          "name": "Santiago Losada",
-          "tm_id": "731810",
-          "photo": "https://img.transfermarkt.com/portrait/medium/731810.jpg"
-        },
-        {
-          "name": "Matheus Cunha",
-          "tm_id": "517894",
-          "photo": "https://img.transfermarkt.com/portrait/medium/517894.jpg"
-        },
-        {
-          "name": "Thomas Partey",
-          "tm_id": "230784",
-          "photo": "https://img.transfermarkt.com/portrait/medium/230784.jpg"
-        },
-        {
-          "name": "Lucas Hernández",
-          "tm_id": "281963",
-          "photo": "https://img.transfermarkt.com/portrait/medium/281963.jpg"
-        },
-        {
-          "name": "Rodri",
-          "tm_id": "357565",
-          "photo": "https://img.transfermarkt.com/portrait/medium/357565.jpg"
-        },
-        {
-          "name": "Pruden Sánchez",
-          "tm_id": "135774",
-          "photo": "https://img.transfermarkt.com/portrait/medium/135774.jpg"
-        },
-        {
-          "name": "Julio Elícegui",
-          "tm_id": "524472",
-          "photo": "https://img.transfermarkt.com/portrait/medium/524472.jpg"
+          "name": "Dávid Hancko",
+          "tm_id": "404418",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/404418-1694515823.jpg",
+          "fee": "26M€"
         }
       ],
-      "18": [
+      "10": [
         {
           "name": "Clément Lenglet",
           "tm_id": "182904",
@@ -3756,7 +3180,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1078961.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Juan Musso",
           "tm_id": "242359",
@@ -3877,60 +3301,6 @@
           "tm_id": "289940",
           "photo": "https://img.transfermarkt.com/portrait/medium/289940.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [
-        {
-          "name": "Álex Baena",
-          "tm_id": "548111",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/548111-1694515823.jpg",
-          "fee": "42M€"
-        },
-        {
-          "name": "Dávid Hancko",
-          "tm_id": "404418",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/404418-1694515823.jpg",
-          "fee": "26M€"
-        }
-      ],
-      "9": [
-        "Antoine Griezmann",
-        "Lucas Hernández",
-        "Thomas Lemar"
-      ],
-      "10": [
-        "Diego Costa",
-        "Fernando Torres",
-        "Álvaro Morata",
-        "David Villa",
-        "Koke"
-      ],
-      "11": [
-        "Antoine Griezmann",
-        "Fernando Torres",
-        "Diego Forlán",
-        "Radamel Falcao",
-        "Diego Costa",
-        "Simeone (joueur)",
-        "Jan Oblak",
-        "Koke",
-        "Filipe Luís"
-      ],
-      "12": [
-        "Antoine Griezmann (podium 2016)",
-        "Diego Forlán (1×)"
-      ],
-      "13": [],
-      "14": [
-        "Diego Forlán (1×)",
-        "Fernando Torres",
-        "Antoine Griezmann",
-        "Radamel Falcao",
-        "Diego Costa",
-        "David Villa"
       ]
     },
     "manutd": {
@@ -4177,15 +3547,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/3143-1694515823.jpg"
         }
       ],
-      "15": [
-        {
-          "name": "Harry Maguire",
-          "tm_id": "177907",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/177907-1694515823.jpg",
-          "caps": 64
-        }
-      ],
-      "16": [
+      "9": [
         {
           "name": "Senne Lammens",
           "tm_id": "503883",
@@ -4542,144 +3904,15 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/740947.jpg"
         }
       ],
-      "17": [
-        {
-          "name": "Benjamin Sesko",
-          "tm_id": "627442",
-          "photo": "https://img.transfermarkt.com/portrait/medium/627442.jpg"
-        },
-        {
-          "name": "Bryan Mbeumo",
-          "tm_id": "413039",
-          "photo": "https://img.transfermarkt.com/portrait/medium/413039.jpg"
-        },
-        {
-          "name": "Matheus Cunha",
-          "tm_id": "517894",
-          "photo": "https://img.transfermarkt.com/portrait/medium/517894.jpg"
-        },
-        {
-          "name": "Leny Yoro",
-          "tm_id": "923831",
-          "photo": "https://img.transfermarkt.com/portrait/medium/923831.jpg"
-        },
-        {
-          "name": "Manuel Ugarte",
-          "tm_id": "476701",
-          "photo": "https://img.transfermarkt.com/portrait/medium/476701.jpg"
-        },
-        {
-          "name": "Rasmus Højlund",
-          "tm_id": "610442",
-          "photo": "https://img.transfermarkt.com/portrait/medium/610442.jpg"
-        },
-        {
-          "name": "Mason Mount",
-          "tm_id": "346483",
-          "photo": "https://img.transfermarkt.com/portrait/medium/346483.jpg"
-        },
-        {
-          "name": "André Onana",
-          "tm_id": "234509",
-          "photo": "https://img.transfermarkt.com/portrait/medium/234509.jpg"
-        },
+      "15": [
         {
           "name": "Antony",
           "tm_id": "602105",
-          "photo": "https://img.transfermarkt.com/portrait/medium/602105.jpg"
-        },
-        {
-          "name": "Casemiro",
-          "tm_id": "16306",
-          "photo": "https://img.transfermarkt.com/portrait/medium/16306.jpg"
-        },
-        {
-          "name": "Lisandro Martínez",
-          "tm_id": "480762",
-          "photo": "https://img.transfermarkt.com/portrait/medium/480762.jpg"
-        },
-        {
-          "name": "Jadon Sancho",
-          "tm_id": "401173",
-          "photo": "https://img.transfermarkt.com/portrait/medium/401173.jpg"
-        },
-        {
-          "name": "Harry Maguire",
-          "tm_id": "177907",
-          "photo": "https://img.transfermarkt.com/portrait/medium/177907.jpg"
-        },
-        {
-          "name": "Bruno Fernandes",
-          "tm_id": "240306",
-          "photo": "https://img.transfermarkt.com/portrait/medium/240306.jpg"
-        },
-        {
-          "name": "Aaron Wan-Bissaka",
-          "tm_id": "477758",
-          "photo": "https://img.transfermarkt.com/portrait/medium/477758.jpg"
-        },
-        {
-          "name": "Fred",
-          "tm_id": "191614",
-          "photo": "https://img.transfermarkt.com/portrait/medium/191614.jpg"
-        },
-        {
-          "name": "Romelu Lukaku",
-          "tm_id": "96341",
-          "photo": "https://img.transfermarkt.com/portrait/medium/96341.jpg"
-        },
-        {
-          "name": "Paul Pogba",
-          "tm_id": "122153",
-          "photo": "https://img.transfermarkt.com/portrait/medium/122153.jpg"
-        },
-        {
-          "name": "Anthony Martial",
-          "tm_id": "182877",
-          "photo": "https://img.transfermarkt.com/portrait/medium/182877.jpg"
-        },
-        {
-          "name": "Ángel Di María",
-          "tm_id": "45320",
-          "photo": "https://img.transfermarkt.com/portrait/medium/45320.jpg"
-        },
-        {
-          "name": "Norman Tapken",
-          "tm_id": "1158047",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1158047.jpg"
-        },
-        {
-          "name": "Harold Hardman",
-          "tm_id": "294545",
-          "photo": "https://img.transfermarkt.com/portrait/medium/294545.jpg"
-        },
-        {
-          "name": "Cristiano Ronaldo",
-          "tm_id": "8198",
-          "photo": "https://img.transfermarkt.com/portrait/medium/8198.jpg"
-        },
-        {
-          "name": "Paddy Sloan",
-          "tm_id": "583738",
-          "photo": "https://img.transfermarkt.com/portrait/medium/583738.jpg"
-        },
-        {
-          "name": "Tommy Reid",
-          "tm_id": "1208387",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1208387.jpg"
-        },
-        {
-          "name": "Tom Miller",
-          "tm_id": "979861",
-          "photo": "https://img.transfermarkt.com/portrait/medium/979861.jpg"
-        },
-        {
-          "name": "Jackie Sheldon",
-          "tm_id": "1311474",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1311474.jpg"
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/602105-1694515823.jpg",
+          "fee": "22M€"
         }
       ],
-      "18": [
+      "10": [
         {
           "name": "Jonny Evans",
           "tm_id": "42412",
@@ -4796,7 +4029,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1233371.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Donny van de Beek",
           "tm_id": "288255",
@@ -4927,55 +4160,6 @@
           "tm_id": "176627",
           "photo": "https://img.transfermarkt.com/portrait/medium/176627.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [
-        {
-          "name": "Antony",
-          "tm_id": "602105",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/602105-1694515823.jpg",
-          "fee": "22M€"
-        }
-      ],
-      "9": [
-        "Patrice Evra",
-        "Mikael Silvestre",
-        "Eric Cantona",
-        "Laurent Blanc",
-        "Louis Saha",
-        "Anthony Martial"
-      ],
-      "10": [
-        "David Beckham"
-      ],
-      "11": [
-        "Cristiano Ronaldo",
-        "Wayne Rooney",
-        "Ryan Giggs",
-        "Paul Scholes",
-        "Roy Keane",
-        "Peter Schmeichel",
-        "Edwin van der Sar",
-        "Rio Ferdinand",
-        "Nemanja Vidić",
-        "Gary Neville",
-        "Eric Cantona",
-        "Dennis Irwin"
-      ],
-      "12": [
-        "Cristiano Ronaldo (2008)",
-        "Wayne Rooney (podium)"
-      ],
-      "13": [],
-      "14": [
-        "Cristiano Ronaldo (1×)",
-        "Ruud van Nistelrooy (1×)",
-        "Wayne Rooney",
-        "Dwight Yorke",
-        "Andrew Cole"
       ]
     },
     "barca": {
@@ -5352,21 +4536,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/688593-1694515823.jpg"
         }
       ],
-      "15": [
-        {
-          "name": "Robert Lewandowski",
-          "tm_id": "38253",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/38253-1694515823.jpg",
-          "caps": 88
-        },
-        {
-          "name": "Wojciech Szczęsny",
-          "tm_id": "44058",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/44058-1694515823.jpg",
-          "caps": 84
-        }
-      ],
-      "16": [
+      "9": [
         {
           "name": "Joan García",
           "tm_id": "561613",
@@ -5668,114 +4838,15 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/348442.jpg"
         }
       ],
-      "17": [
+      "15": [
         {
-          "name": "Dani Olmo",
-          "tm_id": "293385",
-          "photo": "https://img.transfermarkt.com/portrait/medium/293385.jpg"
-        },
-        {
-          "name": "Raphinha",
-          "tm_id": "411295",
-          "photo": "https://img.transfermarkt.com/portrait/medium/411295.jpg"
-        },
-        {
-          "name": "Jules Koundé",
-          "tm_id": "411975",
-          "photo": "https://img.transfermarkt.com/portrait/medium/411975.jpg"
-        },
-        {
-          "name": "Ferran Torres",
-          "tm_id": "398184",
-          "photo": "https://img.transfermarkt.com/portrait/medium/398184.jpg"
-        },
-        {
-          "name": "Miralem Pjanić",
-          "tm_id": "44162",
-          "photo": "https://img.transfermarkt.com/portrait/medium/44162.jpg"
-        },
-        {
-          "name": "Antoine Griezmann",
-          "tm_id": "125781",
-          "photo": "https://img.transfermarkt.com/portrait/medium/125781.jpg"
-        },
-        {
-          "name": "Frenkie de Jong",
-          "tm_id": "326330",
-          "photo": "https://img.transfermarkt.com/portrait/medium/326330.jpg"
-        },
-        {
-          "name": "Ousmane Dembélé",
-          "tm_id": "288230",
-          "photo": "https://img.transfermarkt.com/portrait/medium/288230.jpg"
-        },
-        {
-          "name": "Philippe Coutinho",
-          "tm_id": "80444",
-          "photo": "https://img.transfermarkt.com/portrait/medium/80444.jpg"
-        },
-        {
-          "name": "Luis Suárez",
-          "tm_id": "44352",
-          "photo": "https://img.transfermarkt.com/portrait/medium/44352.jpg"
-        },
-        {
-          "name": "Neymar",
-          "tm_id": "68290",
-          "photo": "https://img.transfermarkt.com/portrait/medium/68290.jpg"
-        },
-        {
-          "name": "Zlatan Ibrahimović",
-          "tm_id": "3455",
-          "photo": "https://img.transfermarkt.com/portrait/medium/3455.jpg"
-        },
-        {
-          "name": "Luis Suárez",
-          "tm_id": "172315",
-          "photo": "https://img.transfermarkt.com/portrait/medium/172315.jpg"
-        },
-        {
-          "name": "Cecilio Aldana",
-          "tm_id": "515253",
-          "photo": "https://img.transfermarkt.com/portrait/medium/515253.jpg"
-        },
-        {
-          "name": "Julián Vergara",
-          "tm_id": "348962",
-          "photo": "https://img.transfermarkt.com/portrait/medium/348962.jpg"
-        },
-        {
-          "name": "Domingo Balmanya",
-          "tm_id": "348842",
-          "photo": "https://img.transfermarkt.com/portrait/medium/348842.jpg"
-        },
-        {
-          "name": "José Iborra",
-          "tm_id": "348840",
-          "photo": "https://img.transfermarkt.com/portrait/medium/348840.jpg"
-        },
-        {
-          "name": "Severiano Goiburu",
-          "tm_id": "321858",
-          "photo": "https://img.transfermarkt.com/portrait/medium/321858.jpg"
-        },
-        {
-          "name": "Ferenc Plattkó",
-          "tm_id": "348466",
-          "photo": "https://img.transfermarkt.com/portrait/medium/348466.jpg"
-        },
-        {
-          "name": "Arthur Melo",
-          "tm_id": "362842",
-          "photo": "https://img.transfermarkt.com/portrait/medium/362842.jpg"
-        },
-        {
-          "name": "Luís Figo",
-          "tm_id": "3446",
-          "photo": "https://img.transfermarkt.com/portrait/medium/3446.jpg"
+          "name": "Joan García",
+          "tm_id": "561613",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/561613-1694515823.jpg",
+          "fee": "25M€"
         }
       ],
-      "18": [
+      "10": [
         {
           "name": "İlkay Gündoğan",
           "tm_id": "53622",
@@ -6047,7 +5118,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/958417.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Vitor Roque",
           "tm_id": "943837",
@@ -6108,66 +5179,6 @@
           "tm_id": "783557",
           "photo": "https://img.transfermarkt.com/portrait/medium/783557.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [
-        {
-          "name": "Joan García",
-          "tm_id": "561613",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/561613-1694515823.jpg",
-          "fee": "25M€"
-        }
-      ],
-      "9": [
-        "Thierry Henry",
-        "Éric Abidal",
-        "Samuel Umtiti",
-        "Antoine Griezmann",
-        "Clément Lenglet"
-      ],
-      "10": [
-        "Xavi",
-        "Iniesta",
-        "Puyol",
-        "Busquets",
-        "Piqué",
-        "Jordi Alba",
-        "Cesc Fàbregas",
-        "Pedro",
-        "David Villa"
-      ],
-      "11": [
-        "Lionel Messi",
-        "Xavi",
-        "Iniesta",
-        "Piqué",
-        "Puyol",
-        "Dani Alves",
-        "Thierry Henry",
-        "Busquets",
-        "Jordi Alba",
-        "Neymar",
-        "Luis Suárez",
-        "Samuel Eto'o",
-        "Ronaldinho"
-      ],
-      "12": [
-        "Lionel Messi (8×)",
-        "Ronaldinho (1×)",
-        "Rivaldo (1×)",
-        "Johan Cruyff (3×)"
-      ],
-      "13": [],
-      "14": [
-        "Lionel Messi (8×)",
-        "Ronaldinho",
-        "Luis Suárez",
-        "Rivaldo",
-        "David Villa",
-        "Samuel Eto'o"
       ]
     },
     "arsenal": {
@@ -6515,21 +5526,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/30936-1694515823.jpg"
         }
       ],
-      "15": [
-        {
-          "name": "Gabriel Jesus",
-          "tm_id": "363205",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/363205-1694515823.jpg",
-          "caps": 64
-        },
-        {
-          "name": "Kai Havertz",
-          "tm_id": "309400",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/309400-1694515823.jpg",
-          "caps": 55
-        }
-      ],
-      "16": [
+      "9": [
         {
           "name": "David Raya",
           "tm_id": "262749",
@@ -6841,134 +5838,15 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1384201.jpg"
         }
       ],
-      "17": [
-        {
-          "name": "Piero Hincapié",
-          "tm_id": "659813",
-          "photo": "https://img.transfermarkt.com/portrait/medium/659813.jpg"
-        },
-        {
-          "name": "Martín Zubimendi",
-          "tm_id": "423440",
-          "photo": "https://img.transfermarkt.com/portrait/medium/423440.jpg"
-        },
-        {
-          "name": "Eberechi Eze",
-          "tm_id": "479999",
-          "photo": "https://img.transfermarkt.com/portrait/medium/479999.jpg"
-        },
+      "15": [
         {
           "name": "Viktor Gyökeres",
           "tm_id": "325443",
-          "photo": "https://img.transfermarkt.com/portrait/medium/325443.jpg"
-        },
-        {
-          "name": "Noni Madueke",
-          "tm_id": "503987",
-          "photo": "https://img.transfermarkt.com/portrait/medium/503987.jpg"
-        },
-        {
-          "name": "Declan Rice",
-          "tm_id": "357662",
-          "photo": "https://img.transfermarkt.com/portrait/medium/357662.jpg"
-        },
-        {
-          "name": "Kai Havertz",
-          "tm_id": "309400",
-          "photo": "https://img.transfermarkt.com/portrait/medium/309400.jpg"
-        },
-        {
-          "name": "Gabriel Jesus",
-          "tm_id": "363205",
-          "photo": "https://img.transfermarkt.com/portrait/medium/363205.jpg"
-        },
-        {
-          "name": "Ben White",
-          "tm_id": "335721",
-          "photo": "https://img.transfermarkt.com/portrait/medium/335721.jpg"
-        },
-        {
-          "name": "Thomas Partey",
-          "tm_id": "230784",
-          "photo": "https://img.transfermarkt.com/portrait/medium/230784.jpg"
-        },
-        {
-          "name": "Nicolas Pépé",
-          "tm_id": "343052",
-          "photo": "https://img.transfermarkt.com/portrait/medium/343052.jpg"
-        },
-        {
-          "name": "Pierre-Emerick Aubameyang",
-          "tm_id": "58864",
-          "photo": "https://img.transfermarkt.com/portrait/medium/58864.jpg"
-        },
-        {
-          "name": "Alexandre Lacazette",
-          "tm_id": "93720",
-          "photo": "https://img.transfermarkt.com/portrait/medium/93720.jpg"
-        },
-        {
-          "name": "Pat Beasley",
-          "tm_id": "227819",
-          "photo": "https://img.transfermarkt.com/portrait/medium/227819.jpg"
-        },
-        {
-          "name": "Jock Rutherford",
-          "tm_id": "376201",
-          "photo": "https://img.transfermarkt.com/portrait/medium/376201.jpg"
-        },
-        {
-          "name": "George Jobey",
-          "tm_id": "1050753",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1050753.jpg"
-        },
-        {
-          "name": "Charles Randall",
-          "tm_id": "1338129",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1338129.jpg"
-        },
-        {
-          "name": "Bobby Templeton",
-          "tm_id": "972174",
-          "photo": "https://img.transfermarkt.com/portrait/medium/972174.jpg"
-        },
-        {
-          "name": "George Cox",
-          "tm_id": "1053351",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1053351.jpg"
-        },
-        {
-          "name": "Arthur Meeson",
-          "tm_id": "1433457",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1433457.jpg"
-        },
-        {
-          "name": "Alex Graham",
-          "tm_id": "1016114",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1016114.jpg"
-        },
-        {
-          "name": "Archie Gray",
-          "tm_id": "1014462",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1014462.jpg"
-        },
-        {
-          "name": "Tim Coleman",
-          "tm_id": "978274",
-          "photo": "https://img.transfermarkt.com/portrait/medium/978274.jpg"
-        },
-        {
-          "name": "Bert Freeman",
-          "tm_id": "978546",
-          "photo": "https://img.transfermarkt.com/portrait/medium/978546.jpg"
-        },
-        {
-          "name": "Harry Storer",
-          "tm_id": "834075",
-          "photo": "https://img.transfermarkt.com/portrait/medium/834075.jpg"
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/325443-1694515823.jpg",
+          "fee": "67M€"
         }
       ],
-      "18": [
+      "10": [
         {
           "name": "Cédric Soares",
           "tm_id": "112988",
@@ -7105,7 +5983,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1239468.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Piero Hincapié",
           "tm_id": "659813",
@@ -7291,62 +6169,6 @@
           "tm_id": "176755",
           "photo": "https://img.transfermarkt.com/portrait/medium/176755.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [
-        {
-          "name": "Viktor Gyökeres",
-          "tm_id": "325443",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/325443-1694515823.jpg",
-          "fee": "67M€"
-        }
-      ],
-      "9": [
-        "Thierry Henry",
-        "Robert Pires",
-        "Patrick Vieira",
-        "Nicolas Anelka",
-        "Sylvain Wiltord",
-        "William Gallas",
-        "Bacary Sagna",
-        "Samir Nasri",
-        "Laurent Koscielny",
-        "Olivier Giroud"
-      ],
-      "10": [
-        "Cesc Fàbregas",
-        "Mikel Arteta",
-        "José Antonio Reyes"
-      ],
-      "11": [
-        "Thierry Henry",
-        "Dennis Bergkamp",
-        "Patrick Vieira",
-        "Robert Pires",
-        "Cesc Fàbregas",
-        "David Seaman",
-        "Ashley Cole",
-        "Tony Adams",
-        "Sol Campbell",
-        "Freddie Ljungberg",
-        "Mesut Özil",
-        "Alexis Sánchez"
-      ],
-      "12": [
-        "Thierry Henry (podium 2003)",
-        "Dennis Bergkamp (podium)"
-      ],
-      "13": [],
-      "14": [
-        "Thierry Henry (3×)",
-        "Ian Wright (1×)",
-        "Alan Smith",
-        "Olivier Giroud",
-        "Robin van Persie (1×)",
-        "Ted Drake"
       ]
     },
     "napoli": {
@@ -7624,15 +6446,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/488229-1694515823.jpg"
         }
       ],
-      "15": [
-        {
-          "name": "Romelu Lukaku",
-          "tm_id": "96341",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/96341-1694515823.jpg",
-          "caps": 89
-        }
-      ],
-      "16": [
+      "9": [
         {
           "name": "Michał Szromnik",
           "tm_id": "181135",
@@ -7779,8 +6593,21 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/142158.jpg"
         }
       ],
-      "17": [],
-      "18": [
+      "15": [
+        {
+          "name": "Lorenzo Lucca",
+          "tm_id": "572265",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/572265-1694515823.jpg",
+          "fee": "26M€"
+        },
+        {
+          "name": "Noa Lang",
+          "tm_id": "339332",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/339332-1694515823.jpg",
+          "fee": "25M€"
+        }
+      ],
+      "10": [
         {
           "name": "Luka Marjanac",
           "tm_id": "583024",
@@ -8687,7 +7514,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/138263.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Simeon Petrov",
           "tm_id": "601058",
@@ -8722,24 +7549,6 @@
           "name": "Przemyslaw Ludzinski",
           "tm_id": "24514",
           "photo": "https://img.transfermarkt.com/portrait/medium/24514.jpg"
-        }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [
-        {
-          "name": "Lorenzo Lucca",
-          "tm_id": "572265",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/572265-1694515823.jpg",
-          "fee": "26M€"
-        },
-        {
-          "name": "Noa Lang",
-          "tm_id": "339332",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/339332-1694515823.jpg",
-          "fee": "25M€"
         }
       ]
     },
@@ -9208,8 +8017,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/555075-1694515823.jpg"
         }
       ],
-      "15": [],
-      "16": [
+      "9": [
         {
           "name": "Gerónimo Rulli",
           "tm_id": "229604",
@@ -9526,8 +8334,15 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1429372.jpg"
         }
       ],
-      "17": [],
-      "18": [
+      "15": [
+        {
+          "name": "Igor Paixão",
+          "tm_id": "653610",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/653610-1694515823.jpg",
+          "fee": "30M€"
+        }
+      ],
+      "10": [
         {
           "name": "Pierre-Emerick Aubameyang",
           "tm_id": "58864",
@@ -10054,7 +8869,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/191844.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Timothy Weah",
           "tm_id": "370846",
@@ -10259,18 +9074,6 @@
           "name": "Fabien Barthez",
           "tm_id": "3289",
           "photo": "https://img.transfermarkt.com/portrait/medium/3289.jpg"
-        }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [
-        {
-          "name": "Igor Paixão",
-          "tm_id": "653610",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/653610-1694515823.jpg",
-          "fee": "30M€"
         }
       ]
     },
@@ -10654,21 +9457,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/1382524-1694515823.jpg"
         }
       ],
-      "15": [
-        {
-          "name": "Thibaut Courtois",
-          "tm_id": "108390",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/108390-1694515823.jpg",
-          "caps": 107
-        },
-        {
-          "name": "Kylian Mbappé",
-          "tm_id": "342229",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/342229-1694515823.jpg",
-          "caps": 55
-        }
-      ],
-      "16": [
+      "9": [
         {
           "name": "Thibaut Courtois",
           "tm_id": "108390",
@@ -10975,164 +9764,15 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/348464.jpg"
         }
       ],
-      "17": [
-        {
-          "name": "Dean Huijsen",
-          "tm_id": "890290",
-          "photo": "https://img.transfermarkt.com/portrait/medium/890290.jpg"
-        },
+      "15": [
         {
           "name": "Álvaro Carreras",
           "tm_id": "811778",
-          "photo": "https://img.transfermarkt.com/portrait/medium/811778.jpg"
-        },
-        {
-          "name": "Jude Bellingham",
-          "tm_id": "581678",
-          "photo": "https://img.transfermarkt.com/portrait/medium/581678.jpg"
-        },
-        {
-          "name": "Aurélien Tchouaméni",
-          "tm_id": "413112",
-          "photo": "https://img.transfermarkt.com/portrait/medium/413112.jpg"
-        },
-        {
-          "name": "Eden Hazard",
-          "tm_id": "50202",
-          "photo": "https://img.transfermarkt.com/portrait/medium/50202.jpg"
-        },
-        {
-          "name": "Luka Jović",
-          "tm_id": "257462",
-          "photo": "https://img.transfermarkt.com/portrait/medium/257462.jpg"
-        },
-        {
-          "name": "Éder Militão",
-          "tm_id": "401530",
-          "photo": "https://img.transfermarkt.com/portrait/medium/401530.jpg"
-        },
-        {
-          "name": "James Rodríguez",
-          "tm_id": "88103",
-          "photo": "https://img.transfermarkt.com/portrait/medium/88103.jpg"
-        },
-        {
-          "name": "Gareth Bale",
-          "tm_id": "39381",
-          "photo": "https://img.transfermarkt.com/portrait/medium/39381.jpg"
-        },
-        {
-          "name": "Cristiano Ronaldo",
-          "tm_id": "8198",
-          "photo": "https://img.transfermarkt.com/portrait/medium/8198.jpg"
-        },
-        {
-          "name": "Kaká",
-          "tm_id": "3366",
-          "photo": "https://img.transfermarkt.com/portrait/medium/3366.jpg"
-        },
-        {
-          "name": "Zinédine Zidane",
-          "tm_id": "3111",
-          "photo": "https://img.transfermarkt.com/portrait/medium/3111.jpg"
-        },
-        {
-          "name": "Luís Figo",
-          "tm_id": "3446",
-          "photo": "https://img.transfermarkt.com/portrait/medium/3446.jpg"
-        },
-        {
-          "name": "Héctor Rial",
-          "tm_id": "170719",
-          "photo": "https://img.transfermarkt.com/portrait/medium/170719.jpg"
-        },
-        {
-          "name": "Wilson Jones",
-          "tm_id": "289323",
-          "photo": "https://img.transfermarkt.com/portrait/medium/289323.jpg"
-        },
-        {
-          "name": "José Tormo",
-          "tm_id": "524050",
-          "photo": "https://img.transfermarkt.com/portrait/medium/524050.jpg"
-        },
-        {
-          "name": "Félix Huete",
-          "tm_id": "348707",
-          "photo": "https://img.transfermarkt.com/portrait/medium/348707.jpg"
-        },
-        {
-          "name": "Mario Inchausti",
-          "tm_id": "728464",
-          "photo": "https://img.transfermarkt.com/portrait/medium/728464.jpg"
-        },
-        {
-          "name": "Simón Lecue",
-          "tm_id": "238839",
-          "photo": "https://img.transfermarkt.com/portrait/medium/238839.jpg"
-        },
-        {
-          "name": "Gyula Kiszel",
-          "tm_id": "348845",
-          "photo": "https://img.transfermarkt.com/portrait/medium/348845.jpg"
-        },
-        {
-          "name": "Hilario Marrero",
-          "tm_id": "348723",
-          "photo": "https://img.transfermarkt.com/portrait/medium/348723.jpg"
-        },
-        {
-          "name": "Jacinto Quincoces",
-          "tm_id": "238875",
-          "photo": "https://img.transfermarkt.com/portrait/medium/238875.jpg"
-        },
-        {
-          "name": "Manuel Olivares",
-          "tm_id": "135769",
-          "photo": "https://img.transfermarkt.com/portrait/medium/135769.jpg"
-        },
-        {
-          "name": "Ricardo Zamora",
-          "tm_id": "171149",
-          "photo": "https://img.transfermarkt.com/portrait/medium/171149.jpg"
-        },
-        {
-          "name": "Manuel Gurruchaga",
-          "tm_id": "348573",
-          "photo": "https://img.transfermarkt.com/portrait/medium/348573.jpg"
-        },
-        {
-          "name": "Ciriaco Errasti",
-          "tm_id": "348722",
-          "photo": "https://img.transfermarkt.com/portrait/medium/348722.jpg"
-        },
-        {
-          "name": "Pachuco Prats",
-          "tm_id": "321427",
-          "photo": "https://img.transfermarkt.com/portrait/medium/321427.jpg"
-        },
-        {
-          "name": "José María Peña",
-          "tm_id": "348457",
-          "photo": "https://img.transfermarkt.com/portrait/medium/348457.jpg"
-        },
-        {
-          "name": "Casemiro",
-          "tm_id": "16306",
-          "photo": "https://img.transfermarkt.com/portrait/medium/16306.jpg"
-        },
-        {
-          "name": "Álvaro Morata",
-          "tm_id": "128223",
-          "photo": "https://img.transfermarkt.com/portrait/medium/128223.jpg"
-        },
-        {
-          "name": "Ángel Di María",
-          "tm_id": "45320",
-          "photo": "https://img.transfermarkt.com/portrait/medium/45320.jpg"
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/811778-1694515823.jpg",
+          "fee": "50M€"
         }
       ],
-      "18": [
+      "10": [
         {
           "name": "Kylian Mbappé",
           "tm_id": "342229",
@@ -11299,7 +9939,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/949122.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Joselu",
           "tm_id": "81999",
@@ -11365,65 +10005,6 @@
           "tm_id": "135744",
           "photo": "https://img.transfermarkt.com/portrait/medium/135744.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [
-        {
-          "name": "Álvaro Carreras",
-          "tm_id": "811778",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/811778-1694515823.jpg",
-          "fee": "50M€"
-        }
-      ],
-      "9": [
-        "Zinedine Zidane",
-        "Raphaël Varane",
-        "Karim Benzema",
-        "Eduardo Camavinga",
-        "Aurélien Tchouaméni",
-        "Kylian Mbappé"
-      ],
-      "10": [
-        "Xabi Alonso",
-        "Sergio Ramos",
-        "Álvaro Morata",
-        "Arbeloa",
-        "Sami Khedira",
-        "Toni Kroos"
-      ],
-      "11": [
-        "Cristiano Ronaldo",
-        "Zinedine Zidane",
-        "Toni Kroos",
-        "Luka Modrić",
-        "Sergio Ramos",
-        "Marcelo",
-        "Karim Benzema",
-        "Gareth Bale",
-        "Keylor Navas",
-        "Iker Casillas",
-        "Roberto Carlos",
-        "Raúl",
-        "Fernando Hierro"
-      ],
-      "12": [
-        "Cristiano Ronaldo (5×)",
-        "Karim Benzema (1×)",
-        "Zinedine Zidane (1×)",
-        "Ronaldo R9 (2×)",
-        "Luís Figo (1×)",
-        "Luka Modrić (1×)"
-      ],
-      "13": [],
-      "14": [
-        "Hugo Sánchez (5×)",
-        "Cristiano Ronaldo",
-        "Karim Benzema",
-        "Alfredo Di Stéfano",
-        "Raúl"
       ]
     },
     "inter": {
@@ -11731,21 +10312,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/7520-1694515823.jpg"
         }
       ],
-      "15": [
-        {
-          "name": "Henrikh Mkhitaryan",
-          "tm_id": "55735",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/55735-1694515823.jpg",
-          "caps": 95
-        },
-        {
-          "name": "Yann Sommer",
-          "tm_id": "42205",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/42205-1694515823.jpg",
-          "caps": 94
-        }
-      ],
-      "16": [
+      "9": [
         {
           "name": "Yann Sommer",
           "tm_id": "42205",
@@ -12067,54 +10634,8 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/840832.jpg"
         }
       ],
-      "17": [
-        {
-          "name": "Romelu Lukaku",
-          "tm_id": "96341",
-          "photo": "https://img.transfermarkt.com/portrait/medium/96341.jpg"
-        },
-        {
-          "name": "Matteo Lombardo",
-          "tm_id": "83404",
-          "photo": "https://img.transfermarkt.com/portrait/medium/83404.jpg"
-        },
-        {
-          "name": "Francesco Moriero",
-          "tm_id": "108638",
-          "photo": "https://img.transfermarkt.com/portrait/medium/108638.jpg"
-        },
-        {
-          "name": "Carlo Ceresoli",
-          "tm_id": "287539",
-          "photo": "https://img.transfermarkt.com/portrait/medium/287539.jpg"
-        },
-        {
-          "name": "André Onana",
-          "tm_id": "234509",
-          "photo": "https://img.transfermarkt.com/portrait/medium/234509.jpg"
-        },
-        {
-          "name": "Achraf Hakimi",
-          "tm_id": "398073",
-          "photo": "https://img.transfermarkt.com/portrait/medium/398073.jpg"
-        },
-        {
-          "name": "Mauro Icardi",
-          "tm_id": "68863",
-          "photo": "https://img.transfermarkt.com/portrait/medium/68863.jpg"
-        },
-        {
-          "name": "Zlatan Ibrahimović",
-          "tm_id": "3455",
-          "photo": "https://img.transfermarkt.com/portrait/medium/3455.jpg"
-        },
-        {
-          "name": "Matteo Momentè",
-          "tm_id": "36359",
-          "photo": "https://img.transfermarkt.com/portrait/medium/36359.jpg"
-        }
-      ],
-      "18": [
+      "15": [],
+      "10": [
         {
           "name": "Piotr Zieliński",
           "tm_id": "181136",
@@ -12391,7 +10912,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/4324.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Nicola Zalewski",
           "tm_id": "550108",
@@ -12672,12 +11193,7 @@
           "tm_id": "88150",
           "photo": "https://img.transfermarkt.com/portrait/medium/88150.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": []
+      ]
     },
     "milan": {
       "1": [
@@ -13024,8 +11540,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/556933-1694515823.jpg"
         }
       ],
-      "15": [],
-      "16": [
+      "9": [
         {
           "name": "Mike Maignan",
           "tm_id": "182906",
@@ -13417,29 +11932,21 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/840879.jpg"
         }
       ],
-      "17": [
+      "15": [
         {
-          "name": "Tijjani Reijnders",
-          "tm_id": "460939",
-          "photo": "https://img.transfermarkt.com/portrait/medium/460939.jpg"
+          "name": "Koni De Winter",
+          "tm_id": "490384",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/490384-1694515823.jpg",
+          "fee": "20M€"
         },
         {
-          "name": "Sandro Tonali",
-          "tm_id": "397033",
-          "photo": "https://img.transfermarkt.com/portrait/medium/397033.jpg"
-        },
-        {
-          "name": "Kaká",
-          "tm_id": "3366",
-          "photo": "https://img.transfermarkt.com/portrait/medium/3366.jpg"
-        },
-        {
-          "name": "Francesco Moriero",
-          "tm_id": "108638",
-          "photo": "https://img.transfermarkt.com/portrait/medium/108638.jpg"
+          "name": "Theo Hernández",
+          "tm_id": "339808",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/339808-1694515823.jpg",
+          "fee": "25M€"
         }
       ],
-      "18": [
+      "10": [
         {
           "name": "Luka Modrić",
           "tm_id": "27992",
@@ -13691,7 +12198,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/4375.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Álvaro Morata",
           "tm_id": "128223",
@@ -13977,60 +12484,6 @@
           "tm_id": "116685",
           "photo": "https://img.transfermarkt.com/portrait/medium/116685.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [
-        {
-          "name": "Koni De Winter",
-          "tm_id": "490384",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/490384-1694515823.jpg",
-          "fee": "20M€"
-        },
-        {
-          "name": "Theo Hernández",
-          "tm_id": "339808",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/339808-1694515823.jpg",
-          "fee": "25M€"
-        }
-      ],
-      "9": [
-        "Jean-Pierre Papin",
-        "Zlatan Ibrahimović"
-      ],
-      "10": [
-        "Clarence Seedorf (néerlandais)"
-      ],
-      "11": [
-        "Paolo Maldini",
-        "Franco Baresi",
-        "Kaká",
-        "Andriy Shevchenko",
-        "Filippo Inzaghi",
-        "Clarence Seedorf",
-        "Andrea Pirlo",
-        "Gennaro Gattuso",
-        "Alessandro Costacurta",
-        "Dida",
-        "Cafu",
-        "Thiago Silva"
-      ],
-      "12": [
-        "Kaká (1×)",
-        "Andriy Shevchenko (1×)",
-        "Jean-Pierre Papin (1×)",
-        "George Weah (1×)",
-        "Ronaldo R9 (passé mais Ballon d'Or ailleurs)"
-      ],
-      "13": [],
-      "14": [
-        "Gunnar Nordahl (5×)",
-        "Filippo Inzaghi (1×)",
-        "Andriy Shevchenko (1×)",
-        "José Altafini",
-        "Kaká"
       ]
     },
     "psg": {
@@ -14338,8 +12791,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/155070-1694515823.jpg"
         }
       ],
-      "15": [],
-      "16": [
+      "9": [
         {
           "name": "Lucas Chevalier",
           "tm_id": "463600",
@@ -14536,84 +12988,15 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1126860.jpg"
         }
       ],
-      "17": [
+      "15": [
         {
-          "name": "Ilya Zabarnyi",
-          "tm_id": "659089",
-          "photo": "https://img.transfermarkt.com/portrait/medium/659089.jpg"
-        },
-        {
-          "name": "Khvicha Kvaratskhelia",
-          "tm_id": "502670",
-          "photo": "https://img.transfermarkt.com/portrait/medium/502670.jpg"
-        },
-        {
-          "name": "João Neves",
-          "tm_id": "670681",
-          "photo": "https://img.transfermarkt.com/portrait/medium/670681.jpg"
-        },
-        {
-          "name": "Désiré Doué",
-          "tm_id": "914562",
-          "photo": "https://img.transfermarkt.com/portrait/medium/914562.jpg"
-        },
-        {
-          "name": "Randal Kolo Muani",
-          "tm_id": "487969",
-          "photo": "https://img.transfermarkt.com/portrait/medium/487969.jpg"
-        },
-        {
-          "name": "Gonçalo Ramos",
-          "tm_id": "550550",
-          "photo": "https://img.transfermarkt.com/portrait/medium/550550.jpg"
-        },
-        {
-          "name": "Manuel Ugarte",
-          "tm_id": "476701",
-          "photo": "https://img.transfermarkt.com/portrait/medium/476701.jpg"
-        },
-        {
-          "name": "Ousmane Dembélé",
-          "tm_id": "288230",
-          "photo": "https://img.transfermarkt.com/portrait/medium/288230.jpg"
-        },
-        {
-          "name": "Achraf Hakimi",
-          "tm_id": "398073",
-          "photo": "https://img.transfermarkt.com/portrait/medium/398073.jpg"
-        },
-        {
-          "name": "Mauro Icardi",
-          "tm_id": "68863",
-          "photo": "https://img.transfermarkt.com/portrait/medium/68863.jpg"
-        },
-        {
-          "name": "Kylian Mbappé",
-          "tm_id": "342229",
-          "photo": "https://img.transfermarkt.com/portrait/medium/342229.jpg"
-        },
-        {
-          "name": "Neymar",
-          "tm_id": "68290",
-          "photo": "https://img.transfermarkt.com/portrait/medium/68290.jpg"
-        },
-        {
-          "name": "Ángel Di María",
-          "tm_id": "45320",
-          "photo": "https://img.transfermarkt.com/portrait/medium/45320.jpg"
-        },
-        {
-          "name": "Edinson Cavani",
-          "tm_id": "48280",
-          "photo": "https://img.transfermarkt.com/portrait/medium/48280.jpg"
-        },
-        {
-          "name": "Xavi Simons",
-          "tm_id": "566931",
-          "photo": "https://img.transfermarkt.com/portrait/medium/566931.jpg"
+          "name": "Lucas Chevalier",
+          "tm_id": "463600",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/463600-1694515823.jpg",
+          "fee": "40M€"
         }
       ],
-      "18": [
+      "10": [
         {
           "name": "Renato Marin",
           "tm_id": "1041614",
@@ -14875,7 +13258,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1096045.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Gonçalo Ramos",
           "tm_id": "550550",
@@ -14991,69 +13374,6 @@
           "tm_id": "4130",
           "photo": "https://img.transfermarkt.com/portrait/medium/4130.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [
-        {
-          "name": "Lucas Chevalier",
-          "tm_id": "463600",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/463600-1694515823.jpg",
-          "fee": "40M€"
-        }
-      ],
-      "9": [
-        "Kylian Mbappé",
-        "Blaise Matuidi",
-        "Thiago Silva",
-        "Di María",
-        "Marquinhos",
-        "Dani Alves",
-        "Camavinga",
-        "Tchouaméni"
-      ],
-      "10": [
-        "Marco Verratti",
-        "Thiago Motta",
-        "Zlatan Ibrahimović",
-        "Kevin Trapp",
-        "Julian Draxler",
-        "Emre Can"
-      ],
-      "11": [
-        "Dani Alves",
-        "David Beckham",
-        "Zlatan Ibrahimović",
-        "Thiago Silva",
-        "Marquinhos",
-        "Neymar",
-        "Di María",
-        "Sergio Ramos",
-        "Keylor Navas"
-      ],
-      "12": [
-        "Neymar Jr (podium)",
-        "Kylian Mbappé (podium)",
-        "Di María"
-      ],
-      "13": [
-        "Kylian Mbappé",
-        "Neymar Jr",
-        "Marco Verratti",
-        "Adrien Rabiot",
-        "Thiago Silva",
-        "Layvin Kurzawa",
-        "Blaise Matuidi",
-        "Cavani",
-        "Dani Alves",
-        "Pastore"
-      ],
-      "14": [
-        "Zlatan Ibrahimović (4×)",
-        "Edinson Cavani",
-        "Kylian Mbappé"
       ]
     },
     "chelsea": {
@@ -15395,8 +13715,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/3410-1694515823.jpg"
         }
       ],
-      "15": [],
-      "16": [
+      "9": [
         {
           "name": "Robert Sánchez",
           "tm_id": "403151",
@@ -15713,154 +14032,27 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1242495.jpg"
         }
       ],
-      "17": [
+      "15": [
         {
-          "name": "Geovany Quenda",
-          "tm_id": "1138758",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1138758.jpg"
-        },
-        {
-          "name": "João Pedro",
-          "tm_id": "626724",
-          "photo": "https://img.transfermarkt.com/portrait/medium/626724.jpg"
-        },
-        {
-          "name": "Jamie Gittens",
-          "tm_id": "670882",
-          "photo": "https://img.transfermarkt.com/portrait/medium/670882.jpg"
-        },
-        {
-          "name": "Pedro Neto",
-          "tm_id": "487465",
-          "photo": "https://img.transfermarkt.com/portrait/medium/487465.jpg"
+          "name": "Jorrel Hato",
+          "tm_id": "904802",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/904802-1694515823.jpg",
+          "fee": "44M€"
         },
         {
           "name": "João Félix",
           "tm_id": "462250",
-          "photo": "https://img.transfermarkt.com/portrait/medium/462250.jpg"
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/462250-1694515823.jpg",
+          "fee": "30M€"
         },
         {
-          "name": "Moisés Caicedo",
-          "tm_id": "687626",
-          "photo": "https://img.transfermarkt.com/portrait/medium/687626.jpg"
-        },
-        {
-          "name": "Roméo Lavia",
-          "tm_id": "628451",
-          "photo": "https://img.transfermarkt.com/portrait/medium/628451.jpg"
-        },
-        {
-          "name": "Christopher Nkunku",
-          "tm_id": "344381",
-          "photo": "https://img.transfermarkt.com/portrait/medium/344381.jpg"
-        },
-        {
-          "name": "Enzo Fernández",
-          "tm_id": "648195",
-          "photo": "https://img.transfermarkt.com/portrait/medium/648195.jpg"
-        },
-        {
-          "name": "Wesley Fofana",
-          "tm_id": "475411",
-          "photo": "https://img.transfermarkt.com/portrait/medium/475411.jpg"
-        },
-        {
-          "name": "Mykhaylo Mudryk",
-          "tm_id": "537860",
-          "photo": "https://img.transfermarkt.com/portrait/medium/537860.jpg"
-        },
-        {
-          "name": "Marc Cucurella",
-          "tm_id": "284857",
-          "photo": "https://img.transfermarkt.com/portrait/medium/284857.jpg"
-        },
-        {
-          "name": "Raheem Sterling",
-          "tm_id": "134425",
-          "photo": "https://img.transfermarkt.com/portrait/medium/134425.jpg"
-        },
-        {
-          "name": "Romelu Lukaku",
-          "tm_id": "96341",
-          "photo": "https://img.transfermarkt.com/portrait/medium/96341.jpg"
-        },
-        {
-          "name": "Kai Havertz",
-          "tm_id": "309400",
-          "photo": "https://img.transfermarkt.com/portrait/medium/309400.jpg"
-        },
-        {
-          "name": "Timo Werner",
-          "tm_id": "170527",
-          "photo": "https://img.transfermarkt.com/portrait/medium/170527.jpg"
-        },
-        {
-          "name": "Ben Chilwell",
-          "tm_id": "316125",
-          "photo": "https://img.transfermarkt.com/portrait/medium/316125.jpg"
-        },
-        {
-          "name": "Kepa Arrizabalaga",
-          "tm_id": "192279",
-          "photo": "https://img.transfermarkt.com/portrait/medium/192279.jpg"
-        },
-        {
-          "name": "Christian Pulisic",
-          "tm_id": "315779",
-          "photo": "https://img.transfermarkt.com/portrait/medium/315779.jpg"
-        },
-        {
-          "name": "Jorginho",
-          "tm_id": "102017",
-          "photo": "https://img.transfermarkt.com/portrait/medium/102017.jpg"
-        },
-        {
-          "name": "Álvaro Morata",
-          "tm_id": "128223",
-          "photo": "https://img.transfermarkt.com/portrait/medium/128223.jpg"
-        },
-        {
-          "name": "Fernando Torres",
-          "tm_id": "7767",
-          "photo": "https://img.transfermarkt.com/portrait/medium/7767.jpg"
-        },
-        {
-          "name": "Jimmy Windridge",
-          "tm_id": "376203",
-          "photo": "https://img.transfermarkt.com/portrait/medium/376203.jpg"
-        },
-        {
-          "name": "Bob McRoberts",
-          "tm_id": "1342049",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1342049.jpg"
-        },
-        {
-          "name": "Noni Madueke",
-          "tm_id": "503987",
-          "photo": "https://img.transfermarkt.com/portrait/medium/503987.jpg"
-        },
-        {
-          "name": "Mason Mount",
-          "tm_id": "346483",
-          "photo": "https://img.transfermarkt.com/portrait/medium/346483.jpg"
-        },
-        {
-          "name": "Eden Hazard",
-          "tm_id": "50202",
-          "photo": "https://img.transfermarkt.com/portrait/medium/50202.jpg"
-        },
-        {
-          "name": "Diego Costa",
-          "tm_id": "44779",
-          "photo": "https://img.transfermarkt.com/portrait/medium/44779.jpg"
-        },
-        {
-          "name": "Oscar",
-          "tm_id": "85314",
-          "photo": "https://img.transfermarkt.com/portrait/medium/85314.jpg"
+          "name": "Renato Veiga",
+          "tm_id": "805714",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/805714-1694515823.jpg",
+          "fee": "24M€"
         }
       ],
-      "18": [
+      "10": [
         {
           "name": "Tosin Adarabioyo",
           "tm_id": "258878",
@@ -16082,7 +14274,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/725114.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Mamadou Sarr",
           "tm_id": "910905",
@@ -16378,72 +14570,6 @@
           "tm_id": "176800",
           "photo": "https://img.transfermarkt.com/portrait/medium/176800.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [
-        {
-          "name": "Jorrel Hato",
-          "tm_id": "904802",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/904802-1694515823.jpg",
-          "fee": "44M€"
-        },
-        {
-          "name": "João Félix",
-          "tm_id": "462250",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/462250-1694515823.jpg",
-          "fee": "30M€"
-        },
-        {
-          "name": "Renato Veiga",
-          "tm_id": "805714",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/805714-1694515823.jpg",
-          "fee": "24M€"
-        }
-      ],
-      "9": [
-        "Marcel Desailly",
-        "Claude Makelele",
-        "Florent Malouda",
-        "William Gallas",
-        "Nicolas Anelka",
-        "Olivier Giroud",
-        "Raphaël Varane (non)"
-      ],
-      "10": [
-        "Cesc Fàbregas",
-        "Juan Mata",
-        "Pedro",
-        "Diego Costa",
-        "Álvaro Morata",
-        "Fernando Torres"
-      ],
-      "11": [
-        "Didier Drogba",
-        "Frank Lampard",
-        "John Terry",
-        "Claude Makelele",
-        "Petr Cech",
-        "Eidur Gudjohnsen",
-        "Arjen Robben",
-        "Michael Ballack",
-        "Ashley Cole",
-        "Thiago Silva",
-        "N'Golo Kanté"
-      ],
-      "12": [
-        "Andriy Shevchenko (podium)",
-        "Didier Drogba (podium)",
-        "Frank Lampard (podium)"
-      ],
-      "13": [],
-      "14": [
-        "Didier Drogba (4×)",
-        "Jimmy Floyd Hasselbaink (2×)",
-        "Kerry Dixon",
-        "Frank Lampard"
       ]
     },
     "mancity": {
@@ -16906,21 +15032,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/20007-1694515823.jpg"
         }
       ],
-      "15": [
-        {
-          "name": "Gianluigi Donnarumma",
-          "tm_id": "315858",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/315858-1694515823.jpg",
-          "caps": 79
-        },
-        {
-          "name": "Erling Haaland",
-          "tm_id": "418560",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/418560-1694515823.jpg",
-          "caps": 55
-        }
-      ],
-      "16": [
+      "9": [
         {
           "name": "Gianluigi Donnarumma",
           "tm_id": "315858",
@@ -17262,139 +15374,8 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1372067.jpg"
         }
       ],
-      "17": [
-        {
-          "name": "Antoine Semenyo",
-          "tm_id": "583255",
-          "photo": "https://img.transfermarkt.com/portrait/medium/583255.jpg"
-        },
-        {
-          "name": "Tijjani Reijnders",
-          "tm_id": "460939",
-          "photo": "https://img.transfermarkt.com/portrait/medium/460939.jpg"
-        },
-        {
-          "name": "Omar Marmoush",
-          "tm_id": "445939",
-          "photo": "https://img.transfermarkt.com/portrait/medium/445939.jpg"
-        },
-        {
-          "name": "Nico González",
-          "tm_id": "466805",
-          "photo": "https://img.transfermarkt.com/portrait/medium/466805.jpg"
-        },
-        {
-          "name": "Josko Gvardiol",
-          "tm_id": "475959",
-          "photo": "https://img.transfermarkt.com/portrait/medium/475959.jpg"
-        },
-        {
-          "name": "Matheus Nunes",
-          "tm_id": "601883",
-          "photo": "https://img.transfermarkt.com/portrait/medium/601883.jpg"
-        },
-        {
-          "name": "Jérémy Doku",
-          "tm_id": "486049",
-          "photo": "https://img.transfermarkt.com/portrait/medium/486049.jpg"
-        },
-        {
-          "name": "Erling Haaland",
-          "tm_id": "418560",
-          "photo": "https://img.transfermarkt.com/portrait/medium/418560.jpg"
-        },
-        {
-          "name": "Jack Grealish",
-          "tm_id": "203460",
-          "photo": "https://img.transfermarkt.com/portrait/medium/203460.jpg"
-        },
-        {
-          "name": "Rúben Dias",
-          "tm_id": "258004",
-          "photo": "https://img.transfermarkt.com/portrait/medium/258004.jpg"
-        },
-        {
-          "name": "Rodri",
-          "tm_id": "357565",
-          "photo": "https://img.transfermarkt.com/portrait/medium/357565.jpg"
-        },
-        {
-          "name": "João Cancelo",
-          "tm_id": "182712",
-          "photo": "https://img.transfermarkt.com/portrait/medium/182712.jpg"
-        },
-        {
-          "name": "Riyad Mahrez",
-          "tm_id": "171424",
-          "photo": "https://img.transfermarkt.com/portrait/medium/171424.jpg"
-        },
-        {
-          "name": "Aymeric Laporte",
-          "tm_id": "176553",
-          "photo": "https://img.transfermarkt.com/portrait/medium/176553.jpg"
-        },
-        {
-          "name": "Benjamin Mendy",
-          "tm_id": "157495",
-          "photo": "https://img.transfermarkt.com/portrait/medium/157495.jpg"
-        },
-        {
-          "name": "Kyle Walker",
-          "tm_id": "95424",
-          "photo": "https://img.transfermarkt.com/portrait/medium/95424.jpg"
-        },
-        {
-          "name": "Bernardo Silva",
-          "tm_id": "241641",
-          "photo": "https://img.transfermarkt.com/portrait/medium/241641.jpg"
-        },
-        {
-          "name": "John Stones",
-          "tm_id": "186590",
-          "photo": "https://img.transfermarkt.com/portrait/medium/186590.jpg"
-        },
-        {
-          "name": "Leroy Sané",
-          "tm_id": "192565",
-          "photo": "https://img.transfermarkt.com/portrait/medium/192565.jpg"
-        },
-        {
-          "name": "Kevin De Bruyne",
-          "tm_id": "88755",
-          "photo": "https://img.transfermarkt.com/portrait/medium/88755.jpg"
-        },
-        {
-          "name": "Raheem Sterling",
-          "tm_id": "134425",
-          "photo": "https://img.transfermarkt.com/portrait/medium/134425.jpg"
-        },
-        {
-          "name": "Jimmy Naylor",
-          "tm_id": "1220963",
-          "photo": "https://img.transfermarkt.com/portrait/medium/1220963.jpg"
-        },
-        {
-          "name": "Julián Alvarez",
-          "tm_id": "576024",
-          "photo": "https://img.transfermarkt.com/portrait/medium/576024.jpg"
-        },
-        {
-          "name": "Gabriel Jesus",
-          "tm_id": "363205",
-          "photo": "https://img.transfermarkt.com/portrait/medium/363205.jpg"
-        },
-        {
-          "name": "Ferran Torres",
-          "tm_id": "398184",
-          "photo": "https://img.transfermarkt.com/portrait/medium/398184.jpg"
-        },
-        {
-          "name": "Syd Gibbons",
-          "tm_id": "227826",
-          "photo": "https://img.transfermarkt.com/portrait/medium/227826.jpg"
-        }
-      ],
-      "18": [
+      "15": [],
+      "10": [
         {
           "name": "İlkay Gündoğan",
           "tm_id": "53622",
@@ -17646,7 +15627,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1200928.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Sverre Nypan",
           "tm_id": "911736",
@@ -17987,45 +15968,6 @@
           "tm_id": "714588",
           "photo": "https://img.transfermarkt.com/portrait/medium/714588.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [],
-      "9": [
-        "Samir Nasri",
-        "Aymeric Laporte",
-        "Nicolas Anelka"
-      ],
-      "10": [
-        "David Silva",
-        "Ilkay Gündogan",
-        "Samir Nasri"
-      ],
-      "11": [
-        "David Silva",
-        "Kevin De Bruyne",
-        "Fernandinho",
-        "Sergio Agüero",
-        "Vincent Kompany",
-        "Ederson",
-        "Aymeric Laporte",
-        "Riyad Mahrez",
-        "Gabriel Jesus",
-        "Bernardo Silva",
-        "Ilkay Gündogan",
-        "Rodri"
-      ],
-      "12": [
-        "Kevin De Bruyne (podium)",
-        "Riyad Mahrez (podium)"
-      ],
-      "13": [],
-      "14": [
-        "Sergio Agüero (1×)",
-        "Carlos Tévez",
-        "Erling Haaland"
       ]
     },
     "juve": {
@@ -18323,15 +16265,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/523817-1694515823.jpg"
         }
       ],
-      "15": [
-        {
-          "name": "Arkadiusz Milik",
-          "tm_id": "191891",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/191891-1694515823.jpg",
-          "caps": 73
-        }
-      ],
-      "16": [
+      "9": [
         {
           "name": "Michele Di Gregorio",
           "tm_id": "301238",
@@ -18613,94 +16547,21 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/834174.jpg"
         }
       ],
-      "17": [
+      "15": [
         {
-          "name": "Teun Koopmeiners",
-          "tm_id": "360518",
-          "photo": "https://img.transfermarkt.com/portrait/medium/360518.jpg"
+          "name": "Francisco Conceição",
+          "tm_id": "487474",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/487474-1694515823.jpg",
+          "fee": "32M€"
         },
         {
-          "name": "Douglas Luiz",
-          "tm_id": "447661",
-          "photo": "https://img.transfermarkt.com/portrait/medium/447661.jpg"
-        },
-        {
-          "name": "Bremer",
-          "tm_id": "516716",
-          "photo": "https://img.transfermarkt.com/portrait/medium/516716.jpg"
-        },
-        {
-          "name": "Dušan Vlahović",
-          "tm_id": "357498",
-          "photo": "https://img.transfermarkt.com/portrait/medium/357498.jpg"
-        },
-        {
-          "name": "Arthur Melo",
-          "tm_id": "362842",
-          "photo": "https://img.transfermarkt.com/portrait/medium/362842.jpg"
-        },
-        {
-          "name": "Matthijs de Ligt",
-          "tm_id": "326031",
-          "photo": "https://img.transfermarkt.com/portrait/medium/326031.jpg"
-        },
-        {
-          "name": "Cristiano Ronaldo",
-          "tm_id": "8198",
-          "photo": "https://img.transfermarkt.com/portrait/medium/8198.jpg"
-        },
-        {
-          "name": "Gonzalo Higuaín",
-          "tm_id": "39153",
-          "photo": "https://img.transfermarkt.com/portrait/medium/39153.jpg"
-        },
-        {
-          "name": "Gianluigi Buffon",
-          "tm_id": "5023",
-          "photo": "https://img.transfermarkt.com/portrait/medium/5023.jpg"
-        },
-        {
-          "name": "Giovanni Ferrari",
-          "tm_id": "237875",
-          "photo": "https://img.transfermarkt.com/portrait/medium/237875.jpg"
-        },
-        {
-          "name": "Raimundo Orsi",
-          "tm_id": "237906",
-          "photo": "https://img.transfermarkt.com/portrait/medium/237906.jpg"
-        },
-        {
-          "name": "Miralem Pjanić",
-          "tm_id": "44162",
-          "photo": "https://img.transfermarkt.com/portrait/medium/44162.jpg"
-        },
-        {
-          "name": "João Cancelo",
-          "tm_id": "182712",
-          "photo": "https://img.transfermarkt.com/portrait/medium/182712.jpg"
-        },
-        {
-          "name": "Paul Pogba",
-          "tm_id": "122153",
-          "photo": "https://img.transfermarkt.com/portrait/medium/122153.jpg"
-        },
-        {
-          "name": "Luca Castiglia",
-          "tm_id": "62358",
-          "photo": "https://img.transfermarkt.com/portrait/medium/62358.jpg"
-        },
-        {
-          "name": "Zinédine Zidane",
-          "tm_id": "3111",
-          "photo": "https://img.transfermarkt.com/portrait/medium/3111.jpg"
-        },
-        {
-          "name": "Guglielmo Gabetto",
-          "tm_id": "300631",
-          "photo": "https://img.transfermarkt.com/portrait/medium/300631.jpg"
+          "name": "Nico González",
+          "tm_id": "486031",
+          "photo": "https://img.a.transfermarkt.technology/portrait/medium/486031-1694515823.jpg",
+          "fee": "28M€"
         }
       ],
-      "18": [
+      "10": [
         {
           "name": "Jonathan David",
           "tm_id": "533738",
@@ -18907,7 +16768,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/300637.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Francisco Conceição",
           "tm_id": "487474",
@@ -19253,68 +17114,6 @@
           "tm_id": "182033",
           "photo": "https://img.transfermarkt.com/portrait/medium/182033.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": [
-        {
-          "name": "Francisco Conceição",
-          "tm_id": "487474",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/487474-1694515823.jpg",
-          "fee": "32M€"
-        },
-        {
-          "name": "Nico González",
-          "tm_id": "486031",
-          "photo": "https://img.a.transfermarkt.technology/portrait/medium/486031-1694515823.jpg",
-          "fee": "28M€"
-        }
-      ],
-      "9": [
-        "Zinedine Zidane",
-        "Blaise Matuidi",
-        "Lilian Thuram",
-        "David Trezeguet",
-        "Michel Platini",
-        "Kingsley Coman",
-        "Adrien Rabiot"
-      ],
-      "10": [
-        "Álvaro Morata",
-        "Fernando Llorente",
-        "Sandro",
-        "Dani Alves"
-      ],
-      "11": [
-        "Zinedine Zidane",
-        "Roberto Baggio",
-        "Alessandro Del Piero",
-        "Gianluigi Buffon",
-        "Giorgio Chiellini",
-        "Dani Alves",
-        "Carlos Tévez",
-        "Cristiano Ronaldo",
-        "Michel Platini",
-        "Marco Tardelli",
-        "Gaetano Scirea"
-      ],
-      "12": [
-        "Michel Platini (3×)",
-        "Zinedine Zidane (1×)",
-        "Roberto Baggio (1×)",
-        "Ronaldo CR7 (5× mais Juventus 2018-21)",
-        "Cristiano Ronaldo (Ballon d'Or 2018)"
-      ],
-      "13": [],
-      "14": [
-        "Alessandro Del Piero (1×)",
-        "David Trezeguet (1×)",
-        "Roberto Baggio",
-        "Filippo Inzaghi",
-        "Omar Sívori",
-        "Cristiano Ronaldo (2×)"
       ]
     },
     "dortmund": {
@@ -19582,8 +17381,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/95887-1694515823.jpg"
         }
       ],
-      "15": [],
-      "16": [
+      "9": [
         {
           "name": "Gregor Kobel",
           "tm_id": "257814",
@@ -19750,44 +17548,8 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/994746.jpg"
         }
       ],
-      "17": [
-        {
-          "name": "Jamie Gittens",
-          "tm_id": "670882",
-          "photo": "https://img.transfermarkt.com/portrait/medium/670882.jpg"
-        },
-        {
-          "name": "Jude Bellingham",
-          "tm_id": "581678",
-          "photo": "https://img.transfermarkt.com/portrait/medium/581678.jpg"
-        },
-        {
-          "name": "Erling Haaland",
-          "tm_id": "418560",
-          "photo": "https://img.transfermarkt.com/portrait/medium/418560.jpg"
-        },
-        {
-          "name": "Jadon Sancho",
-          "tm_id": "401173",
-          "photo": "https://img.transfermarkt.com/portrait/medium/401173.jpg"
-        },
-        {
-          "name": "Christian Pulisic",
-          "tm_id": "315779",
-          "photo": "https://img.transfermarkt.com/portrait/medium/315779.jpg"
-        },
-        {
-          "name": "Ousmane Dembélé",
-          "tm_id": "288230",
-          "photo": "https://img.transfermarkt.com/portrait/medium/288230.jpg"
-        },
-        {
-          "name": "Pierre-Emerick Aubameyang",
-          "tm_id": "58864",
-          "photo": "https://img.transfermarkt.com/portrait/medium/58864.jpg"
-        }
-      ],
-      "18": [
+      "15": [],
+      "10": [
         {
           "name": "Ramy Bensebaini",
           "tm_id": "284732",
@@ -20134,7 +17896,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1046493.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Yan Couto",
           "tm_id": "627228",
@@ -20225,12 +17987,7 @@
           "tm_id": "96288",
           "photo": "https://img.transfermarkt.com/portrait/medium/96288.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": []
+      ]
     },
     "lyon": {
       "1": [
@@ -20502,8 +18259,7 @@
           "photo": "https://img.a.transfermarkt.technology/portrait/medium/543552-1694515823.jpg"
         }
       ],
-      "15": [],
-      "16": [
+      "9": [
         {
           "name": "Dominik Greif",
           "tm_id": "316884",
@@ -20690,19 +18446,8 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1151199.jpg"
         }
       ],
-      "17": [
-        {
-          "name": "Tanguy Ndombélé",
-          "tm_id": "450936",
-          "photo": "https://img.transfermarkt.com/portrait/medium/450936.jpg"
-        },
-        {
-          "name": "Alexandre Lacazette",
-          "tm_id": "93720",
-          "photo": "https://img.transfermarkt.com/portrait/medium/93720.jpg"
-        }
-      ],
-      "18": [
+      "15": [],
+      "10": [
         {
           "name": "Rémy Descamps",
           "tm_id": "282028",
@@ -20919,7 +18664,7 @@
           "photo": "https://img.transfermarkt.com/portrait/medium/1211674.jpg"
         }
       ],
-      "19": [
+      "11": [
         {
           "name": "Martín Satriano",
           "tm_id": "640109",
@@ -21020,12 +18765,7 @@
           "tm_id": "5340",
           "photo": "https://img.transfermarkt.com/portrait/medium/5340.jpg"
         }
-      ],
-      "20": [],
-      "21": [],
-      "22": [],
-      "23": [],
-      "24": []
+      ]
     }
   }
 }
