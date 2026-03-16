@@ -103,8 +103,8 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 @media(max-width:700px){.two-col{grid-template-columns:1fr;}}
 .picker-box{background:#fff;border:1.5px solid rgba(45,122,45,.15);border-radius:var(--r);box-shadow:var(--shadow);animation:fadeUp .4s ease both;position:relative;z-index:100;overflow:visible;}
 .picker-inner{padding:15px;position:relative;}
-.search-ico{position:absolute;left:28px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--slate);pointer-events:none;}
-.search-inp{width:100%;background:var(--bg);border:1.5px solid rgba(45,122,45,.15);border-radius:8px;padding:10px 14px 10px 35px;font-family:"Barlow",sans-serif;font-size:14px;color:var(--text);outline:none;transition:border-color .2s;}
+.search-ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--slate);pointer-events:none;z-index:1;}
+.search-inp{width:100%;background:var(--bg);border:1.5px solid rgba(45,122,45,.15);border-radius:8px;padding:12px 14px 12px 36px;font-family:"Barlow",sans-serif;font-size:14px;color:var(--text);outline:none;transition:border-color .2s;}
 .search-inp:focus{border-color:var(--green);}
 .search-inp::placeholder{color:var(--slate);}
 .dropdown{position:absolute;top:calc(100% + 4px);left:0;width:100%;background:#fff;border:1.5px solid rgba(45,122,45,.2);border-radius:var(--r);max-height:200px;overflow-y:auto;z-index:99999;box-shadow:0 20px 50px rgba(0,0,0,.15);}
@@ -113,7 +113,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"Barlow",sans-serif
 .dg-label{padding:6px 14px 3px;font-size:9px;font-weight:800;letter-spacing:2px;color:var(--slate);text-transform:uppercase;border-bottom:1px solid rgba(45,122,45,.08);}
 .di{padding:16px 14px;cursor:pointer;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(45,122,45,.05);transition:background .1s;color:var(--text);min-height:52px;}
 .di:hover,.di.sel{background:rgba(45,122,45,.06);color:var(--green);}
-.club-chip{margin-top:10px;display:flex;align-items:center;gap:10px;background:rgba(45,122,45,.06);border:1.5px solid rgba(45,122,45,.2);border-radius:10px;padding:10px 14px;animation:fadeUp .2s ease both;}
+.club-chip{margin-top:10px;display:flex;align-items:center;gap:10px;background:rgba(45,122,45,.06);border:1.5px solid rgba(45,122,45,.2);border-radius:10px;padding:14px 16px;animation:fadeUp .2s ease both;width:100%;}
 .chip-flag{font-size:20px;}
 .chip-info{flex:1;}
 .chip-name{font-family:"Barlow Condensed",sans-serif;font-size:16px;font-weight:800;color:var(--green);}
