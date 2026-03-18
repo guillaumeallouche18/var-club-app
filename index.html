@@ -301,8 +301,7 @@ function FamilyMode({onBack}) {
   ];
   const legendeFields=selected?(selected.legendes||[]).map((leg,i)=>{
     const name=typeof leg==="object"?leg.name:leg;
-    const photo=typeof leg==="object"?leg.photo:null;
-    return {key:"l"+i, label:"LÉGENDE "+(i+1), icon:"⭐", pts:1, value:name, photo};
+    return {key:"l"+i, label:"LÉGENDE "+(i+1), icon:"⭐", pts:1, value:name};
   }):[];
   const fields=[...baseFields,...legendeFields];
 
