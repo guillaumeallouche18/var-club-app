@@ -1,45 +1,633 @@
 {
   "clubs": [
-    {"id":"psg","nom":"Paris Saint-Germain","ville":"Paris","pays":"France","continent":"Europe","stade":"Parc des Princes","surnom":"Les Rouge et Bleu"},
-    {"id":"marseille","nom":"Olympique de Marseille","ville":"Marseille","pays":"France","continent":"Europe","stade":"Orange Vélodrome","surnom":"Les Phocéens"},
-    {"id":"monaco","nom":"AS Monaco","ville":"Monaco","pays":"Monaco","continent":"Europe","stade":"Stade Louis II","surnom":"Les Rouge et Blanc"},
-    {"id":"lyon","nom":"Olympique Lyonnais","ville":"Lyon","pays":"France","continent":"Europe","stade":"Groupama Stadium","surnom":"Les Gones"},
-    {"id":"lille","nom":"Lille OSC","ville":"Lille","pays":"France","continent":"Europe","stade":"Stade Pierre-Mauroy","surnom":"Les Dogues"},
-    {"id":"nice","nom":"OGC Nice","ville":"Nice","pays":"France","continent":"Europe","stade":"Allianz Riviera","surnom":"Les Aiglons"},
-    {"id":"rennes","nom":"Stade Rennais FC","ville":"Rennes","pays":"France","continent":"Europe","stade":"Roazhon Park","surnom":"Les Rouge et Noir"},
-    {"id":"real_madrid","nom":"Real Madrid","ville":"Madrid","pays":"Espagne","continent":"Europe","stade":"Santiago Bernabéu","surnom":"Les Merengues"},
-    {"id":"barcelona","nom":"FC Barcelone","ville":"Barcelone","pays":"Espagne","continent":"Europe","stade":"Estadi Olímpic Lluís Companys","surnom":"Le Barça"},
-    {"id":"atletico","nom":"Atlético de Madrid","ville":"Madrid","pays":"Espagne","continent":"Europe","stade":"Cívitas Metropolitano","surnom":"Les Colchoneros"},
-    {"id":"sevilla","nom":"Séville FC","ville":"Séville","pays":"Espagne","continent":"Europe","stade":"Ramón Sánchez-Pizjuán","surnom":"Los Nervionenses"},
-    {"id":"valencia","nom":"Valencia CF","ville":"Valence","pays":"Espagne","continent":"Europe","stade":"Mestalla","surnom":"Los Ches"},
-    {"id":"villarreal","nom":"Villarreal CF","ville":"Villarreal","pays":"Espagne","continent":"Europe","stade":"Estadio de la Cerámica","surnom":"Le Sous-marin Jaune"},
-    {"id":"man_utd","nom":"Manchester United","ville":"Manchester","pays":"Angleterre","continent":"Europe","stade":"Old Trafford","surnom":"Les Red Devils"},
-    {"id":"man_city","nom":"Manchester City","ville":"Manchester","pays":"Angleterre","continent":"Europe","stade":"Etihad Stadium","surnom":"Les Citizens"},
-    {"id":"liverpool","nom":"Liverpool FC","ville":"Liverpool","pays":"Angleterre","continent":"Europe","stade":"Anfield","surnom":"Les Reds"},
-    {"id":"chelsea","nom":"Chelsea FC","ville":"Londres","pays":"Angleterre","continent":"Europe","stade":"Stamford Bridge","surnom":"Les Blues"},
-    {"id":"arsenal","nom":"Arsenal FC","ville":"Londres","pays":"Angleterre","continent":"Europe","stade":"Emirates Stadium","surnom":"Les Gunners"},
-    {"id":"tottenham","nom":"Tottenham Hotspur","ville":"Londres","pays":"Angleterre","continent":"Europe","stade":"Tottenham Hotspur Stadium","surnom":"Les Spurs"},
-    {"id":"newcastle","nom":"Newcastle United","ville":"Newcastle","pays":"Angleterre","continent":"Europe","stade":"St. James' Park","surnom":"Les Magpies"},
-    {"id":"aston_villa","nom":"Aston Villa","ville":"Birmingham","pays":"Angleterre","continent":"Europe","stade":"Villa Park","surnom":"Les Villans"},
-    {"id":"west_ham","nom":"West Ham United","ville":"Londres","pays":"Angleterre","continent":"Europe","stade":"London Stadium","surnom":"Les Hammers"},
-    {"id":"leicester","nom":"Leicester City","ville":"Leicester","pays":"Angleterre","continent":"Europe","stade":"King Power Stadium","surnom":"Les Foxes"},
-    {"id":"juventus","nom":"Juventus FC","ville":"Turin","pays":"Italie","continent":"Europe","stade":"Allianz Stadium","surnom":"La Vieille Dame"},
-    {"id":"ac_milan","nom":"AC Milan","ville":"Milan","pays":"Italie","continent":"Europe","stade":"San Siro","surnom":"Les Rossoneri"},
-    {"id":"inter_milan","nom":"Inter Milan","ville":"Milan","pays":"Italie","continent":"Europe","stade":"San Siro","surnom":"Les Nerazzurri"},
-    {"id":"napoli","nom":"SSC Napoli","ville":"Naples","pays":"Italie","continent":"Europe","stade":"Stadio Diego Armando Maradona","surnom":"Les Partenopei"},
-    {"id":"as_roma","nom":"AS Roma","ville":"Rome","pays":"Italie","continent":"Europe","stade":"Stadio Olimpico","surnom":"Les Giallorossi"},
-    {"id":"atalanta","nom":"Atalanta BC","ville":"Bergame","pays":"Italie","continent":"Europe","stade":"Gewiss Stadium","surnom":"La Dea"},
-    {"id":"lazio","nom":"SS Lazio","ville":"Rome","pays":"Italie","continent":"Europe","stade":"Stadio Olimpico","surnom":"Les Biancocelesti"},
-    {"id":"bayern","nom":"FC Bayern Munich","ville":"Munich","pays":"Allemagne","continent":"Europe","stade":"Allianz Arena","surnom":"Le Rekordmeister"},
-    {"id":"dortmund","nom":"Borussia Dortmund","ville":"Dortmund","pays":"Allemagne","continent":"Europe","stade":"Signal Iduna Park","surnom":"Les Schwarzgelben"},
-    {"id":"leverkusen","nom":"Bayer 04 Leverkusen","ville":"Leverkusen","pays":"Allemagne","continent":"Europe","stade":"BayArena","surnom":"Les Werkself"},
-    {"id":"hoffenheim","nom":"TSG Hoffenheim","ville":"Sinsheim","pays":"Allemagne","continent":"Europe","stade":"PreZero Arena","surnom":"Les Kraichgauer"},
-    {"id":"benfica","nom":"SL Benfica","ville":"Lisbonne","pays":"Portugal","continent":"Europe","stade":"Estádio da Luz","surnom":"Les Aigles"},
-    {"id":"porto","nom":"FC Porto","ville":"Porto","pays":"Portugal","continent":"Europe","stade":"Estádio do Dragão","surnom":"Les Dragons"},
-    {"id":"sporting","nom":"Sporting CP","ville":"Lisbonne","pays":"Portugal","continent":"Europe","stade":"Estádio José Alvalade","surnom":"Les Lions"},
-    {"id":"ajax","nom":"Ajax Amsterdam","ville":"Amsterdam","pays":"Pays-Bas","continent":"Europe","stade":"Johan Cruyff Arena","surnom":"Les Lanciers"},
-    {"id":"psv","nom":"PSV Eindhoven","ville":"Eindhoven","pays":"Pays-Bas","continent":"Europe","stade":"Philips Stadion","surnom":"Les Boeren"},
-    {"id":"southampton","nom":"Southampton FC","ville":"Southampton","pays":"Angleterre","continent":"Europe","stade":"St. Mary's Stadium","surnom":"Les Saints"},
-    {"id":"everton","nom":"Everton FC","ville":"Liverpool","pays":"Angleterre","continent":"Europe","stade":"Goodison Park","surnom":"Les Toffees"}
+    {
+      "id": "psg",
+      "nom": "Paris Saint-Germain",
+      "ville": "Paris",
+      "pays": "France",
+      "continent": "Europe",
+      "stade": "Parc des Princes",
+      "surnom": "Les Parisiens",
+      "couleurs": "Rouge & Bleu",
+      "legendes": [
+        {
+          "name": "Zlatan Ibrahimović",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3455.jpg?lm=1",
+          "tm_id": 3455
+        },
+        {
+          "name": "Ronaldinho",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3482.jpg?lm=1",
+          "tm_id": 3482
+        },
+        {
+          "name": "David Beckham",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3468.jpg?lm=1",
+          "tm_id": 3468
+        },
+        {
+          "name": "Thiago Silva",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/97941.jpg?lm=1",
+          "tm_id": 97941
+        },
+        {
+          "name": "Cavani",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/81232.jpg?lm=1",
+          "tm_id": 81232
+        }
+      ]
+    },
+    {
+      "id": "marseille",
+      "nom": "Olympique de Marseille",
+      "ville": "Marseille",
+      "pays": "France",
+      "continent": "Europe",
+      "stade": "Vélodrome",
+      "surnom": "Les Phocéens",
+      "couleurs": "Blanc & Bleu ciel",
+      "legendes": [
+        {
+          "name": "Didier Drogba",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/7787.jpg?lm=1",
+          "tm_id": 7787
+        },
+        {
+          "name": "Zinédine Zidane",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3008.jpg?lm=1",
+          "tm_id": 3008
+        },
+        {
+          "name": "Jean-Pierre Papin",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/6676.jpg?lm=1",
+          "tm_id": 6676
+        },
+        {
+          "name": "Chris Waddle",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/26977.jpg?lm=1",
+          "tm_id": 26977
+        },
+        {
+          "name": "Samir Nasri",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/46070.jpg?lm=1",
+          "tm_id": 46070
+        }
+      ]
+    },
+    {
+      "id": "lyon",
+      "nom": "Olympique Lyonnais",
+      "ville": "Lyon",
+      "pays": "France",
+      "continent": "Europe",
+      "stade": "Groupama Stadium",
+      "surnom": "Les Gones",
+      "couleurs": "Rouge & Bleu marine",
+      "legendes": [
+        {
+          "name": "Juninho Pernambucano",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3469.jpg?lm=1",
+          "tm_id": 3469
+        },
+        {
+          "name": "Karim Benzema",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/18922.jpg?lm=1",
+          "tm_id": 18922
+        },
+        {
+          "name": "Samuel Umtiti",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/177681.jpg?lm=1",
+          "tm_id": 177681
+        },
+        {
+          "name": "Florent Malouda",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/14276.jpg?lm=1",
+          "tm_id": 14276
+        },
+        {
+          "name": "Sidney Govou",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/6736.jpg?lm=1",
+          "tm_id": 6736
+        }
+      ]
+    },
+    {
+      "id": "real",
+      "nom": "Real Madrid",
+      "ville": "Madrid",
+      "pays": "Espagne",
+      "continent": "Europe",
+      "stade": "Santiago Bernabéu",
+      "surnom": "La Casa Blanca",
+      "couleurs": "Blanc & Or",
+      "legendes": [
+        {
+          "name": "Raúl González",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3460.jpg?lm=1",
+          "tm_id": 3460
+        },
+        {
+          "name": "Ronaldo Nazário",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3462.jpg?lm=1",
+          "tm_id": 3462
+        },
+        {
+          "name": "Roberto Carlos",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3461.jpg?lm=1",
+          "tm_id": 3461
+        },
+        {
+          "name": "Zinédine Zidane",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3008.jpg?lm=1",
+          "tm_id": 3008
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/8198.jpg?lm=1",
+          "tm_id": 8198
+        }
+      ]
+    },
+    {
+      "id": "barca",
+      "nom": "FC Barcelone",
+      "ville": "Barcelone",
+      "pays": "Espagne",
+      "continent": "Europe",
+      "stade": "Spotify Camp Nou",
+      "surnom": "Le Barça",
+      "couleurs": "Bleu & Grenat",
+      "legendes": [
+        {
+          "name": "Lionel Messi",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/28003.jpg?lm=1",
+          "tm_id": 28003
+        },
+        {
+          "name": "Ronaldinho",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3482.jpg?lm=1",
+          "tm_id": 3482
+        },
+        {
+          "name": "Xavi Hernández",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3505.jpg?lm=1",
+          "tm_id": 3505
+        },
+        {
+          "name": "Andrés Iniesta",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/9566.jpg?lm=1",
+          "tm_id": 9566
+        },
+        {
+          "name": "Carles Puyol",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3464.jpg?lm=1",
+          "tm_id": 3464
+        }
+      ]
+    },
+    {
+      "id": "atleti",
+      "nom": "Atlético de Madrid",
+      "ville": "Madrid",
+      "pays": "Espagne",
+      "continent": "Europe",
+      "stade": "Civitas Metropolitano",
+      "surnom": "Los Colchoneros",
+      "couleurs": "Rouge & Blanc",
+      "legendes": [
+        {
+          "name": "Fernando Torres",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/7239.jpg?lm=1",
+          "tm_id": 7239
+        },
+        {
+          "name": "Diego Forlán",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/6730.jpg?lm=1",
+          "tm_id": 6730
+        },
+        {
+          "name": "Kun Agüero",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/26399.jpg?lm=1",
+          "tm_id": 26399
+        },
+        {
+          "name": "Radamel Falcao",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/70468.jpg?lm=1",
+          "tm_id": 70468
+        },
+        {
+          "name": "Antoine Griezmann",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/125781.jpg?lm=1",
+          "tm_id": 125781
+        }
+      ]
+    },
+    {
+      "id": "liverpool",
+      "nom": "Liverpool FC",
+      "ville": "Liverpool",
+      "pays": "Angleterre",
+      "continent": "Europe",
+      "stade": "Anfield",
+      "surnom": "The Reds",
+      "couleurs": "Rouge",
+      "legendes": [
+        {
+          "name": "Steven Gerrard",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3379.jpg?lm=1",
+          "tm_id": 3379
+        },
+        {
+          "name": "Kenny Dalglish",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/46965.jpg?lm=1",
+          "tm_id": 46965
+        },
+        {
+          "name": "Robbie Fowler",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3380.jpg?lm=1",
+          "tm_id": 3380
+        },
+        {
+          "name": "Sami Hyypiä",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/4100.jpg?lm=1",
+          "tm_id": 4100
+        },
+        {
+          "name": "Dirk Kuyt",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/26813.jpg?lm=1",
+          "tm_id": 26813
+        }
+      ]
+    },
+    {
+      "id": "arsenal",
+      "nom": "Arsenal FC",
+      "ville": "Londres",
+      "pays": "Angleterre",
+      "continent": "Europe",
+      "stade": "Emirates Stadium",
+      "surnom": "The Gunners",
+      "couleurs": "Rouge & Blanc",
+      "legendes": [
+        {
+          "name": "Thierry Henry",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/18940.jpg?lm=1",
+          "tm_id": 18940
+        },
+        {
+          "name": "Patrick Vieira",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3390.jpg?lm=1",
+          "tm_id": 3390
+        },
+        {
+          "name": "Dennis Bergkamp",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3509.jpg?lm=1",
+          "tm_id": 3509
+        },
+        {
+          "name": "Robert Pires",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/6524.jpg?lm=1",
+          "tm_id": 6524
+        },
+        {
+          "name": "Tony Adams",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/10498.jpg?lm=1",
+          "tm_id": 10498
+        }
+      ]
+    },
+    {
+      "id": "chelsea",
+      "nom": "Chelsea FC",
+      "ville": "Londres",
+      "pays": "Angleterre",
+      "continent": "Europe",
+      "stade": "Stamford Bridge",
+      "surnom": "The Blues",
+      "couleurs": "Bleu roi",
+      "legendes": [
+        {
+          "name": "Frank Lampard",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3501.jpg?lm=1",
+          "tm_id": 3501
+        },
+        {
+          "name": "John Terry",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3503.jpg?lm=1",
+          "tm_id": 3503
+        },
+        {
+          "name": "Didier Drogba",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/7787.jpg?lm=1",
+          "tm_id": 7787
+        },
+        {
+          "name": "Gianfranco Zola",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/9099.jpg?lm=1",
+          "tm_id": 9099
+        },
+        {
+          "name": "Petr Čech",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/33370.jpg?lm=1",
+          "tm_id": 33370
+        }
+      ]
+    },
+    {
+      "id": "manutd",
+      "nom": "Manchester United",
+      "ville": "Manchester",
+      "pays": "Angleterre",
+      "continent": "Europe",
+      "stade": "Old Trafford",
+      "surnom": "The Red Devils",
+      "couleurs": "Rouge & Noir",
+      "legendes": [
+        {
+          "name": "Eric Cantona",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/22537.jpg?lm=1",
+          "tm_id": 22537
+        },
+        {
+          "name": "Roy Keane",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3489.jpg?lm=1",
+          "tm_id": 3489
+        },
+        {
+          "name": "Paul Scholes",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3488.jpg?lm=1",
+          "tm_id": 3488
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/8198.jpg?lm=1",
+          "tm_id": 8198
+        },
+        {
+          "name": "Wayne Rooney",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/46963.jpg?lm=1",
+          "tm_id": 46963
+        }
+      ]
+    },
+    {
+      "id": "mancity",
+      "nom": "Manchester City",
+      "ville": "Manchester",
+      "pays": "Angleterre",
+      "continent": "Europe",
+      "stade": "Etihad Stadium",
+      "surnom": "The Citizens",
+      "couleurs": "Bleu ciel",
+      "legendes": [
+        {
+          "name": "David Silva",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/94765.jpg?lm=1",
+          "tm_id": 94765
+        },
+        {
+          "name": "Vincent Kompany",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/92417.jpg?lm=1",
+          "tm_id": 92417
+        },
+        {
+          "name": "Yaya Touré",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/54782.jpg?lm=1",
+          "tm_id": 54782
+        },
+        {
+          "name": "Carlos Tevez",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/46968.jpg?lm=1",
+          "tm_id": 46968
+        },
+        {
+          "name": "Sergio Agüero",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/26399.jpg?lm=1",
+          "tm_id": 26399
+        }
+      ]
+    },
+    {
+      "id": "bayern",
+      "nom": "Bayern Munich",
+      "ville": "Munich",
+      "pays": "Allemagne",
+      "continent": "Europe",
+      "stade": "Allianz Arena",
+      "surnom": "Der Rekordmeister",
+      "couleurs": "Rouge & Blanc",
+      "legendes": [
+        {
+          "name": "Oliver Kahn",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/6030.jpg?lm=1",
+          "tm_id": 6030
+        },
+        {
+          "name": "Franz Beckenbauer",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/6031.jpg?lm=1",
+          "tm_id": 6031
+        },
+        {
+          "name": "Gerd Müller",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/10534.jpg?lm=1",
+          "tm_id": 10534
+        },
+        {
+          "name": "Lothar Matthäus",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/6032.jpg?lm=1",
+          "tm_id": 6032
+        },
+        {
+          "name": "Franck Ribéry",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/12141.jpg?lm=1",
+          "tm_id": 12141
+        }
+      ]
+    },
+    {
+      "id": "dortmund",
+      "nom": "Borussia Dortmund",
+      "ville": "Dortmund",
+      "pays": "Allemagne",
+      "continent": "Europe",
+      "stade": "Signal Iduna Park",
+      "surnom": "Die Schwarzgelben",
+      "couleurs": "Jaune & Noir",
+      "legendes": [
+        {
+          "name": "Michael Zorc",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/17100.jpg?lm=1",
+          "tm_id": 17100
+        },
+        {
+          "name": "Stefan Reuter",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/17098.jpg?lm=1",
+          "tm_id": 17098
+        },
+        {
+          "name": "Karl-Heinz Riedle",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/17097.jpg?lm=1",
+          "tm_id": 17097
+        },
+        {
+          "name": "Jürgen Kohler",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/17096.jpg?lm=1",
+          "tm_id": 17096
+        },
+        {
+          "name": "Robert Lewandowski",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/38253.jpg?lm=1",
+          "tm_id": 38253
+        }
+      ]
+    },
+    {
+      "id": "milan",
+      "nom": "AC Milan",
+      "ville": "Milan",
+      "pays": "Italie",
+      "continent": "Europe",
+      "stade": "San Siro",
+      "surnom": "Il Diavolo Rosso",
+      "couleurs": "Rouge & Noir",
+      "legendes": [
+        {
+          "name": "Paolo Maldini",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/17811.jpg?lm=1",
+          "tm_id": 17811
+        },
+        {
+          "name": "Franco Baresi",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/17813.jpg?lm=1",
+          "tm_id": 17813
+        },
+        {
+          "name": "Andriy Shevchenko",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3361.jpg?lm=1",
+          "tm_id": 3361
+        },
+        {
+          "name": "Kaká",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3366.jpg?lm=1",
+          "tm_id": 3366
+        },
+        {
+          "name": "Ronaldo Nazário",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3462.jpg?lm=1",
+          "tm_id": 3462
+        }
+      ]
+    },
+    {
+      "id": "inter",
+      "nom": "Inter Milan",
+      "ville": "Milan",
+      "pays": "Italie",
+      "continent": "Europe",
+      "stade": "San Siro",
+      "surnom": "La Beneamata",
+      "couleurs": "Bleu & Noir",
+      "legendes": [
+        {
+          "name": "Ronaldo Nazário",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3462.jpg?lm=1",
+          "tm_id": 3462
+        },
+        {
+          "name": "Javier Zanetti",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3363.jpg?lm=1",
+          "tm_id": 3363
+        },
+        {
+          "name": "Roberto Carlos",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3461.jpg?lm=1",
+          "tm_id": 3461
+        },
+        {
+          "name": "Zlatan Ibrahimović",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3455.jpg?lm=1",
+          "tm_id": 3455
+        },
+        {
+          "name": "Samuel Eto'o",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3368.jpg?lm=1",
+          "tm_id": 3368
+        }
+      ]
+    },
+    {
+      "id": "juve",
+      "nom": "Juventus FC",
+      "ville": "Turin",
+      "pays": "Italie",
+      "continent": "Europe",
+      "stade": "Allianz Stadium",
+      "surnom": "La Vecchia Signora",
+      "couleurs": "Blanc & Noir",
+      "legendes": [
+        {
+          "name": "Alessandro Del Piero",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3359.jpg?lm=1",
+          "tm_id": 3359
+        },
+        {
+          "name": "Zinédine Zidane",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3008.jpg?lm=1",
+          "tm_id": 3008
+        },
+        {
+          "name": "Pavel Nedvěd",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3358.jpg?lm=1",
+          "tm_id": 3358
+        },
+        {
+          "name": "Gianluigi Buffon",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/3357.jpg?lm=1",
+          "tm_id": 3357
+        },
+        {
+          "name": "Michel Platini",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/7088.jpg?lm=1",
+          "tm_id": 7088
+        }
+      ]
+    },
+    {
+      "id": "napoli",
+      "nom": "SSC Napoli",
+      "ville": "Naples",
+      "pays": "Italie",
+      "continent": "Europe",
+      "stade": "Diego Armando Maradona",
+      "surnom": "Gli Azzurri",
+      "couleurs": "Bleu ciel",
+      "legendes": [
+        {
+          "name": "Diego Maradona",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/7087.jpg?lm=1",
+          "tm_id": 7087
+        },
+        {
+          "name": "Careca",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/45282.jpg?lm=1",
+          "tm_id": 45282
+        },
+        {
+          "name": "Dries Mertens",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/89431.jpg?lm=1",
+          "tm_id": 89431
+        },
+        {
+          "name": "Ciro Ferrara",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/17090.jpg?lm=1",
+          "tm_id": 17090
+        },
+        {
+          "name": "Lorenzo Insigne",
+          "photo": "https://img.a.transfermarkt.technology/portrait/big/133964.jpg?lm=1",
+          "tm_id": 133964
+        }
+      ]
+    }
   ]
 }
