@@ -78,7 +78,7 @@ html,body{background:var(--bg);color:var(--dark);font-family:"DM Sans",sans-seri
 .family-page{background:linear-gradient(180deg,#d4eeda 0%,#a8d8b8 60%,#5aa870 100%);min-height:calc(100vh - 60px);padding:24px 20px 0;position:relative;overflow:hidden;}
 .family-page::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,80 Q20,20 40,70 Q60,110 80,50 Q100,10 120,60 Q140,100 160,40 Q180,0 200,55 Q220,100 240,45 Q260,5 280,65 Q300,110 320,50 Q340,5 360,60 Q380,105 400,48 Q420,5 440,58 Q460,100 480,42 Q500,0 520,55 Q540,105 560,45 Q580,5 600,60 Q620,110 640,50 Q660,5 680,65 Q700,110 720,52 Q740,5 760,58 Q780,105 800,48 Q820,5 840,60 Q860,108 880,50 Q900,5 920,62 Q940,110 960,48 Q980,2 1000,58 Q1020,108 1040,50 Q1060,5 1080,62 Q1100,110 1120,52 Q1140,5 1160,60 Q1180,108 1200,50 L1200,120 L0,120 Z' fill='%232d7a3d'/%3E%3Cpath d='M0,90 Q15,50 30,80 Q45,110 60,65 Q75,30 90,72 Q105,108 120,62 Q135,25 150,70 Q165,108 180,68 Q195,30 210,75 Q225,112 240,68 Q255,28 270,75 Q285,112 300,68 Q315,28 330,74 Q345,112 360,70 Q375,32 390,76 Q405,110 420,70 Q435,30 450,76 Q465,112 480,70 Q495,30 510,76 Q525,112 540,70 Q555,30 570,76 Q585,112 600,70 Q615,30 630,76 Q645,112 660,70 Q675,30 690,76 Q705,112 720,70 Q735,30 750,76 Q765,112 780,70 Q795,30 810,76 Q825,112 840,70 Q855,30 870,76 Q885,112 900,70 Q915,30 930,76 Q945,112 960,70 Q975,30 990,76 Q1005,112 1020,70 Q1035,30 1050,76 Q1065,112 1080,70 Q1095,30 1110,76 Q1125,112 1140,70 Q1155,30 1170,76 Q1185,112 1200,70 L1200,120 L0,120 Z' fill='%23378a45' opacity='0.8'/%3E%3C/svg%3E") bottom/cover no-repeat;pointer-events:none;z-index:0;}
 .family-wrap{max-width:480px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px;position:relative;z-index:1;padding-bottom:140px;}
-.family-hero{background:transparent;border:none;padding:16px 24px 8px;margin-bottom:0;text-align:center;}
+.grass-canvas{position:absolute;bottom:0;left:0;width:100%;height:200px;pointer-events:none;z-index:0;image-rendering:pixelated;}.family-hero{background:transparent;border:none;padding:16px 24px 8px;margin-bottom:0;text-align:center;}
 .family-hero-icon{font-size:72px;animation:float 2s ease-in-out infinite;line-height:1;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.2));}
 .family-hero-title{font-family:"Bebas Neue",cursive;font-size:36px;letter-spacing:6px;color:#1a3a20;margin-top:8px;text-shadow:0 2px 8px rgba(255,255,255,0.4);}
 @keyframes sway1{0%,100%{transform:rotate(-3deg);}50%{transform:rotate(3deg);}}
@@ -90,7 +90,7 @@ html,body{background:var(--bg);color:var(--dark);font-family:"DM Sans",sans-seri
 .family-card-header{background:linear-gradient(135deg,#fff8e1,#fff3cd);padding:18px 22px;border-bottom:2px solid rgba(232,168,0,.15);}
 .family-club-name{font-family:"Bebas Neue",cursive;font-size:26px;letter-spacing:4px;color:var(--gold);}
 .family-rows{display:flex;flex-direction:column;}
-.family-row{display:grid;grid-template-columns:1fr 2fr;gap:8px;padding:12px 20px;border-bottom:1px solid rgba(28,58,34,0.08);align-items:center;}
+.family-row{display:grid;grid-template-columns:1fr 2fr;gap:8px;padding:10px 20px;border-bottom:0.5px solid rgba(28,58,34,0.08);align-items:center;}
 .family-row:last-child{border-bottom:none;}
 .family-label{font-family:"DM Sans",sans-serif;font-size:8px;font-weight:500;letter-spacing:4px;color:#4a6a4a;text-transform:uppercase;}
 .family-value{font-family:"Bebas Neue",cursive;font-size:22px;letter-spacing:2px;color:#1c3a22;}
@@ -274,6 +274,99 @@ const CAT_META={
 };
 const CATS=["nat","pro","sta"];
 
+function GrassAnimation(){
+  React.useEffect(()=>{
+    const canvas=document.getElementById('grassCanvas');
+    if(!canvas)return;
+    const ctx=canvas.getContext('2d');
+    let W,H,raf,t0=Date.now();
+    const P=4; // taille pixel
+    const tufts=[];
+
+    // Couleurs palette jeu vidéo
+    const COLORS=['#3aaa50','#2d8a40','#45c45a','#228b35','#58d468','#1a6e2a'];
+    const DARK=['#1a5c28','#145020','#236b30'];
+
+    function init(){
+      W=canvas.offsetWidth; H=canvas.offsetHeight;
+      canvas.width=W; canvas.height=H;
+      ctx.imageSmoothingEnabled=false;
+      tufts.length=0;
+      // Sol pixelisé par colonnes
+      const cols=Math.ceil(W/P);
+      for(let i=0;i<cols;i+=1){
+        // Hauteur de base du sol
+        const groundH=Math.floor(H*0.45+Math.sin(i*0.18)*P*2);
+        // Plusieurs touffes par colonne
+        const tCount=1+Math.floor(Math.random()*2);
+        for(let t=0;t<tCount;t++){
+          tufts.push({
+            col:i,
+            baseY:groundH,
+            h:P*(2+Math.floor(Math.random()*4)),  // hauteur 2-5 pixels
+            w:P*(1+Math.floor(Math.random()*2)),   // largeur 1-2 pixels
+            phase:Math.random()*Math.PI*2,
+            speed:0.5+Math.random()*0.8,
+            color:COLORS[Math.floor(Math.random()*COLORS.length)],
+            darkColor:DARK[Math.floor(Math.random()*DARK.length)],
+            layer:Math.random(),
+          });
+        }
+      }
+    }
+
+    function drawPixelRect(x,y,w,h,color){
+      // Snap to pixel grid
+      ctx.fillStyle=color;
+      ctx.fillRect(Math.round(x/P)*P, Math.round(y/P)*P, Math.round(w/P)*P, Math.round(h/P)*P);
+    }
+
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      const t=(Date.now()-t0)/1000;
+
+      // Sol plat pixelisé
+      for(let x=0;x<W;x+=P){
+        const groundY=H*0.55+Math.sin(x*0.015)*P*1.5;
+        // Couche 1 foncée (ombre)
+        drawPixelRect(x, groundY, P, H-groundY, '#1a5228');
+        // Couche 2 medium
+        drawPixelRect(x, groundY, P, P*2, '#2d7a3d');
+        // Ligne de surface claire
+        drawPixelRect(x, groundY-P, P, P, '#45c45a');
+      }
+
+      // Trier par layer pour depth
+      const sorted=[...tufts].sort((a,b)=>a.layer-b.layer);
+
+      sorted.forEach(b=>{
+        const sway=Math.sin(t*b.speed+b.phase);
+        const baseY=H*0.55+Math.sin(b.col*0.015)*P*1.5;
+        const ox=sway*P*0.8; // oscillation horizontale max 1 pixel
+
+        // Tige principale
+        drawPixelRect(b.col*P+Math.round(ox/P)*P, baseY-b.h, b.w, b.h, b.color);
+
+        // Pointe triangulaire (pixel)
+        const tipX=b.col*P+Math.round(ox/P)*P+Math.round(b.w/2/P)*P;
+        drawPixelRect(tipX, baseY-b.h-P, P, P, b.color);
+
+        // Ombre côté gauche
+        drawPixelRect(b.col*P+Math.round(ox/P)*P, baseY-b.h, P, b.h, b.darkColor);
+      });
+
+      raf=requestAnimationFrame(draw);
+    }
+
+    init();
+    draw();
+    window.addEventListener('resize',()=>init());
+    return ()=>cancelAnimationFrame(raf);
+  },[]);
+  return null;
+}
+
+
 function FamilyMode({onBack}) {
   const [clubs,setClubs]=React.useState([]);
   const [selected,setSelected]=React.useState(null);
@@ -286,20 +379,33 @@ function FamilyMode({onBack}) {
       .catch(()=>{});
   },[]);
 
-  const allRevealed=selected&&["ville","pays","continent","stade","surnom"].every(f=>revealed[f]);
+  const allRevealed=selected&&["ville","pays","continent","stade","surnom","couleurs","l0","l1","l2","l3","l4"].every(f=>revealed[f]);
   const pickClub=(id)=>{setSelected(clubs.find(c=>c.id===id)||null);setRevealed({});};
   const reveal=(field)=>setRevealed(p=>({...p,[field]:true}));
   const next=()=>{setSelected(null);setRevealed({});};
-  const fields=[{key:"ville",label:"VILLE"},{key:"pays",label:"PAYS"},{key:"continent",label:"CONTINENT"},{key:"stade",label:"STADE"},{key:"surnom",label:"SURNOM"}];
+  const baseFields=[
+    {key:"ville",    label:"VILLE",    icon:"📍", pts:1},
+    {key:"pays",     label:"PAYS",     icon:"🌍", pts:1},
+    {key:"continent",label:"CONTINENT",icon:"🗺️", pts:1},
+    {key:"stade",    label:"STADE",    icon:"🏟️", pts:1},
+    {key:"surnom",   label:"SURNOM",   icon:"🏷️", pts:2},
+    {key:"couleurs", label:"COULEURS", icon:"🎨", pts:1},
+  ];
+  const legendeFields=selected?(selected.legendes||[]).map((leg,i)=>{
+    const name=typeof leg==="object"?leg.name:leg;
+    const photo=typeof leg==="object"?leg.photo:null;
+    return {key:"l"+i, label:"LÉGENDE "+(i+1), icon:"⭐", pts:1, value:name, photo};
+  }):[];
+  const fields=[...baseFields,...legendeFields];
 
   return(
-    <div className="family-page">
+    <div className="family-page"><canvas className="grass-canvas" id="grassCanvas"></canvas><GrassAnimation/>
       <div style={{maxWidth:480,margin:"0 auto",padding:"24px 20px 60px"}}>
         <div className="back-btn" onClick={onBack}>← Retour</div>
         <div className="family-wrap">
           <div className="family-hero">
             <div className="family-hero-icon">🏆</div>
-            <div className="family-hero-title">MODE FAMILLE</div>
+            <div className="family-hero-title">L'IDENTITÉ</div>
           </div>
           <div className="family-select-wrap">
             <select className="family-select" value={selected?.id||""} onChange={e=>pickClub(e.target.value)}>
@@ -313,11 +419,37 @@ function FamilyMode({onBack}) {
                 <div className="family-club-name">{selected.nom}</div>
               </div>
               <div className="family-rows">
-                {fields.map((f,i)=>(
-                  <div className="family-row" key={f.key} style={{animationDelay:`${i*.07}s`}}>
-                    <span className="family-label">{f.label}</span>
+                {baseFields.map((f,i)=>(
+                  <div className="family-row" key={f.key} style={{animationDelay:`${i*.06}s`}}>
+                    <div style={{display:"flex",alignItems:"center",gap:"6px",flexShrink:0}}>
+                      <span style={{fontSize:"14px"}}>{f.icon}</span>
+                      <span className="family-label">{f.label}</span>
+                      <span style={{fontSize:"9px",color:"var(--gold2)",fontWeight:600,letterSpacing:"1px"}}>{f.pts}pt</span>
+                    </div>
                     {revealed[f.key]
                       ?<span className="family-value">{selected[f.key]}</span>
+                      :<button className="btn-reveal" onClick={()=>reveal(f.key)}>RÉVÉLER ▶</button>
+                    }
+                  </div>
+                ))}
+                {legendeFields.length>0&&(
+                  <div style={{padding:"8px 20px 4px",background:"rgba(232,168,0,0.06)",borderTop:"0.5px solid rgba(232,168,0,0.25)"}}>
+                    <span style={{fontSize:"9px",fontWeight:600,letterSpacing:"3px",color:"var(--gold2)",textTransform:"uppercase"}}>⭐ Joueurs légendaires — 1 pt chacun</span>
+                  </div>
+                )}
+                {legendeFields.map((f,i)=>(
+                  <div className="family-row" key={f.key} style={{animationDelay:`${(baseFields.length+i)*.06}s`,background:"rgba(232,168,0,0.03)"}}>
+                    <div style={{display:"flex",alignItems:"center",gap:"6px",flexShrink:0}}>
+                      <span style={{fontSize:"13px"}}>{f.icon}</span>
+                      <span className="family-label" style={{color:"var(--gold2)"}}>{f.label}</span>
+                    </div>
+                    {revealed[f.key]
+                      ?<span className="family-value" style={{display:"flex",alignItems:"center",gap:"8px",color:"var(--gold2)"}}>
+                          {f.photo&&<img src={f.photo} alt={f.value}
+                            style={{width:"32px",height:"32px",borderRadius:"50%",objectFit:"cover",objectPosition:"top",border:"1.5px solid rgba(232,168,0,0.5)"}}
+                            onError={e=>{e.target.style.display="none";}}/>}
+                          {f.value}
+                        </span>
                       :<button className="btn-reveal" onClick={()=>reveal(f.key)}>RÉVÉLER ▶</button>
                     }
                   </div>
@@ -325,7 +457,17 @@ function FamilyMode({onBack}) {
               </div>
             </div>
           )}
-          {allRevealed&&<button className="btn-next" onClick={next}>⚽ Prochain club !</button>}
+          {allRevealed&&(
+            <div style={{textAlign:"center",animation:"fadeUp .3s ease both"}}>
+              <div style={{fontSize:"11px",letterSpacing:"3px",color:"var(--slate)",marginBottom:"6px",textTransform:"uppercase"}}>
+                Total défaussable
+              </div>
+              <div style={{fontSize:"28px",fontWeight:700,color:"var(--gold2)",marginBottom:"12px"}}>
+                {fields.reduce((acc,f)=>acc+f.pts,0)} jetons
+              </div>
+              <button className="btn-next" onClick={next}>⚽ Prochain club !</button>
+            </div>
+          )}
         </div>
       </div>
     </div>
