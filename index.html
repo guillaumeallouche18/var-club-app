@@ -274,44 +274,6 @@ const CAT_META={
 };
 const CATS=["nat","pro","sta"];
 
-    function drawPixelRect(x,y,w,h,color){
-      // Snap to pixel grid
-      ctx.fillStyle=color;
-      ctx.fillRect(Math.round(x/P)*P, Math.round(y/P)*P, Math.round(w/P)*P, Math.round(h/P)*P);
-    }
-
-    function draw(){
-      ctx.clearRect(0,0,W,H);
-      const t=(Date.now()-t0)/1000;
-
-      // Trier par layer pour depth
-      const sorted=[...tufts].sort((a,b)=>a.layer-b.layer);
-
-      sorted.forEach(b=>{
-        const sway=Math.sin(t*b.speed+b.phase);
-        const baseY=b.baseY;
-        const ox=Math.round(sway*P*0.8/P)*P;
-        const bx=b.col*P+ox;
-
-        // Tige principale
-        drawPixelRect(bx, baseY-b.h, b.w, b.h, b.color);
-        // Pointe
-        drawPixelRect(bx+Math.round(b.w/2/P)*P, baseY-b.h-P, P, P, b.color);
-        // Ombre
-        drawPixelRect(bx, baseY-b.h, P, b.h, b.darkColor);
-      });
-
-      raf=requestAnimationFrame(draw);
-    }
-
-    init();
-    draw();
-    window.addEventListener('resize',()=>init());
-    return ()=>cancelAnimationFrame(raf);
-  },[]);
-  return null;
-}
-
 
 function FamilyMode({onBack}) {
   const [clubs,setClubs]=React.useState([]);
