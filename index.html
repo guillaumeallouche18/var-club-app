@@ -325,17 +325,6 @@ function GrassAnimation(){
       ctx.clearRect(0,0,W,H);
       const t=(Date.now()-t0)/1000;
 
-      // Sol plat pixelisé
-      for(let x=0;x<W;x+=P){
-        const groundY=H*0.55+Math.sin(x*0.015)*P*1.5;
-        // Couche 1 foncée (ombre)
-        drawPixelRect(x, groundY, P, H-groundY, '#1a5228');
-        // Couche 2 medium
-        drawPixelRect(x, groundY, P, P*2, '#2d7a3d');
-        // Ligne de surface claire
-        drawPixelRect(x, groundY-P, P, P, '#45c45a');
-      }
-
       // Trier par layer pour depth
       const sorted=[...tufts].sort((a,b)=>a.layer-b.layer);
 
