@@ -250,32 +250,172 @@ html,body{background:var(--bg);color:var(--dark);font-family:"DM Sans",sans-seri
 
 const EXPERT_API = "https://var-club-expert.vercel.app";
 
-const QUESTIONS=[
-  {id:1,cat:"nat",short:"Joueurs Français",full:"Citez des joueurs Français passés par ce club."},
-  {id:2,cat:"nat",short:"Joueurs Espagnols",full:"Citez des joueurs Espagnols passés par ce club."},
-  {id:3,cat:"nat",short:"Joueurs Allemands",full:"Citez des joueurs Allemands passés par ce club."},
-  {id:4,cat:"nat",short:"Joueurs Italiens",full:"Citez des joueurs Italiens passés par ce club."},
-  {id:5,cat:"nat",short:"Joueurs Anglais",full:"Citez des joueurs Anglais passés par ce club."},
-  {id:6,cat:"nat",short:"Brésiliens / Argentins",full:"Citez des joueurs Brésiliens ou Argentins passés par ce club."},
-  {id:7,cat:"nat",short:"Joueurs Algériens",full:"Citez des joueurs Algériens passés par ce club."},
-  {id:8,cat:"nat",short:"Joueurs Marocains",full:"Citez des joueurs Marocains passés par ce club."},
-  {id:9,cat:"pro",short:"Gardiens de but",full:"Citez des gardiens de but passés par ce club."},
-  {id:10,cat:"pro",short:"Recrutés libres",full:"Citez des joueurs recrutés gratuitement par ce club."},
-  {id:11,cat:"pro",short:"Prêtés puis achetés",full:"Citez des joueurs d'abord prêtés puis achetés définitivement."},
+const TRANSLATIONS = {
+  fr: {
+    back: "← Retour",
+    loading: "Chargement…",
+    search: "Rechercher…",
+    chooseClub: "CHOISIR UN CLUB",
+    reveal: "RÉVÉLER ▶",
+    nextClub: "⚽ Prochain club !",
+    launchVar: "▶ Lancer la VAR",
+    analyzing: "⏳ Analyse…",
+    restart: "↺ Recommencer",
+    hideAnswer: "↺ Masquer",
+    newQuestion: "→ Nouvelle question",
+    newSearch: "↺ Nouvelle recherche",
+    stepClub: "Club",
+    stepQuestion: "Question",
+    stepVerdict: "Verdict",
+    chooseClubStep: "Choisir un club",
+    chooseQuestionStep: "Choisir une question",
+    verdictVar: "Verdict VAR",
+    varReady: "La VAR est prête",
+    varReadySub: "Sélectionnez un club et une question",
+    ready: "Prêt",
+    selectQuestion: "→ Choisissez une question",
+    clubSelected: "Club sélectionné",
+    findCommon: "Trouvez les joueurs en commun",
+    club1: "Club 1",
+    club2: "Club 2",
+    noConnection: "Aucune connexion",
+    noConnectionSub: "Aucun joueur commun trouvé",
+    directTransfer: "Transfert direct",
+    indirectPassage: "Passage commun",
+    modeFamily: "L'Identité",
+    modeDuel: "Duel VAR",
+    modeExpert: "Pro Mercato",
+    modeDescFamily: "Révèle les infos de ton club préféré. Parfait pour jouer en famille !",
+    modeDescDuel: "Tire une carte Club + une carte Question. La VAR valide ou invalide ta réponse.",
+    modeDescExpert: "Trouve tous les joueurs ayant porté deux maillots. Pour les experts !",
+    badgeFamily: "FACILE",
+    badgeDuel: "INTERMÉDIAIRE",
+    badgeExpert: "EXPERT",
+    fieldVille: "VILLE",
+    fieldPays: "PAYS",
+    fieldContinent: "CONTINENT",
+    fieldStade: "STADE",
+    fieldSurnom: "SURNOM",
+    fieldCouleurs: "COULEURS",
+    fieldLegende: "LÉGENDE",
+    catNat: "Nationalités",
+    catPro: "Profil Joueurs",
+    catSta: "Statistiques",
+    legendSection: "⭐ Joueurs légendaires — 1 pt chacun",
+    q1s:"Joueurs Français", q1f:"Citez des joueurs Français passés par ce club.",
+    q2s:"Joueurs Espagnols", q2f:"Citez des joueurs Espagnols passés par ce club.",
+    q3s:"Joueurs Allemands", q3f:"Citez des joueurs Allemands passés par ce club.",
+    q4s:"Joueurs Italiens",  q4f:"Citez des joueurs Italiens passés par ce club.",
+    q5s:"Joueurs Anglais",   q5f:"Citez des joueurs Anglais passés par ce club.",
+    q6s:"Brésiliens / Argentins", q6f:"Citez des joueurs Brésiliens ou Argentins passés par ce club.",
+    q7s:"Joueurs Algériens", q7f:"Citez des joueurs Algériens passés par ce club.",
+    q8s:"Joueurs Marocains", q8f:"Citez des joueurs Marocains passés par ce club.",
+    q9s:"Gardiens de but",   q9f:"Citez des gardiens de but passés par ce club.",
+    q10s:"Recrutés libres",  q10f:"Citez des joueurs recrutés gratuitement par ce club.",
+    q11s:"Prêtés puis achetés", q11f:"Citez des joueurs d'abord prêtés puis achetés définitivement.",
+    q12s:"+120 buts",        q12f:"Citez des joueurs avec plus de 120 buts pour ce club.",
+    q13s:"+5 saisons consécutives", q13f:"Citez des joueurs restés plus de 5 saisons consécutives au club.",
+    q14s:"Transfert >50M€",  q14f:"Citez des joueurs achetés ou vendus pour plus de 50M€.",
+    announceTitle: "Annoncez votre réponse à voix haute",
+    announceSub: 'Puis cliquez sur "Lancer la VAR"',
+  },
+  en: {
+    back: "← Back",
+    loading: "Loading…",
+    search: "Search…",
+    chooseClub: "CHOOSE A CLUB",
+    reveal: "REVEAL ▶",
+    nextClub: "⚽ Next club!",
+    launchVar: "▶ Launch VAR",
+    analyzing: "⏳ Analyzing…",
+    restart: "↺ Restart",
+    hideAnswer: "↺ Hide",
+    newQuestion: "→ New question",
+    newSearch: "↺ New search",
+    stepClub: "Club",
+    stepQuestion: "Question",
+    stepVerdict: "Verdict",
+    chooseClubStep: "Choose a club",
+    chooseQuestionStep: "Choose a question",
+    verdictVar: "VAR Verdict",
+    varReady: "VAR is ready",
+    varReadySub: "Select a club and a question",
+    ready: "Ready",
+    selectQuestion: "→ Choose a question",
+    clubSelected: "Selected club",
+    findCommon: "Find players in common",
+    club1: "Club 1",
+    club2: "Club 2",
+    noConnection: "No connection",
+    noConnectionSub: "No common player found",
+    directTransfer: "Direct transfer",
+    indirectPassage: "Common passage",
+    modeFamily: "The Identity",
+    modeDuel: "VAR Duel",
+    modeExpert: "Pro Mercato",
+    modeDescFamily: "Reveal your favourite club's info. Perfect for family play!",
+    modeDescDuel: "Draw a Club card + a Question card. VAR validates or invalidates your answer.",
+    modeDescExpert: "Find all players who wore two shirts. For the experts!",
+    badgeFamily: "EASY",
+    badgeDuel: "INTERMEDIATE",
+    badgeExpert: "EXPERT",
+    fieldVille: "CITY",
+    fieldPays: "COUNTRY",
+    fieldContinent: "CONTINENT",
+    fieldStade: "STADIUM",
+    fieldSurnom: "NICKNAME",
+    fieldCouleurs: "COLOURS",
+    fieldLegende: "LEGEND",
+    catNat: "Nationalities",
+    catPro: "Player Profile",
+    catSta: "Statistics",
+    legendSection: "⭐ Legendary players — 1 pt each",
+    q1s:"French Players",   q1f:"Name French players who played for this club.",
+    q2s:"Spanish Players",  q2f:"Name Spanish players who played for this club.",
+    q3s:"German Players",   q3f:"Name German players who played for this club.",
+    q4s:"Italian Players",  q4f:"Name Italian players who played for this club.",
+    q5s:"English Players",  q5f:"Name English players who played for this club.",
+    q6s:"Brazilians / Argentinians", q6f:"Name Brazilian or Argentinian players who played for this club.",
+    q7s:"Algerian Players", q7f:"Name Algerian players who played for this club.",
+    q8s:"Moroccan Players", q8f:"Name Moroccan players who played for this club.",
+    q9s:"Goalkeepers",      q9f:"Name goalkeepers who played for this club.",
+    q10s:"Free transfers",  q10f:"Name players recruited on a free transfer by this club.",
+    q11s:"Loan to buy",     q11f:"Name players first loaned then permanently signed.",
+    q12s:"+120 goals",      q12f:"Name players who scored more than 120 goals for this club.",
+    q13s:"+5 consecutive seasons", q13f:"Name players who stayed more than 5 consecutive seasons at the club.",
+    q14s:"Transfer >€50M",  q14f:"Name players bought or sold for more than €50M.",
+    announceTitle: "Announce your answer out loud",
+    announceSub: 'Then click "Launch VAR"',
+  }
+};
 
-  {id:12,cat:"sta",short:"+120 buts",full:"Citez des joueurs avec plus de 120 buts pour ce club."},
-  {id:13,cat:"sta",short:"+5 saisons consécutives",full:"Citez des joueurs restés plus de 5 saisons consécutives au club."},
-  {id:14,cat:"sta",short:"Transfert >50M€",full:"Citez des joueurs achetés ou vendus pour plus de 50M€."},
+
+const QUESTIONS=[
+  {id:1,cat:"nat",get short(){return t("q1s")},get full(){return t("q1f")}},
+  {id:2,cat:"nat",get short(){return t("q2s")},get full(){return t("q2f")}},
+  {id:3,cat:"nat",get short(){return t("q3s")},get full(){return t("q3f")}},
+  {id:4,cat:"nat",get short(){return t("q4s")},get full(){return t("q4f")}},
+  {id:5,cat:"nat",get short(){return t("q5s")},get full(){return t("q5f")}},
+  {id:6,cat:"nat",get short(){return t("q6s")},get full(){return t("q6f")}},
+  {id:7,cat:"nat",get short(){return t("q7s")},get full(){return t("q7f")}},
+  {id:8,cat:"nat",get short(){return t("q8s")},get full(){return t("q8f")}},
+  {id:9,cat:"pro",get short(){return t("q9s")},get full(){return t("q9f")}},
+  {id:10,cat:"pro",get short(){return t("q10s")},get full(){return t("q10f")}},
+  {id:11,cat:"pro",get short(){return t("q11s")},get full(){return t("q11f")}},
+
+  {id:12,cat:"sta",get short(){return t("q12s")},get full(){return t("q12f")}},
+  {id:13,cat:"sta",get short(){return t("q13s")},get full(){return t("q13f")}},
+  {id:14,cat:"sta",get short(){return t("q14s")},get full(){return t("q14f")}},
 ];
 const CAT_META={
-  nat:{label:"Nationalités",badgeCls:"cat-badge nat",tagCls:"tag-green"},
-  pro:{label:"Profil Joueurs",badgeCls:"cat-badge pro",tagCls:"tag-lime2"},
-  sta:{label:"Statistiques",badgeCls:"cat-badge sta",tagCls:"tag-coral"},
+  nat:{get label(){return t("catNat")},badgeCls:"cat-badge nat",tagCls:"tag-green"},
+  pro:{get label(){return t("catPro")},badgeCls:"cat-badge pro",tagCls:"tag-lime2"},
+  sta:{get label(){return t("catSta")},badgeCls:"cat-badge sta",tagCls:"tag-coral"},
 };
 const CATS=["nat","pro","sta"];
 
 
-function FamilyMode({onBack}) {
+function FamilyMode({onBack,t}) {
   const [clubs,setClubs]=React.useState([]);
   const [selected,setSelected]=React.useState(null);
   const [revealed,setRevealed]=React.useState({});
@@ -292,23 +432,23 @@ function FamilyMode({onBack}) {
   const reveal=(field)=>setRevealed(p=>({...p,[field]:true}));
   const next=()=>{setSelected(null);setRevealed({});};
   const baseFields=[
-    {key:"ville",    label:"VILLE",    icon:"📍", pts:1},
-    {key:"pays",     label:"PAYS",     icon:"🌍", pts:1},
-    {key:"continent",label:"CONTINENT",icon:"🗺️", pts:1},
-    {key:"stade",    label:"STADE",    icon:"🏟️", pts:1},
-    {key:"surnom",   label:"SURNOM",   icon:"🏷️", pts:2},
-    {key:"couleurs", label:"COULEURS", icon:"🎨", pts:1},
+    {key:"ville",    label:t("fieldVille"),    icon:"📍", pts:1},
+    {key:"pays",     label:t("fieldPays"),     icon:"🌍", pts:1},
+    {key:"continent",label:t("fieldContinent"),icon:"🗺️", pts:1},
+    {key:"stade",    label:t("fieldStade"),    icon:"🏟️", pts:1},
+    {key:"surnom",   label:t("fieldSurnom"),   icon:"🏷️", pts:2},
+    {key:"couleurs", label:t("fieldCouleurs"), icon:"🎨", pts:1},
   ];
   const legendeFields=selected?(selected.legendes||[]).map((leg,i)=>{
     const name=typeof leg==="object"?leg.name:leg;
-    return {key:"l"+i, label:"LÉGENDE "+(i+1), icon:"⭐", pts:1, value:name};
+    return {key:"l"+i, label:t("fieldLegende")+" "+(i+1), icon:"⭐", pts:1, value:name};
   }):[];
   const fields=[...baseFields,...legendeFields];
 
   return(
     <div className="family-page">
       <div style={{maxWidth:640,margin:"0 auto",padding:"24px 20px 60px",width:"100%"}}>
-        <div className="back-btn" onClick={onBack}>← Retour</div>
+        <div className="back-btn" onClick={onBack}>{t("back")}</div>
         <div className="family-wrap">
           <div className="family-hero">
             <div className="family-hero-icon">🏆</div>
@@ -316,7 +456,7 @@ function FamilyMode({onBack}) {
           </div>
           <div className="family-select-wrap">
             <select className="family-select" value={selected?.id||""} onChange={e=>pickClub(e.target.value)}>
-              <option value="">— CHOISIR UN CLUB ({clubs.length}) —</option>
+              <option value="">{`— ${t("chooseClub")} (${clubs.length}) —`}</option>
               {clubs.map(c=><option key={c.id} value={c.id}>{c.nom}</option>)}
             </select>
           </div>
@@ -341,7 +481,7 @@ function FamilyMode({onBack}) {
                 ))}
                 {legendeFields.length>0&&(
                   <div style={{padding:"8px 20px 4px",background:"rgba(232,168,0,0.06)",borderTop:"0.5px solid rgba(232,168,0,0.25)"}}>
-                    <span style={{fontSize:"9px",fontWeight:600,letterSpacing:"3px",color:"var(--gold2)",textTransform:"uppercase"}}>⭐ Joueurs légendaires — 1 pt chacun</span>
+                    <span style={{fontSize:"9px",fontWeight:600,letterSpacing:"3px",color:"var(--gold2)",textTransform:"uppercase"}}>{t("legendSection")}</span>
                   </div>
                 )}
                 {legendeFields.map((f,i)=>(
@@ -357,21 +497,21 @@ function FamilyMode({onBack}) {
                             onError={e=>{e.target.style.display="none";}}/>}
                           {f.value}
                         </span>
-                      :<button className="btn-reveal" onClick={()=>reveal(f.key)}>RÉVÉLER ▶</button>
+                      :<button className="btn-reveal" onClick={()=>reveal(f.key)}>{t("reveal")}</button>
                     }
                   </div>
                 ))}
               </div>
             </div>
           )}
-          {allRevealed&&<button className="btn-next" onClick={next}>⚽ Prochain club !</button>}
+          {allRevealed&&<button className="btn-next" onClick={next}>{t("nextClub")}</button>}
         </div>
       </div>
     </div>
   );
 }
 
-function InterMode({onBack}) {
+function InterMode({onBack,t}) {
   const [db,setDb]=React.useState(null);
   const [loading,setLoading]=React.useState(true);
   const [club,setClub]=React.useState(null);
@@ -394,6 +534,7 @@ function InterMode({onBack}) {
   const pickQ=q=>{setQuestion(q);setRevealed(false);};
   const launch=()=>{setScanning(true);setTimeout(()=>{setScanning(false);setRevealed(true);},900);};
   const reset=()=>{setClub(null);setQuestion(null);setRevealed(false);setSearch("");};
+  const resetBtn=<button className="reset-btn" onClick={reset}>{t("restart")}</button>;
   const getAns=(cid,qid)=>{if(!answers||!answers[cid])return null;const d=answers[cid];return d[String(qid)]!==undefined?d[String(qid)]:(d[qid]!==undefined?d[qid]:null);};
   const renderPlayer=(p,i,tagCls)=>{const name=p&&typeof p==="object"?(p.name||"?"):String(p);const photo=p&&typeof p==="object"?p.photo:null;return(<span key={i} className={"tag "+tagCls} style={{animationDelay:`${i*.04}s`}}>{photo&&<img src={photo} style={{width:"20px",height:"20px",borderRadius:"50%",objectFit:"cover"}} onError={e=>{e.target.style.display="none";}}/>}{name}</span>);};
   const ans=club&&question?getAns(club.id,question.id):null;
@@ -404,57 +545,57 @@ function InterMode({onBack}) {
   return(
     <div className="inter-page">
       <div className="page">
-        <div className="back-btn" onClick={onBack}>← Retour</div>
+        <div className="back-btn" onClick={onBack}>{t("back")}</div>
         <div className="stepbar">
-          {[["①","Club",1],["②","Question",2],["③","Verdict",3]].map(([n,label,val])=>(
+          {[["①",t("stepClub"),1],["②",t("stepQuestion"),2],["③",t("stepVerdict"),3]].map(([n,label,val])=>(
             <div key={val} className={"step-item"+(step===val?" on":"")+(step>val?" done":"")}>
               <div className="step-num">{step>val?"✓":n}</div><span>{label}</span>
             </div>
           ))}
-          {(club||question)&&<div className="step-reset"><button className="reset-btn" onClick={reset}>↺ Recommencer</button></div>}
+          {(club||question)&&<div className="step-reset">{resetBtn}</div>}
         </div>
         <div className="two-col">
           <div>
-            <div className="sh"><span className="sh-num">①</span><span className="sh-label">Choisir un club</span></div>
+            <div className="sh"><span className="sh-num">①</span><span className="sh-label">{t("chooseClubStep")}</span></div>
             <div className="picker-box">
               <div className="picker-inner">
                 <span className="search-ico">🔍</span>
-                <input ref={inputRef} className="search-inp" placeholder="Rechercher…" value={search} onChange={e=>{setSearch(e.target.value);setDropOpen(true);}} onFocus={()=>setDropOpen(true)}/>
+                <input ref={inputRef} className="search-inp" placeholder={t("search")} value={search} onChange={e=>{setSearch(e.target.value);setDropOpen(true);}} onFocus={()=>setDropOpen(true)}/>
                 {dropOpen&&(<div className="dropdown" ref={dropRef}>{Object.entries(grouped).map(([league,cls])=>(<div key={league}><div className="dg-label">{league}</div>{cls.map(c=>(<div key={c.id} className={"di"+(club?.id===c.id?" sel":"")} onMouseDown={()=>pickClub(c)}><span style={{fontSize:"15px"}}>{c.flag}</span><span>{c.name}</span></div>))}</div>))}{!Object.keys(grouped).length&&<div style={{padding:"14px",color:"var(--slate)",fontSize:"12px",textAlign:"center"}}>Aucun résultat</div>}</div>)}
                 {club&&(<div className="club-chip"><span className="chip-flag">{club.flag}</span><div className="chip-info"><div className="chip-name">{club.name}</div><div className="chip-league">{club.league}</div></div><span className="chip-x" onClick={()=>{setClub(null);setRevealed(false);}}>×</span></div>)}
               </div>
             </div>
           </div>
           <div>
-            <div className="sh"><span className="sh-num">③</span><span className="sh-label">Verdict VAR</span></div>
+            <div className="sh"><span className="sh-num">③</span><span className="sh-label">{t("verdictVar")}</span></div>
             <div className="status-box">
-              {!club&&<div className="status-idle">Sélectionnez un club puis une question.<br/><br/>Annoncez votre réponse — puis <strong style={{color:"var(--green)"}}>lancez la VAR</strong>.</div>}
-              {club&&!question&&(<div style={{animation:"fadeUp .25s ease both"}}><div style={{fontSize:"9px",fontWeight:700,letterSpacing:"2px",textTransform:"uppercase",color:"var(--slate)",marginBottom:"4px"}}>Club sélectionné</div><div className="status-club-name">{club.flag} {club.name}</div><div style={{fontSize:"12px",color:"var(--green)",fontWeight:600,marginTop:"6px"}}>→ Choisissez une question</div></div>)}
-              {club&&question&&(<div style={{animation:"fadeUp .25s ease both"}}><div style={{fontSize:"9px",fontWeight:700,letterSpacing:"2px",textTransform:"uppercase",color:"var(--slate)",marginBottom:"3px"}}>Prêt</div><div className="status-club-name">{club.flag} {club.name}</div><div className="status-q-text">Q{question.id} — {question.short}</div>{!revealed&&!scanning&&<button className="btn-launch" onClick={launch}>▶ Lancer la VAR</button>}{scanning&&<button className="btn-launch" disabled>⏳ Analyse…</button>}{revealed&&(<div style={{display:"flex",gap:"8px",flexWrap:"wrap"}}><button className="btn-ghost" onClick={()=>setRevealed(false)}>↺ Masquer</button><button className="btn-ghost" onClick={()=>{setQuestion(null);setRevealed(false);}}>→ Nouvelle question</button></div>)}</div>)}
+              {!club&&<div className="status-idle">{t("varReadySub")}<br/><br/>{t("ready")} → <strong style={{color:"var(--green)"}}>{t("launchVar")}</strong></div>}
+              {club&&!question&&(<div style={{animation:"fadeUp .25s ease both"}}><div style={{fontSize:"9px",fontWeight:700,letterSpacing:"2px",textTransform:"uppercase",color:"var(--slate)",marginBottom:"4px"}}>{t("clubSelected")}</div><div className="status-club-name">{club.flag} {club.name}</div><div style={{fontSize:"12px",color:"var(--green)",fontWeight:600,marginTop:"6px"}}>{t("selectQuestion")}</div></div>)}
+              {club&&question&&(<div style={{animation:"fadeUp .25s ease both"}}><div style={{fontSize:"9px",fontWeight:700,letterSpacing:"2px",textTransform:"uppercase",color:"var(--slate)",marginBottom:"3px"}}>Prêt</div><div className="status-club-name">{club.flag} {club.name}</div><div className="status-q-text">Q{question.id} — {question.short}</div>{!revealed&&!scanning&&<button className="btn-launch" onClick={launch}>{t("launchVar")}</button>}{scanning&&<button className="btn-launch" disabled>{t("analyzing")}</button>}{revealed&&(<div style={{display:"flex",gap:"8px",flexWrap:"wrap"}}><button className="btn-ghost" onClick={()=>setRevealed(false)}>{t("hideAnswer")}</button><button className="btn-ghost" onClick={()=>{setQuestion(null);setRevealed(false);}}>{t("newQuestion")}</button></div>)}</div>)}
             </div>
           </div>
         </div>
         <div className="q-section">
-          <div className="sh"><span className="sh-num">②</span><span className="sh-label">Choisir une question</span></div>
+          <div className="sh"><span className="sh-num">②</span><span className="sh-label">{t("chooseQuestionStep")}</span></div>
           {CATS.map(cat=>{const meta=CAT_META[cat];const qs=QUESTIONS.filter(q=>q.cat===cat&&!q.hidden);return(<div key={cat} className="cat-block"><div className="cat-header"><span className={meta.badgeCls}>{meta.label}</span><span className="cat-count">{qs.length} questions</span></div><div className="q-grid">{qs.map(q=>(<div key={q.id} className={"q-card"+(question?.id===q.id?" on "+cat:"")} onClick={()=>pickQ(q)}><div className="q-num">Q{q.id}</div><div className="q-text">{q.short}</div></div>))}</div></div>);})}
         </div>
         {club&&question?(
           <div className="verdict-wrap" ref={verdictRef}>
-            <div className="sh"><span className="sh-num">③</span><span className="sh-label">Verdict VAR</span></div>
+            <div className="sh"><span className="sh-num">③</span><span className="sh-label">{t("verdictVar")}</span></div>
             <div className="verdict-card">
               <div className="verdict-head">
                 <div><div className="vh-club">{club.flag} {club.name}</div><div className="vh-q">{question.full}</div></div>
-                <div>{!revealed&&!scanning&&<button className="btn-launch" onClick={launch}>▶ Lancer la VAR</button>}{scanning&&<button className="btn-launch" disabled>⏳ Analyse…</button>}{revealed&&<button className="btn-ghost" onClick={()=>setRevealed(false)}>↺ Masquer</button>}</div>
+                <div>{!revealed&&!scanning&&<button className="btn-launch" onClick={launch}>{t("launchVar")}</button>}{scanning&&<button className="btn-launch" disabled>{t("analyzing")}</button>}{revealed&&<button className="btn-ghost" onClick={()=>setRevealed(false)}>{t("hideAnswer")}</button>}</div>
               </div>
               <div className="verdict-body">
                 {scanning&&<div className="scan-wrap"><div className="scan-bg"/><div className="scan-beam"/></div>}
-                {!revealed&&!scanning&&(<div className="locked"><div className="locked-icon">🔒</div><div className="locked-t">Annoncez votre réponse à voix haute</div><div className="locked-s">Puis cliquez sur "Lancer la VAR"</div></div>)}
+                {!revealed&&!scanning&&(<div className="locked"><div className="locked-icon">🔒</div><div className="locked-t">{t("announceTitle")}</div><div className="locked-s">{t("announceSub")}</div></div>)}
                 {revealed&&(<div style={{animation:"fadeUp .35s ease both"}}>{ans===null?<div className="no-data-msg">⚠️ Données non renseignées pour {club.name}</div>:!Array.isArray(ans)||ans.length===0?<div className="no-data-msg">Aucun joueur référencé.</div>:(<><div className="rev-intro"><div className="rev-intro-line"/><span className="rev-intro-text">Réponses de référence</span><span className="rev-count">{ans.length}</span></div><div className="tags">{ans.map((p,i)=>renderPlayer(p,i,tagCls))}</div></>)}</div>)}
               </div>
             </div>
           </div>
         ):(
-          <div className="empty"><div className="empty-badge">⚽</div><div className="empty-t">La VAR est prête</div><div className="empty-s">Sélectionnez un club et une question</div></div>
+          <div className="empty"><div className="empty-badge">⚽</div><div className="empty-t">{t("varReady")}</div><div className="empty-s">{t("varReadySub")}</div></div>
         )}
         <div className="footer">VAR CLUB · Duel VAR · {clubs.length} clubs</div>
       </div>
@@ -474,7 +615,7 @@ function PlayerCard({player,type}) {
   );
 }
 
-function ExpertMode({onBack}) {
+function ExpertMode({onBack,t}) {
   const [clubs,setClubs]=React.useState([]);
   const [loading,setLoading]=React.useState(true);
   const [club1,setClub1]=React.useState(null);
@@ -500,33 +641,33 @@ function ExpertMode({onBack}) {
   return(
     <div className="inter-page">
       <div className="page">
-        <div className="back-btn" onClick={onBack}>← Retour</div>
+        <div className="back-btn" onClick={onBack}>{t("back")}</div>
         {error&&<div style={{background:"#fce4ec",border:"1px solid rgba(231,76,60,.2)",borderRadius:"10px",padding:"12px 16px",marginBottom:"16px",fontSize:"12px",color:"var(--coral)"}}>⚠️ {error}</div>}
         <div className="expert-hero">
           <div className="expert-title">PRO <span>MERCATO</span></div>
-          <div className="expert-sub">Trouvez les joueurs en commun</div>
+          <div className="expert-sub">{t("findCommon")}</div>
           <div className="expert-rule"/>
         </div>
         {scanning&&(<div className="scan-overlay"><div className="scan-box"><div className="scan-beam-overlay" style={{top:0}}/><div className="scan-title">Analyse VAR</div><div className="scan-sub">Recherche des connexions…</div></div></div>)}
         <div className="selector-grid">
           <div>
-            <div className="picker-label">Club 1</div>
+            <div className="picker-label">{t("club1")}</div>
             <div className="picker-box" ref={ref1} style={{position:"relative",overflow:"visible",zIndex:drop1?200:10}}>
               <div className="picker-inner">
                 <span className="search-ico">🔍</span>
-                <input className="search-inp" placeholder="Rechercher…" value={search1} onChange={e=>{setSearch1(e.target.value);setDrop1(true);}} onFocus={()=>setDrop1(true)}/>
+                <input className="search-inp" placeholder={t("search")} value={search1} onChange={e=>{setSearch1(e.target.value);setDrop1(true);}} onFocus={()=>setDrop1(true)}/>
                 {drop1&&(<div className="dropdown">{Object.entries(filter(search1)).map(([league,cls])=>(<div key={league}><div className="dg-label">{league}</div>{cls.filter(c=>!club2||c.id!==club2.id).map(c=>(<div key={c.id} className={"di"+(club1?.id===c.id?" sel":"")} onMouseDown={()=>{setClub1(c);setSearch1("");setDrop1(false);setResults(null);}}><span>{c.flag}</span><span>{c.name}</span></div>))}</div>))}</div>)}
                 {club1&&(<div className="club-chip"><span className="chip-flag">{club1.flag}</span><div className="chip-info"><div className="chip-name">{club1.name}</div><div className="chip-league">{club1.league}</div></div><span className="chip-x" onClick={()=>{setClub1(null);setResults(null);}}>×</span></div>)}
               </div>
             </div>
           </div>
-          <div className="vs-badge"><div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"16px"}}><div className="vs-inner">VS</div>{!results?<button className="btn-launch-expert" onClick={launch} disabled={!club1||!club2||scanning}>{scanning?"⏳ Analyse…":"▶ Lancer la VAR"}</button>:<button className="btn-launch-expert" style={{background:"rgba(0,0,0,.08)",color:"var(--slate)",boxShadow:"none"}} onClick={()=>setResults(null)}>↺ Nouvelle recherche</button>}</div></div>
+          <div className="vs-badge"><div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"16px"}}><div className="vs-inner">VS</div>{!results?<button className="btn-launch-expert" onClick={launch} disabled={!club1||!club2||scanning}>{scanning?t("analyzing"):t("launchVar")}</button>:<button className="btn-launch-expert" style={{background:"rgba(0,0,0,.08)",color:"var(--slate)",boxShadow:"none"}} onClick={()=>setResults(null)}>{t("newSearch")}</button>}</div></div>
           <div>
-            <div className="picker-label">Club 2</div>
+            <div className="picker-label">{t("club2")}</div>
             <div className="picker-box" ref={ref2} style={{position:"relative",overflow:"visible",zIndex:drop2?200:10}}>
               <div className="picker-inner">
                 <span className="search-ico">🔍</span>
-                <input className="search-inp" placeholder="Rechercher…" value={search2} onChange={e=>{setSearch2(e.target.value);setDrop2(true);}} onFocus={()=>setDrop2(true)}/>
+                <input className="search-inp" placeholder={t("search")} value={search2} onChange={e=>{setSearch2(e.target.value);setDrop2(true);}} onFocus={()=>setDrop2(true)}/>
                 {drop2&&(<div className="dropdown">{Object.entries(filter(search2)).map(([league,cls])=>(<div key={league}><div className="dg-label">{league}</div>{cls.filter(c=>!club1||c.id!==club1.id).map(c=>(<div key={c.id} className={"di"+(club2?.id===c.id?" sel":"")} onMouseDown={()=>{setClub2(c);setSearch2("");setDrop2(false);setResults(null);}}><span>{c.flag}</span><span>{c.name}</span></div>))}</div>))}</div>)}
                 {club2&&(<div className="club-chip"><span className="chip-flag">{club2.flag}</span><div className="chip-info"><div className="chip-name">{club2.name}</div><div className="chip-league">{club2.league}</div></div><span className="chip-x" onClick={()=>{setClub2(null);setResults(null);}}>×</span></div>)}
               </div>
@@ -545,7 +686,7 @@ function ExpertMode({onBack}) {
             <div className="score-club"><span>{club2.flag}</span>{club2.name}</div>
           </div>
           {totalDirect===0&&totalIndirect===0
-            ?<div className="empty"><div className="empty-badge">🔍</div><div className="empty-t">Aucune connexion</div><div className="empty-s">Aucun joueur commun trouvé</div></div>
+            ?<div className="empty"><div className="empty-badge">🔍</div><div className="empty-t">{t("noConnection")}</div><div className="empty-s">{t("noConnectionSub")}</div></div>
             :<div className="results-section">
               {totalDirect>0&&(<><div className="section-header"><span className="section-badge badge-direct">Transferts directs</span><span className="section-count direct">{totalDirect}</span><span className="section-desc">2 points chacun</span></div><div className="players-grid">{results.direct.map((p,i)=><PlayerCard key={i} player={p} type="direct"/>)}</div></>)}
               {totalIndirect>0&&(<><div className="section-header"><span className="section-badge badge-indirect">Passages communs</span><span className="section-count indirect">{totalIndirect}</span><span className="section-desc">1 point chacun</span></div><div className="players-grid">{results.indirect.map((p,i)=><PlayerCard key={i} player={p} type="indirect"/>)}</div></>)}
@@ -568,20 +709,20 @@ function Home({onSelect}) {
       <div className="mode-cards">
         <div className="mode-card family" onClick={()=>onSelect("family")}>
           <div className="mode-icon-wrap">🌟</div>
-          <div className="mode-title">L'Identité</div>
-          <div className="mode-desc">Révèle les infos de ton club préféré. Parfait pour jouer en famille !</div>
-          <span className="mode-badge badge-family">FACILE</span>
+          <div className="mode-title">{t("modeFamily")}</div>
+          <div className="mode-desc">{t("modeDescFamily")}</div>
+          <span className="mode-badge badge-family">{t("badgeFamily")}</span>
         </div>
         <div className="mode-card inter" onClick={()=>onSelect("inter")}>
           <div className="mode-icon-wrap">🛡️</div>
-          <div className="mode-title">Duel VAR</div>
+          <div className="mode-title">{t("modeDuel")}</div>
           <div className="mode-desc">Sélectionne un club et une question. La VAR valide tes réponses.</div>
           <span className="mode-badge badge-inter">INTERMÉDIAIRE</span>
         </div>
         <div className="mode-card expert" onClick={()=>onSelect("expert")}>
           <div className="mode-icon-wrap">🔥</div>
           <div className="mode-title" style={{color:"#e74c3c"}}>PRO <span style={{color:"#ffffff"}}>MERCATO</span></div>
-          <div className="mode-desc">Trouve tous les joueurs ayant porté deux maillots. Pour les experts !</div>
+          <div className="mode-desc">{t("modeDescExpert")}</div>
           <span className="mode-badge badge-expert">EXPERT</span>
         </div>
       </div>
@@ -591,7 +732,9 @@ function Home({onSelect}) {
 
 function App() {
   const [mode,setMode]=React.useState(null);
-  const MODE_LABELS={"family":"L'Identité","inter":"Duel VAR","expert":"Pro Mercato"};
+  const [lang,setLang]=React.useState('fr');
+  const t=(key)=>TRANSLATIONS[lang][key]||TRANSLATIONS['fr'][key]||key;
+  const MODE_LABELS={"family":t("modeFamily"),"inter":t("modeDuel"),"expert":t("modeExpert")};
   return(
     <div>
       <div className="topbar">
@@ -602,9 +745,9 @@ function App() {
         <div className="live-pill"><div className="live-dot"/>LIVE</div>
       </div>
       {!mode&&<Home onSelect={setMode}/>}
-      {mode==="family"&&<FamilyMode onBack={()=>setMode(null)}/>}
-      {mode==="inter"&&<InterMode onBack={()=>setMode(null)}/>}
-      {mode==="expert"&&<ExpertMode onBack={()=>setMode(null)}/>}
+      {mode==="family"&&<FamilyMode onBack={()=>setMode(null)} t={t}/>}
+      {mode==="inter"&&<InterMode onBack={()=>setMode(null)} t={t}/>}
+      {mode==="expert"&&<ExpertMode onBack={()=>setMode(null)} t={t}/>}
     </div>
   );
 }
