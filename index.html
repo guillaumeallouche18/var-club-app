@@ -111,7 +111,7 @@ html,body{background:var(--bg);color:var(--dark);font-family:"DM Sans",sans-seri
 .search-inp{width:100%;background:#eaf5ea;border:1px solid rgba(240,180,41,0.2);border-radius:0;padding:12px 14px 12px 34px;font-family:"DM Sans",sans-serif;font-size:13px;color:var(--white);outline:none;transition:border-color .2s;}
 .search-inp:focus{border-color:var(--gold);background:rgba(240,180,41,0.04);}
 .search-inp::placeholder{color:var(--slate);}
-.dropdown{position:absolute;top:calc(100% + 2px);left:0;width:100%;background:#f5fff5;border:1px solid rgba(28,58,34,0.12);border-radius:0;max-height:200px;overflow-y:auto;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,.1);}
+.dropdown{position:absolute;top:calc(100% + 2px);left:0;width:100%;background:#f5fff5;border:1px solid rgba(28,58,34,0.12);border-radius:0;max-height:180px;overflow-y:auto;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,.15);}
 .dropdown::-webkit-scrollbar{width:4px;}
 .dropdown::-webkit-scrollbar-thumb{background:rgba(45,122,45,.2);border-radius:4px;}
 .dg-label{padding:8px 14px 4px;font-family:"DM Sans",sans-serif;font-size:9px;font-weight:500;letter-spacing:4px;color:#8ab88a;text-transform:uppercase;border-bottom:1px solid rgba(28,58,34,0.08);}
@@ -199,8 +199,8 @@ html,body{background:var(--bg);color:var(--dark);font-family:"DM Sans",sans-seri
 .expert-sub{font-family:"DM Sans",sans-serif;font-size:14px;font-weight:600;letter-spacing:3px;color:var(--slate);text-transform:uppercase;}
 .expert-rule{width:48px;height:2px;background:linear-gradient(90deg,var(--green),var(--coral));border-radius:2px;margin:10px auto 0;}
 .selector-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:start;margin-bottom:26px;animation:fadeUp .5s ease .1s both;overflow:visible;}
-@media(max-width:660px){.selector-grid{grid-template-columns:1fr;}}
-.vs-badge{display:flex;align-items:center;justify-content:center;padding-top:42px;}
+@media(max-width:660px){.selector-grid{grid-template-columns:1fr;}.selector-grid>div:first-child{order:1;}.vs-badge{order:3;padding-top:0;}.selector-grid>div:last-child{order:2;}}
+.vs-badge{display:flex;align-items:center;justify-content:center;padding-top:42px;}@media(max-width:660px){.vs-badge{padding-top:8px;padding-bottom:4px;flex-direction:row;gap:12px;}}
 .vs-inner{font-family:"Bebas Neue",cursive;font-size:36px;letter-spacing:3px;color:var(--green);}
 .picker-label{font-family:"DM Sans",sans-serif;font-size:10px;font-weight:800;letter-spacing:3px;color:var(--slate);text-transform:uppercase;margin-bottom:7px;}
 .launch-wrap{display:flex;justify-content:center;margin-bottom:28px;animation:fadeUp .5s ease .15s both;position:relative;z-index:0;}
@@ -511,7 +511,7 @@ function ExpertMode({onBack}) {
         <div className="selector-grid">
           <div>
             <div className="picker-label">Club 1</div>
-            <div className="picker-box" ref={ref1} style={{position:"relative",overflow:"visible"}}>
+            <div className="picker-box" ref={ref1} style={{position:"relative",overflow:"visible",zIndex:drop1?200:10}}>
               <div className="picker-inner">
                 <span className="search-ico">🔍</span>
                 <input className="search-inp" placeholder="Rechercher…" value={search1} onChange={e=>{setSearch1(e.target.value);setDrop1(true);}} onFocus={()=>setDrop1(true)}/>
@@ -523,7 +523,7 @@ function ExpertMode({onBack}) {
           <div className="vs-badge"><div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"16px"}}><div className="vs-inner">VS</div>{!results?<button className="btn-launch-expert" onClick={launch} disabled={!club1||!club2||scanning}>{scanning?"⏳ Analyse…":"▶ Lancer la VAR"}</button>:<button className="btn-launch-expert" style={{background:"rgba(0,0,0,.08)",color:"var(--slate)",boxShadow:"none"}} onClick={()=>setResults(null)}>↺ Nouvelle recherche</button>}</div></div>
           <div>
             <div className="picker-label">Club 2</div>
-            <div className="picker-box" ref={ref2} style={{position:"relative",overflow:"visible"}}>
+            <div className="picker-box" ref={ref2} style={{position:"relative",overflow:"visible",zIndex:drop2?200:10}}>
               <div className="picker-inner">
                 <span className="search-ico">🔍</span>
                 <input className="search-inp" placeholder="Rechercher…" value={search2} onChange={e=>{setSearch2(e.target.value);setDrop2(true);}} onFocus={()=>setDrop2(true)}/>
