@@ -318,6 +318,20 @@ const TRANSLATIONS = {
     q14s:"Transfert >50M€",  q14f:"Citez des joueurs achetés ou vendus pour plus de 50M€.",
     announceTitle: "Annoncez votre réponse à voix haute",
     announceSub: 'Puis cliquez sur "Lancer la VAR"',
+    homeSubtitle: "Choisissez votre mode de jeu",
+    refAnswers: "Réponses de référence",
+    noData: "Aucun joueur référencé.",
+    noDataFor: "Données non renseignées pour",
+    directsPts: "Directs · 2 pts",
+    passagesPts: "Passages · 1 pt",
+    total: "Total",
+    questionCount: "questions",
+    noResult: "Aucun résultat",
+    footer: "clubs",
+    badgeDuel2: "INTERMÉDIAIRE",
+    chooseTwoClubs: "Choisissez deux clubs",
+    chooseTwoClubsSub: "Sélectionnez deux clubs et lancez la VAR",
+    footerExpert: "clubs",
   },
   en: {
     back: "← Back",
@@ -386,6 +400,20 @@ const TRANSLATIONS = {
     q14s:"Transfer >€50M",  q14f:"Name players bought or sold for more than €50M.",
     announceTitle: "Announce your answer out loud",
     announceSub: 'Then click "Launch VAR"',
+    homeSubtitle: "Choose your game mode",
+    refAnswers: "Reference answers",
+    noData: "No players on record.",
+    noDataFor: "No data available for",
+    directsPts: "Direct · 2 pts",
+    passagesPts: "Passages · 1 pt",
+    total: "Total",
+    questionCount: "questions",
+    noResult: "No results",
+    footer: "clubs",
+    badgeDuel2: "INTERMEDIATE",
+    chooseTwoClubs: "Choose two clubs",
+    chooseTwoClubsSub: "Select two clubs and launch VAR",
+    footerExpert: "clubs",
   }
 };
 
@@ -551,7 +579,7 @@ function InterMode({onBack,t}) {
               <div className="picker-inner">
                 <span className="search-ico">🔍</span>
                 <input ref={inputRef} className="search-inp" placeholder={t("search")} value={search} onChange={e=>{setSearch(e.target.value);setDropOpen(true);}} onFocus={()=>setDropOpen(true)}/>
-                {dropOpen&&(<div className="dropdown" ref={dropRef}>{Object.entries(grouped).map(([league,cls])=>(<div key={league}><div className="dg-label">{league}</div>{cls.map(c=>(<div key={c.id} className={"di"+(club?.id===c.id?" sel":"")} onMouseDown={()=>pickClub(c)}><span style={{fontSize:"15px"}}>{c.flag}</span><span>{c.name}</span></div>))}</div>))}{!Object.keys(grouped).length&&<div style={{padding:"14px",color:"var(--slate)",fontSize:"12px",textAlign:"center"}}>Aucun résultat</div>}</div>)}
+                {dropOpen&&(<div className="dropdown" ref={dropRef}>{Object.entries(grouped).map(([league,cls])=>(<div key={league}><div className="dg-label">{league}</div>{cls.map(c=>(<div key={c.id} className={"di"+(club?.id===c.id?" sel":"")} onMouseDown={()=>pickClub(c)}><span style={{fontSize:"15px"}}>{c.flag}</span><span>{c.name}</span></div>))}</div>))}{!Object.keys(grouped).length&&<div style={{padding:"14px",color:"var(--slate)",fontSize:"12px",textAlign:"center"}}>{t("noResult")}</div>}</div>)}
                 {club&&(<div className="club-chip"><span className="chip-flag">{club.flag}</span><div className="chip-info"><div className="chip-name">{club.name}</div><div className="chip-league">{club.league}</div></div><span className="chip-x" onClick={()=>{setClub(null);setRevealed(false);}}>×</span></div>)}
               </div>
             </div>
@@ -567,7 +595,7 @@ function InterMode({onBack,t}) {
         </div>
         <div className="q-section">
           <div className="sh"><span className="sh-num">②</span><span className="sh-label">{t("chooseQuestionStep")}</span></div>
-          {CATS.map(cat=>{const meta=catMeta[cat];const qs=QUESTIONS.filter(q=>q.cat===cat&&!q.hidden);return(<div key={cat} className="cat-block"><div className="cat-header"><span className={meta.badgeCls}>{meta.label}</span><span className="cat-count">{qs.length} questions</span></div><div className="q-grid">{qs.map(q=>(<div key={q.id} className={"q-card"+(question?.id===q.id?" on "+cat:"")} onClick={()=>pickQ(q)}><div className="q-num">Q{q.id}</div><div className="q-text">{q.short}</div></div>))}</div></div>);})}
+          {CATS.map(cat=>{const meta=catMeta[cat];const qs=QUESTIONS.filter(q=>q.cat===cat&&!q.hidden);return(<div key={cat} className="cat-block"><div className="cat-header"><span className={meta.badgeCls}>{meta.label}</span><span className="cat-count">{qs.length} {t("questionCount")}</span></div><div className="q-grid">{qs.map(q=>(<div key={q.id} className={"q-card"+(question?.id===q.id?" on "+cat:"")} onClick={()=>pickQ(q)}><div className="q-num">Q{q.id}</div><div className="q-text">{q.short}</div></div>))}</div></div>);})}
         </div>
         {club&&question?(
           <div className="verdict-wrap" ref={verdictRef}>
@@ -580,27 +608,27 @@ function InterMode({onBack,t}) {
               <div className="verdict-body">
                 {scanning&&<div className="scan-wrap"><div className="scan-bg"/><div className="scan-beam"/></div>}
                 {!revealed&&!scanning&&(<div className="locked"><div className="locked-icon">🔒</div><div className="locked-t">{t("announceTitle")}</div><div className="locked-s">{t("announceSub")}</div></div>)}
-                {revealed&&(<div style={{animation:"fadeUp .35s ease both"}}>{ans===null?<div className="no-data-msg">⚠️ Données non renseignées pour {club.name}</div>:!Array.isArray(ans)||ans.length===0?<div className="no-data-msg">Aucun joueur référencé.</div>:(<><div className="rev-intro"><div className="rev-intro-line"/><span className="rev-intro-text">Réponses de référence</span><span className="rev-count">{ans.length}</span></div><div className="tags">{ans.map((p,i)=>renderPlayer(p,i,tagCls))}</div></>)}</div>)}
+                {revealed&&(<div style={{animation:"fadeUp .35s ease both"}}>{ans===null?<div className="no-data-msg">⚠️ {t("noDataFor")} {club.name}</div>:!Array.isArray(ans)||ans.length===0?<div className="no-data-msg">{t("noData")}</div>:(<><div className="rev-intro"><div className="rev-intro-line"/><span className="rev-intro-text">{t("refAnswers")}</span><span className="rev-count">{ans.length}</span></div><div className="tags">{ans.map((p,i)=>renderPlayer(p,i,tagCls))}</div></>)}</div>)}
               </div>
             </div>
           </div>
         ):(
           <div className="empty"><div className="empty-badge">⚽</div><div className="empty-t">{t("varReady")}</div><div className="empty-s">{t("varReadySub")}</div></div>
         )}
-        <div className="footer">VAR CLUB · Duel VAR · {clubs.length} clubs</div>
+        <div className="footer">VAR CLUB · {t("modeDuel")} · {clubs.length} {t("footer")}</div>
       </div>
     </div>
   );
 }
 
-function PlayerCard({player,type}) {
+function PlayerCard({player,type,pts2,pts1}) {
   const [imgErr,setImgErr]=React.useState(false);
   return(
     <div className={"player-card "+type} style={{animationDelay:`${Math.random()*.25}s`}}>
       {player.photo_url&&!imgErr?<img className="player-photo" src={player.photo_url} alt={player.nom} onError={()=>setImgErr(true)}/>:<div className="player-photo-placeholder">⚽</div>}
       <div className="player-name">{player.nom}</div>
       {player.annee&&parseInt(player.annee)>1950&&parseInt(player.annee)<2030&&<div className="player-year">{player.annee}</div>}
-      <div className={"player-pts "+type}>{type==="direct"?"2 pts":"1 pt"}</div>
+      <div className={"player-pts "+type}>{type==="direct"?(pts2||"2 pts"):(pts1||"1 pt")}</div>
     </div>
   );
 }
@@ -669,22 +697,22 @@ function ExpertMode({onBack,t}) {
           <div className="score-banner">
             <div className="score-club"><span>{club1.flag}</span>{club1.name}</div>
             <div className="score-stats">
-              <div className="score-stat"><div className="score-stat-num direct">{totalDirect}</div><div className="score-stat-label">Directs · 2 pts</div></div>
-              <div className="score-stat"><div className="score-stat-num indirect">{totalIndirect}</div><div className="score-stat-label">Passages · 1 pt</div></div>
-              <div className="score-stat"><div className="score-stat-num total">{totalPoints}</div><div className="score-stat-label">Total</div></div>
+              <div className="score-stat"><div className="score-stat-num direct">{totalDirect}</div><div className="score-stat-label">{t("directsPts")}</div></div>
+              <div className="score-stat"><div className="score-stat-num indirect">{totalIndirect}</div><div className="score-stat-label">{t("passagesPts")}</div></div>
+              <div className="score-stat"><div className="score-stat-num total">{totalPoints}</div><div className="score-stat-label">{t("total")}</div></div>
             </div>
             <div className="score-club"><span>{club2.flag}</span>{club2.name}</div>
           </div>
           {totalDirect===0&&totalIndirect===0
             ?<div className="empty"><div className="empty-badge">🔍</div><div className="empty-t">{t("noConnection")}</div><div className="empty-s">{t("noConnectionSub")}</div></div>
             :<div className="results-section">
-              {totalDirect>0&&(<><div className="section-header"><span className="section-badge badge-direct">Transferts directs</span><span className="section-count direct">{totalDirect}</span><span className="section-desc">2 points chacun</span></div><div className="players-grid">{results.direct.map((p,i)=><PlayerCard key={i} player={p} type="direct"/>)}</div></>)}
-              {totalIndirect>0&&(<><div className="section-header"><span className="section-badge badge-indirect">Passages communs</span><span className="section-count indirect">{totalIndirect}</span><span className="section-desc">1 point chacun</span></div><div className="players-grid">{results.indirect.map((p,i)=><PlayerCard key={i} player={p} type="indirect"/>)}</div></>)}
+              {totalDirect>0&&(<><div className="section-header"><span className="section-badge badge-direct">Transferts directs</span><span className="section-count direct">{totalDirect}</span><span className="section-desc">2 points chacun</span></div><div className="players-grid">{results.direct.map((p,i)=><PlayerCard key={i} player={p} type="direct" pts2={t("directsPts").split("·")[0].trim()} pts1={t("passagesPts").split("·")[0].trim()}/>)}</div></>)}
+              {totalIndirect>0&&(<><div className="section-header"><span className="section-badge badge-indirect">Passages communs</span><span className="section-count indirect">{totalIndirect}</span><span className="section-desc">1 point chacun</span></div><div className="players-grid">{results.indirect.map((p,i)=><PlayerCard key={i} player={p} type="indirect" pts2={t("directsPts").split("·")[0].trim()} pts1={t("passagesPts").split("·")[0].trim()}/>)}</div></>)}
             </div>
           }
         </>)}
-        {!results&&!scanning&&(<div className="empty"><div className="empty-badge">⚽</div><div className="empty-t">Choisissez deux clubs</div><div className="empty-s">Sélectionnez deux clubs et lancez la VAR</div></div>)}
-        <div className="footer">VAR CLUB · Pro Mercato · {clubs.length} clubs</div>
+        {!results&&!scanning&&(<div className="empty"><div className="empty-badge">⚽</div><div className="empty-t">{t("chooseTwoClubs")}</div><div className="empty-s">{t("chooseTwoClubsSub")}</div></div>)}
+        <div className="footer">VAR CLUB · {t("modeExpert")} · {clubs.length} {t("footerExpert")}</div>
       </div>
     </div>
   );
@@ -695,7 +723,7 @@ function Home({onSelect,t}) {
     <div className="home">
       <div className="home-mascot">⚽</div>
       <div className="home-title">VAR<br/><span>CLUB</span></div>
-      <div className="home-sub">Choisissez votre mode de jeu</div>
+      <div className="home-sub">{t("homeSubtitle")}</div>
       <div className="mode-cards">
         <div className="mode-card family" onClick={()=>onSelect("family")}>
           <div className="mode-icon-wrap">🌟</div>
@@ -707,13 +735,13 @@ function Home({onSelect,t}) {
           <div className="mode-icon-wrap">🛡️</div>
           <div className="mode-title">{t("modeDuel")}</div>
           <div className="mode-desc">Sélectionne un club et une question. La VAR valide tes réponses.</div>
-          <span className="mode-badge badge-inter">INTERMÉDIAIRE</span>
+          <span className="mode-badge badge-inter">{t("badgeDuel2")}</span>
         </div>
         <div className="mode-card expert" onClick={()=>onSelect("expert")}>
           <div className="mode-icon-wrap">🔥</div>
           <div className="mode-title" style={{color:"#e74c3c"}}>PRO <span style={{color:"#ffffff"}}>MERCATO</span></div>
           <div className="mode-desc">{t("modeDescExpert")}</div>
-          <span className="mode-badge badge-expert">EXPERT</span>
+          <span className="mode-badge badge-expert">{t("badgeExpert")}</span>
         </div>
       </div>
     </div>
