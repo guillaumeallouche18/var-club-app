@@ -390,30 +390,14 @@ const TRANSLATIONS = {
 };
 
 
-const QUESTIONS=[
-  {id:1,cat:"nat",get short(){return t("q1s")},get full(){return t("q1f")}},
-  {id:2,cat:"nat",get short(){return t("q2s")},get full(){return t("q2f")}},
-  {id:3,cat:"nat",get short(){return t("q3s")},get full(){return t("q3f")}},
-  {id:4,cat:"nat",get short(){return t("q4s")},get full(){return t("q4f")}},
-  {id:5,cat:"nat",get short(){return t("q5s")},get full(){return t("q5f")}},
-  {id:6,cat:"nat",get short(){return t("q6s")},get full(){return t("q6f")}},
-  {id:7,cat:"nat",get short(){return t("q7s")},get full(){return t("q7f")}},
-  {id:8,cat:"nat",get short(){return t("q8s")},get full(){return t("q8f")}},
-  {id:9,cat:"pro",get short(){return t("q9s")},get full(){return t("q9f")}},
-  {id:10,cat:"pro",get short(){return t("q10s")},get full(){return t("q10f")}},
-  {id:11,cat:"pro",get short(){return t("q11s")},get full(){return t("q11f")}},
-
-  {id:12,cat:"sta",get short(){return t("q12s")},get full(){return t("q12f")}},
-  {id:13,cat:"sta",get short(){return t("q13s")},get full(){return t("q13f")}},
-  {id:14,cat:"sta",get short(){return t("q14s")},get full(){return t("q14f")}},
-];
-const CAT_META={
-  nat:{get label(){return t("catNat")},badgeCls:"cat-badge nat",tagCls:"tag-green"},
-  pro:{get label(){return t("catPro")},badgeCls:"cat-badge pro",tagCls:"tag-lime2"},
-  sta:{get label(){return t("catSta")},badgeCls:"cat-badge sta",tagCls:"tag-coral"},
-};
 const CATS=["nat","pro","sta"];
-
+const QUESTIONS_BASE=[
+  {id:1,cat:"nat",qk:"q1"},{id:2,cat:"nat",qk:"q2"},{id:3,cat:"nat",qk:"q3"},
+  {id:4,cat:"nat",qk:"q4"},{id:5,cat:"nat",qk:"q5"},{id:6,cat:"nat",qk:"q6"},
+  {id:7,cat:"nat",qk:"q7"},{id:8,cat:"nat",qk:"q8"},{id:9,cat:"pro",qk:"q9"},
+  {id:10,cat:"pro",qk:"q10"},{id:11,cat:"pro",qk:"q11"},
+  {id:12,cat:"sta",qk:"q12"},{id:13,cat:"sta",qk:"q13"},{id:14,cat:"sta",qk:"q14"},
+];
 
 function FamilyMode({onBack,t}) {
   const [clubs,setClubs]=React.useState([]);
@@ -512,6 +496,12 @@ function FamilyMode({onBack,t}) {
 }
 
 function InterMode({onBack,t}) {
+  const QUESTIONS=QUESTIONS_BASE.map(q=>({...q,short:t(q.qk+"s"),full:t(q.qk+"f")}));
+  const catMeta={
+    nat:{label:t("catNat"),badgeCls:"cat-badge nat",tagCls:"tag-green"},
+    pro:{label:t("catPro"),badgeCls:"cat-badge pro",tagCls:"tag-lime2"},
+    sta:{label:t("catSta"),badgeCls:"cat-badge sta",tagCls:"tag-coral"},
+  };
   const [db,setDb]=React.useState(null);
   const [loading,setLoading]=React.useState(true);
   const [club,setClub]=React.useState(null);
@@ -540,7 +530,7 @@ function InterMode({onBack,t}) {
   const ans=club&&question?getAns(club.id,question.id):null;
   const step=!club?1:!question?2:3;
   const qCat=question?.cat||"nat";
-  const tagCls=CAT_META[qCat]?.tagCls||"tag-green";
+  const tagCls=catMeta[qCat]?.tagCls||"tag-green";
   if(loading)return<div className="page"><div className="back-btn" onClick={onBack}>← Retour</div><div className="loading"><div className="spinner"/><div className="loading-text">Chargement…</div></div></div>;
   return(
     <div className="inter-page">
@@ -577,7 +567,7 @@ function InterMode({onBack,t}) {
         </div>
         <div className="q-section">
           <div className="sh"><span className="sh-num">②</span><span className="sh-label">{t("chooseQuestionStep")}</span></div>
-          {CATS.map(cat=>{const meta=CAT_META[cat];const qs=QUESTIONS.filter(q=>q.cat===cat&&!q.hidden);return(<div key={cat} className="cat-block"><div className="cat-header"><span className={meta.badgeCls}>{meta.label}</span><span className="cat-count">{qs.length} questions</span></div><div className="q-grid">{qs.map(q=>(<div key={q.id} className={"q-card"+(question?.id===q.id?" on "+cat:"")} onClick={()=>pickQ(q)}><div className="q-num">Q{q.id}</div><div className="q-text">{q.short}</div></div>))}</div></div>);})}
+          {CATS.map(cat=>{const meta=catMeta[cat];const qs=QUESTIONS.filter(q=>q.cat===cat&&!q.hidden);return(<div key={cat} className="cat-block"><div className="cat-header"><span className={meta.badgeCls}>{meta.label}</span><span className="cat-count">{qs.length} questions</span></div><div className="q-grid">{qs.map(q=>(<div key={q.id} className={"q-card"+(question?.id===q.id?" on "+cat:"")} onClick={()=>pickQ(q)}><div className="q-num">Q{q.id}</div><div className="q-text">{q.short}</div></div>))}</div></div>);})}
         </div>
         {club&&question?(
           <div className="verdict-wrap" ref={verdictRef}>
@@ -700,7 +690,7 @@ function ExpertMode({onBack,t}) {
   );
 }
 
-function Home({onSelect}) {
+function Home({onSelect,t}) {
   return(
     <div className="home">
       <div className="home-mascot">⚽</div>
@@ -742,9 +732,9 @@ function App() {
           <span className="brand-name">VAR <span className="brand-accent">CLUB</span></span>
           {mode&&<><div className="brand-pipe"/><span className="mode-chip">{MODE_LABELS[mode]}</span></>}
         </div>
-        <div className="live-pill"><div className="live-dot"/>LIVE</div>
+        <div style={{display:"flex",alignItems:"center",gap:"8px"}}><button onClick={()=>setLang(l=>l==="fr"?"en":"fr")} style={{background:"transparent",border:"1px solid rgba(240,180,41,0.4)",borderRadius:"4px",padding:"3px 9px",fontSize:"10px",fontWeight:600,letterSpacing:"2px",cursor:"pointer",color:"var(--gold)",fontFamily:"'DM Sans',sans-serif"}}>{lang==="fr"?"EN":"FR"}</button><div className="live-pill"><div className="live-dot"/>LIVE</div></div>
       </div>
-      {!mode&&<Home onSelect={setMode}/>}
+      {!mode&&<Home onSelect={setMode} t={t}/>}
       {mode==="family"&&<FamilyMode onBack={()=>setMode(null)} t={t}/>}
       {mode==="inter"&&<InterMode onBack={()=>setMode(null)} t={t}/>}
       {mode==="expert"&&<ExpertMode onBack={()=>setMode(null)} t={t}/>}
