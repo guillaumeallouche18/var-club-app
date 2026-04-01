@@ -692,24 +692,39 @@ function InterMode({onBack,t}) {
   const [search,setSearch]=React.useState("");
   const [dropOpen,setDropOpen]=React.useState(false);
   const [dropRect,setDropRect]=React.useState(null);
-  const dropRef=React.useRef(null);
   const inputRef=React.useRef(null);
+  const dropRef=React.useRef(null);
   const verdictRef=React.useRef(null);
 
   const openDrop=()=>{
     if(inputRef.current){
       const r=inputRef.current.getBoundingClientRect();
-      setDropRect({top:r.bottom+2,left:r.left,width:r.width});
+      setDropRect({top:r.bottom+window.scrollY+2,left:r.left+window.scrollX,width:r.width});
     }
     setDropOpen(true);
   };
 
+  React.useEffect(()=>{
+    const onScroll=()=>{
+      if(dropOpen&&inputRef.current){
+        const r=inputRef.current.getBoundingClientRect();
+        setDropRect({top:r.bottom+window.scrollY+2,left:r.left+window.scrollX,width:r.width});
+      }
+    };
+    window.addEventListener('scroll',onScroll,true);
+    return()=>window.removeEventListener('scroll',onScroll,true);
+  },[dropOpen]);
+
   React.useEffect(()=>{fetch("./database.json").then(r=>r.json()).then(d=>{setDb(d);setLoading(false);}).catch(()=>setLoading(false));},[]);
   React.useEffect(()=>{
     const fn=e=>{
-      if(dropRef.current&&!dropRef.current.contains(e.target))setDropOpen(false);
+      if(
+        dropRef.current&&!dropRef.current.contains(e.target)&&
+        inputRef.current&&!inputRef.current.contains(e.target)
+      ) setDropOpen(false);
     };
-    document.addEventListener("mousedown",fn);return()=>document.removeEventListener("mousedown",fn);
+    document.addEventListener("mousedown",fn);
+    return()=>document.removeEventListener("mousedown",fn);
   },[]);
   React.useEffect(()=>{if(question&&verdictRef.current){setTimeout(()=>verdictRef.current.scrollIntoView({behavior:"smooth",block:"center"}),150);}},[question]);
 
@@ -760,8 +775,9 @@ function InterMode({onBack,t}) {
                        value={search}
                        onChange={e=>{setSearch(e.target.value);openDrop();}}
                        onFocus={openDrop}/>
-                {dropOpen&&dropRect&&(
-                  <div className="dropdown" style={{position:"fixed",top:dropRect.top,left:dropRect.left,width:dropRect.width,zIndex:9999}}>
+                {dropOpen&&dropRect&&ReactDOM.createPortal(
+                  <div className="dropdown" ref={dropRef}
+                       style={{position:"absolute",top:dropRect.top,left:dropRect.left,width:dropRect.width,zIndex:9999}}>
                     {Object.entries(grouped).map(([league,cls])=>(
                       <div key={league}>
                         <div className="dg-label">{league}</div>
@@ -775,7 +791,8 @@ function InterMode({onBack,t}) {
                       </div>
                     ))}
                     {!Object.keys(grouped).length&&<div style={{padding:"12px",color:"var(--muted)",fontSize:"12px",textAlign:"center"}}>{t("noResult")}</div>}
-                  </div>
+                  </div>,
+                  document.body
                 )}
                 {club&&(
                   <div className="club-chip">
