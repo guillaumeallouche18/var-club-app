@@ -80,7 +80,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 .mode-card.expert .mode-title{color:var(--coral);}
 .mode-desc{font-size:11px;font-weight:300;color:var(--muted);text-align:center;line-height:1.6;}
 .mode-badge{font-size:8px;font-weight:500;letter-spacing:3px;text-transform:uppercase;padding:3px 9px;border-radius:20px;}
-.badge-family{background:rgba(240,180,41,0.1);color:var(--gold);border:1px solid rgba(240,180,41,0.3);}
+.badge-family{background:rgba(247,253,244,0.08);color:var(--text);border:1px solid rgba(247,253,244,0.25);border-radius:20px;}
 .badge-inter{background:rgba(240,180,41,0.08);color:var(--muted);border:1px solid var(--border);}
 .badge-expert{background:rgba(231,76,60,0.1);color:var(--coral);border:1px solid rgba(231,76,60,0.3);}
 
@@ -373,7 +373,7 @@ function ClubLogo({id, nom, size=28, wrapCls="club-logo", imgSize}) {
 }
 
 /* ── CLUB PICKER (remplace le <select> natif) ── */
-function ClubPicker({clubs, selected, onSelect}) {
+function ClubPicker({clubs, selected, onSelect, t, lang}) {
   const [search, setSearch] = React.useState("");
   const [view, setView] = React.useState("grid"); // "grid" | "list"
 
@@ -411,8 +411,8 @@ function ClubPicker({clubs, selected, onSelect}) {
 
       {/* Toggle vue */}
       <div className="view-toggle">
-        <div className={"vtog"+(view==="grid"?" active":"")} onClick={()=>setView("grid")}>⊞ Grille</div>
-        <div className={"vtog"+(view==="list"?" active":"")} onClick={()=>setView("list")}>☰ Liste</div>
+        <div className={"vtog"+(view==="grid"?" active":"")} onClick={()=>setView("grid")}>{lang==="fr"?"Grille":"Grid"}</div>
+        <div className={"vtog"+(view==="list"?" active":"")} onClick={()=>setView("list")}>{lang==="fr"?"Liste":"List"}</div>
       </div>
 
       {/* Contenu scrollable */}
@@ -610,7 +610,7 @@ function FamilyMode({onBack,t,lang}) {
             <div className="picker-hero-sub">{clubs.length} {lang==="fr" ? "clubs disponibles" : "clubs available"}</div>
           </div>
 
-          <ClubPicker clubs={clubs} selected={selectedId} onSelect={handleSelect}/>
+          <ClubPicker clubs={clubs} selected={selectedId} onSelect={handleSelect} t={t} lang={lang}/>
 
           <button className="cta-btn" disabled={!selectedId} onClick={handlePlay}
                   style={{pointerEvents: selectedId?"auto":"none", marginTop:14}}>
