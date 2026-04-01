@@ -4,244 +4,318 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VAR CLUB</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bg:#1c3a22;--bg2:#162e1a;--bg3:#f5fff5;
-  --green:#1c3a22;--green2:#162e1a;--green3:#f5fff5;
-  --gold:#e8a800;--gold2:#f0b429;--gold3:#fde68a;
-  --white:#1c3a22;--white2:#4a6a4a;
-  --dark:#1c3a22;--slate:#4a6a4a;--coral:#e74c3c;
-  --text:#1c3a22;--text2:#4a6a4a;--r:8px;
-  --shadow:0 4px 20px rgba(45,122,45,.12);
-  --shadow2:0 8px 32px rgba(45,122,45,.18);
+  --bg:#0D1F0D;
+  --bg2:#162e1a;
+  --card:#1C3A22;
+  --border:#243828;
+  --gold:#F0B429;
+  --gold2:#F5C842;
+  --text:#F7FDF4;
+  --muted:#8AB88A;
+  --coral:#E74C3C;
+  --r:8px;
 }
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes scanDown{0%{top:0;opacity:1}100%{top:100%;opacity:0}}
-@keyframes tagIn{0%{opacity:0;transform:scale(.8) translateY(6px)}100%{opacity:1;transform:scale(1) translateY(0)}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes tagIn{0%{opacity:0;transform:scale(.85) translateY(5px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
-html,body{background:var(--bg);color:var(--dark);font-family:"DM Sans",sans-serif;min-height:100vh;}
+html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;min-height:100vh;}
 
-.topbar{background:#162e1a;border-bottom:2px solid var(--gold);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 3px 20px rgba(0,0,0,.4);}
-.brand{display:flex;align-items:center;gap:12px;cursor:pointer;}
-.brand-name{font-family:"Bebas Neue",cursive;font-size:34px;letter-spacing:4px;color:#fff;line-height:1;}
+/* ── TOPBAR ── */
+.topbar{background:var(--bg2);border-bottom:2px solid var(--gold);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;}
+.brand{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.brand-name{font-family:"Bebas Neue",cursive;font-size:28px;letter-spacing:4px;color:var(--text);line-height:1;}
 .brand-accent{color:var(--gold);}
-.brand-pipe{width:2px;height:28px;background:rgba(255,255,255,.4);border-radius:2px;}
-.mode-chip{font-family:"DM Sans",sans-serif;font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;padding:4px 12px;border-radius:0;background:rgba(240,180,41,0.1);color:var(--gold);border:1px solid rgba(240,180,41,0.3);}
-.live-pill{display:flex;align-items:center;gap:6px;background:var(--coral);padding:4px 12px;border-radius:20px;font-family:"DM Sans",sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;color:#fff;box-shadow:0 2px 10px rgba(231,76,60,.4);}
-.live-dot{width:6px;height:6px;background:var(--bg3);border-radius:50%;animation:blink 1.1s ease-in-out infinite;}
+.brand-pipe{width:1px;height:22px;background:var(--border);}
+.mode-chip{font-size:9px;font-weight:500;letter-spacing:3px;text-transform:uppercase;padding:3px 10px;background:rgba(240,180,41,0.08);color:var(--gold);border:1px solid rgba(240,180,41,0.25);}
+.live-pill{display:flex;align-items:center;gap:5px;background:var(--coral);padding:3px 10px;border-radius:20px;font-size:9px;font-weight:700;letter-spacing:2px;color:#fff;}
+.live-dot{width:5px;height:5px;background:#fff;border-radius:50%;animation:blink 1.1s ease-in-out infinite;}
+.lang-btn{background:transparent;border:1px solid rgba(240,180,41,0.35);padding:3px 8px;font-size:9px;font-weight:600;letter-spacing:2px;cursor:pointer;color:var(--gold);font-family:"DM Sans",sans-serif;}
 
-.home{min-height:calc(100vh - 60px);display:flex;flex-direction:column;align-items:center;padding:48px 20px 60px;background:linear-gradient(180deg,#e8f5e8 0%,#f0f7f0 100%);}
-.home-mascot{font-size:80px;animation:float 3s ease-in-out infinite;margin-bottom:4px;line-height:1;}
-.home-title{font-family:"Bebas Neue",cursive;font-size:clamp(56px,10vw,96px);letter-spacing:8px;text-align:center;line-height:.95;color:#ffffff;animation:fadeUp .5s ease .1s both;}
+/* ── HOME ── */
+.home{min-height:calc(100vh - 56px);display:flex;flex-direction:column;align-items:center;padding:48px 20px 60px;background:var(--bg);}
+.home-ball{font-size:64px;animation:float 3s ease-in-out infinite;margin-bottom:8px;line-height:1;}
+.home-title{font-family:"Bebas Neue",cursive;font-size:clamp(64px,12vw,104px);letter-spacing:8px;text-align:center;line-height:.9;color:var(--text);animation:fadeUp .5s ease .1s both;}
 .home-title span{color:var(--gold);}
-.home-sub{font-family:"DM Sans",sans-serif;font-size:11px;font-weight:400;letter-spacing:5px;color:#8ab88a;text-transform:uppercase;margin-top:8px;margin-bottom:44px;animation:fadeUp .5s ease .2s both;}
-.mode-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;width:100%;max-width:860px;animation:fadeUp .6s ease .3s both;}
-@media(max-width:680px){.mode-cards{grid-template-columns:1fr;max-width:360px;}}
-.mode-card{background:#f5fff5;border:2px solid rgba(232,168,0,0.6);border-radius:var(--r);padding:30px 20px;cursor:pointer;transition:all .25s;display:flex;flex-direction:column;align-items:center;gap:14px;}
-.mode-card:hover{transform:translateY(-4px);border-color:#e8a800;box-shadow:0 8px 28px rgba(232,168,0,0.25);}
-.mode-card.family{border-color:rgba(232,168,0,.3);}
+.home-sub{font-size:10px;font-weight:400;letter-spacing:5px;color:var(--muted);text-transform:uppercase;margin-top:10px;margin-bottom:48px;animation:fadeUp .5s ease .2s both;}
+
+.mode-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%;max-width:860px;animation:fadeUp .6s ease .3s both;}
+@media(max-width:680px){.mode-cards{grid-template-columns:1fr;max-width:420px;}}
+
+.mode-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px 18px 22px;cursor:pointer;transition:border-color .2s,transform .2s;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.mode-card:hover{transform:translateY(-3px);}
 .mode-card.family:hover{border-color:var(--gold);}
-.mode-card.inter{border-color:rgba(45,122,45,.2);}
 .mode-card.inter:hover{border-color:var(--gold);}
-.mode-card.expert{border-color:rgba(231,76,60,.2);}
-.mode-card.expert:hover{border-color:#e74c3c;}
-.mode-icon-wrap{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;}
-.mode-card.family .mode-icon-wrap{background:linear-gradient(135deg,#fff8e1,#fff3cd);}
-.mode-card.inter .mode-icon-wrap{background:linear-gradient(135deg,#e8f5e8,#c8e6c9);}
-.mode-card.expert .mode-icon-wrap{background:linear-gradient(135deg,#fce4ec,#ffcdd2);}
-.mode-title{font-family:"Bebas Neue",cursive;font-size:26px;letter-spacing:2px;text-align:center;}
-.mode-card.family .mode-title{color:#e8a800;}
-.mode-card.inter .mode-title{color:#1c3a22;}
-.mode-card.expert .mode-title{color:#e74c3c;}
-.mode-desc{font-family:"DM Sans",sans-serif;font-size:12px;font-weight:300;color:#4a6a4a;text-align:center;line-height:1.7;}
-.mode-badge{font-family:"DM Sans",sans-serif;font-size:9px;font-weight:500;letter-spacing:3px;text-transform:uppercase;padding:3px 10px;}
-.badge-family{background:rgba(240,180,41,0.1);color:var(--gold);border:1px solid rgba(240,180,41,0.3);border-radius:0;}
-.badge-inter{background:rgba(247,253,244,0.06);color:var(--white2);border:1px solid rgba(200,223,200,0.2);border-radius:0;}
-.badge-expert{background:rgba(231,76,60,0.1);color:#e74c3c;border:1px solid rgba(231,76,60,0.3);border-radius:0;}
+.mode-card.expert:hover{border-color:var(--coral);}
 
-.page{max-width:1080px;margin:0 auto;padding:28px 20px 80px;}
-.back-btn{display:inline-flex;align-items:center;gap:8px;font-family:"DM Sans",sans-serif;font-size:11px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:#4a6a4a;cursor:pointer;margin-bottom:24px;transition:color .15s;animation:fadeIn .3s ease both;}
-.back-btn:hover{color:#1c3a22;}
+/* mobile: mode cards as rows */
+@media(max-width:680px){
+  .mode-card{flex-direction:row;align-items:center;padding:16px 18px;gap:14px;}
+  .mode-card .mode-body{flex:1;text-align:left;}
+  .mode-card .mode-desc{text-align:left;}
+}
+
+.mode-icon-wrap{width:52px;height:52px;border-radius:10px;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.mode-icon-wrap svg{width:22px;height:22px;}
+.mode-card.expert .mode-icon-wrap{border-color:var(--coral);}
+
+.mode-body{display:flex;flex-direction:column;align-items:center;gap:8px;}
+@media(max-width:680px){.mode-body{align-items:flex-start;}}
+
+.mode-title{font-family:"Bebas Neue",cursive;font-size:22px;letter-spacing:2px;text-align:center;}
+.mode-card.family .mode-title,.mode-card.inter .mode-title{color:var(--gold);}
+.mode-card.expert .mode-title{color:var(--coral);}
+.mode-desc{font-size:11px;font-weight:300;color:var(--muted);text-align:center;line-height:1.6;}
+.mode-badge{font-size:8px;font-weight:500;letter-spacing:3px;text-transform:uppercase;padding:3px 9px;border-radius:20px;}
+.badge-family{background:rgba(240,180,41,0.1);color:var(--gold);border:1px solid rgba(240,180,41,0.3);}
+.badge-inter{background:rgba(240,180,41,0.08);color:var(--muted);border:1px solid var(--border);}
+.badge-expert{background:rgba(231,76,60,0.1);color:var(--coral);border:1px solid rgba(231,76,60,0.3);}
+
+/* ── SHARED PAGE ── */
+.page{max-width:1080px;margin:0 auto;padding:24px 16px 80px;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(--muted);cursor:pointer;margin-bottom:20px;transition:color .15s;animation:fadeIn .3s ease both;}
+.back-btn:hover{color:var(--text);}
 .loading{display:flex;flex-direction:column;align-items:center;justify-content:center;height:50vh;gap:16px;}
-.spinner{width:36px;height:36px;border:2px solid rgba(240,180,41,0.15);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;}
-.loading-text{font-family:"DM Sans",sans-serif;font-size:10px;font-weight:400;letter-spacing:4px;text-transform:uppercase;color:var(--slate);}
+.spinner{width:32px;height:32px;border:2px solid rgba(240,180,41,0.15);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;}
+.loading-text{font-size:9px;font-weight:400;letter-spacing:4px;text-transform:uppercase;color:var(--muted);}
 
-.family-page{background:linear-gradient(180deg,#d4eeda 0%,#a8d8b8 60%,#5aa870 100%);min-height:calc(100vh - 60px);padding:24px 20px 0;position:relative;overflow:hidden;}
+/* ── CLUB PICKER (remplace le <select> natif) ── */
+.picker-page{background:var(--bg);min-height:calc(100vh - 56px);}
+.picker-wrap{max-width:520px;margin:0 auto;padding:20px 16px 40px;}
+.picker-hero{text-align:center;padding:16px 0 20px;}
+.picker-hero-icon{width:56px;height:56px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
+.picker-hero-icon svg{width:24px;height:24px;}
+.picker-hero-title{font-family:"Bebas Neue",cursive;font-size:28px;letter-spacing:5px;color:var(--gold);}
+.picker-hero-sub{font-size:9px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-top:4px;}
 
-.family-wrap{max-width:600px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px;position:relative;z-index:1;padding-bottom:60px;width:100%;}
-.family-hero{background:transparent;border:none;padding:16px 24px 8px;margin-bottom:0;text-align:center;}
-.family-hero-icon{font-size:72px;animation:float 2s ease-in-out infinite;line-height:1;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.2));}
-.family-hero-title{font-family:"Bebas Neue",cursive;font-size:36px;letter-spacing:6px;color:#1a3a20;margin-top:8px;text-shadow:0 2px 8px rgba(255,255,255,0.4);}
-50%{transform:rotate(3deg);}}
-50%{transform:rotate(-4deg);}}
-.family-select-wrap{width:100%;max-width:600px;}
-.family-select{width:100%;padding:14px 20px;background:rgba(255,255,255,0.85);color:#1c3a22;border:1px solid rgba(28,58,34,0.15);border-radius:0;font-family:"DM Sans",sans-serif;font-size:14px;font-weight:400;letter-spacing:1px;cursor:pointer;outline:none;transition:border-color .2s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23f0b429' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;}
-.family-select:focus{border-color:var(--gold);}
-.family-card{width:100%;max-width:600px;background:rgba(255,255,255,0.9);border:1.5px solid rgba(232,168,0,0.35);border-radius:8px;overflow:hidden;animation:fadeUp .4s ease both;backdrop-filter:blur(4px);}
-.family-card-header{background:linear-gradient(135deg,#fff8e1,#fff3cd);padding:18px 22px;border-bottom:2px solid rgba(232,168,0,.15);}
-.family-club-name{font-family:"Bebas Neue",cursive;font-size:26px;letter-spacing:4px;color:var(--gold);}
+.search-bar{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:9px;margin-bottom:12px;transition:border-color .2s;}
+.search-bar:focus-within{border-color:rgba(240,180,41,0.5);}
+.search-bar svg{width:14px;height:14px;flex-shrink:0;}
+.search-input{background:none;border:none;outline:none;font-size:13px;color:var(--text);font-family:"DM Sans",sans-serif;width:100%;}
+.search-input::placeholder{color:var(--muted);}
+
+.view-toggle{display:flex;gap:6px;margin-bottom:10px;}
+.vtog{flex:1;padding:7px;border-radius:6px;border:1px solid var(--border);background:var(--card);font-size:10px;color:var(--muted);text-align:center;cursor:pointer;transition:all .15s;letter-spacing:0.05em;font-family:"DM Sans",sans-serif;}
+.vtog.active{border-color:rgba(240,180,41,0.4);color:var(--gold);background:rgba(240,180,41,0.06);}
+
+.league-section{margin-bottom:4px;}
+.league-label{font-size:8px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#3a5a3a;padding:6px 2px 5px;border-bottom:1px solid var(--border);margin-bottom:8px;}
+
+/* Grille 3 colonnes */
+.clubs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+
+.club-tile{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 6px 9px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;transition:border-color .15s,background .15s;min-height:76px;}
+.club-tile:hover{border-color:rgba(240,180,41,0.4);}
+.club-tile.selected{border-color:var(--gold);background:rgba(240,180,41,0.06);}
+
+.club-logo{width:36px;height:36px;border-radius:50%;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.club-logo img{width:28px;height:28px;object-fit:contain;}
+.club-logo.fb{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:.03em;}
+.club-tile.selected .club-logo{border-color:rgba(240,180,41,0.5);}
+.club-tile-name{font-size:9px;color:var(--muted);text-align:center;line-height:1.3;}
+.club-tile.selected .club-tile-name{color:var(--gold);}
+
+/* Vue liste */
+.club-list-row{display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:7px;cursor:pointer;transition:border-color .15s;}
+.club-list-row:hover{border-color:rgba(240,180,41,0.35);}
+.club-list-row.selected{border-color:var(--gold);background:rgba(240,180,41,0.05);}
+.club-list-logo{width:32px;height:32px;border-radius:50%;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.club-list-logo img{width:24px;height:24px;object-fit:contain;}
+.club-list-logo.fb{font-size:9px;font-weight:700;color:var(--gold);}
+.club-list-info{flex:1;}
+.club-list-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px;}
+.club-list-league{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;}
+.club-check{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;}
+.club-list-row.selected .club-check{border-color:var(--gold);background:var(--gold);}
+.check-dot{width:8px;height:8px;border-radius:50%;background:var(--bg);}
+
+.cta-btn{width:100%;background:var(--gold);color:var(--bg);border-radius:10px;padding:14px;text-align:center;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;margin-top:14px;transition:opacity .15s;font-family:"DM Sans",sans-serif;border:none;}
+.cta-btn:disabled{background:var(--card);color:var(--muted);cursor:default;}
+
+/* ── FAMILY CARD ── */
+.family-page{background:var(--bg);min-height:calc(100vh - 56px);}
+.family-wrap{max-width:560px;margin:0 auto;padding:24px 16px 60px;display:flex;flex-direction:column;gap:18px;}
+.family-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;animation:fadeUp .4s ease both;}
+.family-card-header{background:rgba(240,180,41,0.08);padding:16px 20px;border-bottom:1px solid rgba(240,180,41,0.15);display:flex;align-items:center;gap:12px;}
+.family-club-logo{width:40px;height:40px;border-radius:50%;background:var(--bg);border:1px solid rgba(240,180,41,0.3);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.family-club-logo img{width:30px;height:30px;object-fit:contain;}
+.family-club-logo.fb{font-size:11px;font-weight:700;color:var(--gold);}
+.family-club-name{font-family:"Bebas Neue",cursive;font-size:24px;letter-spacing:3px;color:var(--gold);}
 .family-rows{display:flex;flex-direction:column;}
-.family-row{display:grid;grid-template-columns:1fr 2fr;gap:8px;padding:10px 20px;border-bottom:0.5px solid rgba(28,58,34,0.08);align-items:center;}
+.family-row{display:grid;grid-template-columns:1fr 2fr;gap:8px;padding:10px 20px;border-bottom:.5px solid var(--border);align-items:center;}
 .family-row:last-child{border-bottom:none;}
-.family-label{font-family:"DM Sans",sans-serif;font-size:8px;font-weight:500;letter-spacing:4px;color:#4a6a4a;text-transform:uppercase;}
-.family-value{font-family:"Bebas Neue",cursive;font-size:22px;letter-spacing:2px;color:#1c3a22;}
-.btn-reveal{background:linear-gradient(135deg,var(--gold),#f5c518);border:none;color:#fff;padding:8px 18px;border-radius:8px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:800;letter-spacing:1px;cursor:pointer;transition:all .15s;box-shadow:0 2px 10px rgba(232,168,0,.3);}
-.btn-reveal:hover{transform:scale(1.05);}
-.btn-next{padding:14px 40px;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border:none;border-radius:var(--r);font-family:"DM Sans",sans-serif;font-size:16px;font-weight:800;letter-spacing:2px;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(45,122,45,.3);}
-.btn-next:hover{transform:translateY(-2px);}
+.family-label{font-size:8px;font-weight:500;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
+.family-value{font-family:"Bebas Neue",cursive;font-size:20px;letter-spacing:2px;color:var(--text);}
+.btn-reveal{background:var(--bg);border:1px solid rgba(240,180,41,0.4);color:var(--gold);padding:6px 14px;font-size:10px;font-weight:600;letter-spacing:1px;cursor:pointer;transition:all .15s;font-family:"DM Sans",sans-serif;border-radius:6px;}
+.btn-reveal:hover{background:rgba(240,180,41,0.1);}
+.btn-next{padding:13px 36px;background:var(--card);color:var(--gold);border:1.5px solid var(--gold);border-radius:10px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;cursor:pointer;transition:all .2s;align-self:center;}
+.btn-next:hover{background:rgba(240,180,41,0.08);}
 
-.inter-page{background:#1c3a22;min-height:calc(100vh - 60px);overflow:visible;}
-.sh{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
-.sh-num{font-family:"Bebas Neue",cursive;font-size:30px;color:var(--green);line-height:1;}
-.sh-label{font-family:"DM Sans",sans-serif;font-size:11px;font-weight:800;letter-spacing:3px;color:var(--slate);text-transform:uppercase;}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:22px;overflow:visible;}
+/* ── INTER / DUEL VAR ── */
+.inter-page{background:var(--bg);min-height:calc(100vh - 56px);}
+.sh{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.sh-num{font-family:"Bebas Neue",cursive;font-size:26px;color:var(--gold);line-height:1;}
+.sh-label{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px;overflow:visible;}
 @media(max-width:700px){.two-col{grid-template-columns:1fr;}}
-.picker-box{background:#f5fff5;border:1px solid rgba(28,58,34,0.15);border:1px solid rgba(255,255,255,0.14);border-radius:var(--r);animation:fadeUp .4s ease both;position:relative;z-index:100;overflow:visible;}
-.picker-inner{padding:15px;position:relative;}
-.search-ico{display:none;}
-.search-inp{width:100%;background:#eaf5ea;border:1px solid rgba(240,180,41,0.2);border-radius:0;padding:12px 14px 12px 34px;font-family:"DM Sans",sans-serif;font-size:13px;color:var(--white);outline:none;transition:border-color .2s;}
-.search-inp:focus{border-color:var(--gold);background:rgba(240,180,41,0.04);}
-.search-inp::placeholder{color:var(--slate);}
-.dropdown{position:absolute;top:calc(100% + 2px);left:0;width:100%;background:#f5fff5;border:1px solid rgba(28,58,34,0.12);border-radius:0;max-height:180px;overflow-y:auto;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,.15);}
-.dropdown::-webkit-scrollbar{width:4px;}
-.dropdown::-webkit-scrollbar-thumb{background:rgba(45,122,45,.2);border-radius:4px;}
-.dg-label{padding:8px 14px 4px;font-family:"DM Sans",sans-serif;font-size:9px;font-weight:500;letter-spacing:4px;color:#8ab88a;text-transform:uppercase;border-bottom:1px solid rgba(28,58,34,0.08);}
-.di{padding:13px 14px;cursor:pointer;font-size:13px;font-weight:400;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(28,58,34,0.08);transition:background .1s;color:#1c3a22;min-height:48px;}
-.di:hover,.di.sel{background:rgba(232,168,0,0.1);color:#1c3a22;}
-.club-chip{margin-top:8px;display:flex;align-items:center;gap:10px;background:#eaf5ea;border:1px solid rgba(28,58,34,0.15);border-radius:0;padding:13px 14px;animation:fadeUp .2s ease both;width:100%;}
-.chip-flag{font-size:20px;}
+
+.picker-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);animation:fadeUp .4s ease both;position:relative;overflow:visible;}
+.picker-inner{padding:14px;position:relative;}
+.search-inp{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 12px;font-family:"DM Sans",sans-serif;font-size:13px;color:var(--text);outline:none;transition:border-color .2s;}
+.search-inp:focus{border-color:rgba(240,180,41,0.5);}
+.search-inp::placeholder{color:var(--muted);}
+.dropdown{position:absolute;top:calc(100% + 2px);left:0;width:100%;background:var(--card);border:1px solid var(--border);border-radius:8px;max-height:200px;overflow-y:auto;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,.4);}
+.dropdown::-webkit-scrollbar{width:3px;}
+.dropdown::-webkit-scrollbar-thumb{background:var(--border);}
+.dg-label{padding:6px 12px 4px;font-size:8px;font-weight:600;letter-spacing:4px;color:var(--muted);text-transform:uppercase;border-bottom:1px solid var(--border);}
+.di{padding:11px 12px;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);transition:background .1s;color:var(--text);min-height:44px;}
+.di:hover,.di.sel{background:rgba(240,180,41,0.08);}
+.di-logo{width:24px;height:24px;border-radius:50%;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.di-logo img{width:18px;height:18px;object-fit:contain;}
+.di-logo.fb{font-size:8px;font-weight:700;color:var(--gold);}
+
+.club-chip{margin-top:8px;display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 12px;animation:fadeUp .2s ease both;width:100%;}
+.chip-logo{width:28px;height:28px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.chip-logo img{width:20px;height:20px;object-fit:contain;}
+.chip-logo.fb{font-size:8px;font-weight:700;color:var(--gold);}
 .chip-info{flex:1;}
-.chip-name{font-family:"DM Sans",sans-serif;font-size:14px;font-weight:500;color:#1c3a22;}
-.chip-league{font-family:"DM Sans",sans-serif;font-size:9px;font-weight:400;letter-spacing:3px;color:#4a6a4a;text-transform:uppercase;}
-.chip-x{cursor:pointer;color:var(--slate);font-size:16px;transition:color .15s;}
+.chip-name{font-size:13px;font-weight:500;color:var(--text);}
+.chip-league{font-size:9px;font-weight:400;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.chip-x{cursor:pointer;color:var(--muted);font-size:16px;transition:color .15s;line-height:1;}
 .chip-x:hover{color:var(--coral);}
-.status-box{background:var(--bg3);border:1.5px solid rgba(45,122,45,.15);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;justify-content:center;min-height:130px;box-shadow:none;animation:fadeUp .4s ease .05s both;}
-.status-idle{font-size:13px;color:var(--slate);font-weight:500;line-height:1.7;}
-.status-club-name{font-family:"Bebas Neue",cursive;font-size:24px;letter-spacing:2px;color:var(--dark);margin-bottom:2px;}
-.status-q-text{font-family:"DM Sans",sans-serif;font-size:13px;font-weight:700;color:var(--green);margin-bottom:12px;}
-.btn-launch{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:8px;border:none;font-family:"DM Sans",sans-serif;font-size:14px;font-weight:800;letter-spacing:1px;cursor:pointer;transition:all .2s;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;box-shadow:0 4px 16px rgba(45,122,45,.3);}
-.btn-launch:hover{transform:translateY(-2px);}
-.btn-launch:disabled{background:rgba(0,0,0,.08);color:var(--slate);box-shadow:none;transform:none;cursor:not-allowed;}
-.btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:8px;font-family:"DM Sans",sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .15s;background:transparent;border:1.5px solid rgba(45,122,45,.2);color:var(--slate);}
-.btn-ghost:hover{border-color:var(--green);color:var(--green);}
-.q-section{animation:fadeUp .4s ease .1s both;margin-bottom:22px;}
-.cat-block{margin-bottom:16px;}
-.cat-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;padding-bottom:6px;border-bottom:2px solid rgba(45,122,45,.1);}
-.cat-badge{font-family:"DM Sans",sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:14px;}
-.cat-badge.nat{background:#e8f5e8;color:var(--green);border:1px solid rgba(45,122,45,.2);}
-.cat-badge.pal{background:#fff8e1;color:var(--gold);border:1px solid rgba(232,168,0,.2);}
-.cat-badge.pro{background:#e8f5e8;color:var(--green2);border:1px solid rgba(61,156,61,.2);}
-.cat-badge.sta{background:#fce4ec;color:var(--coral);border:1px solid rgba(231,76,60,.15);}
-.cat-count{font-size:10px;color:var(--slate);margin-left:auto;}
-.q-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:7px;}
-.q-card{background:#f5fff5;border:1px solid rgba(28,58,34,0.1);border-radius:0;padding:16px 14px;cursor:pointer;transition:all .2s;}
-.q-card:hover{border-color:rgba(232,168,0,0.5);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06);}
-.q-card.on{border-color:rgba(45,122,45,.5);background:rgba(45,122,45,.05);}
-.q-card.on.pal{border-color:rgba(232,168,0,.5);background:rgba(232,168,0,.04);}
-.q-card.on.sta{border-color:rgba(231,76,60,.4);background:rgba(231,76,60,.04);}
-.q-num{font-family:"DM Sans",sans-serif;font-size:9px;font-weight:500;letter-spacing:3px;color:#e8a800;text-transform:uppercase;}
-.q-card.on .q-num{font-family:"DM Sans",sans-serif;font-size:9px;font-weight:500;letter-spacing:3px;color:#e8a800;text-transform:uppercase;}
-.q-card.on.pal .q-num{font-family:"DM Sans",sans-serif;font-size:9px;font-weight:500;letter-spacing:3px;color:#e8a800;text-transform:uppercase;}
-.q-text{font-size:11px;font-weight:600;color:var(--text2);line-height:1.3;}
-.q-card.on .q-text{color:var(--dark);}
+
+.status-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;justify-content:center;min-height:120px;animation:fadeUp .4s ease .05s both;}
+.status-idle{font-size:12px;color:var(--muted);font-weight:400;line-height:1.7;}
+.status-club-name{font-family:"Bebas Neue",cursive;font-size:22px;letter-spacing:2px;color:var(--text);margin-bottom:2px;}
+.status-q-text{font-size:12px;font-weight:600;color:var(--gold);margin-bottom:10px;}
+.btn-launch{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:none;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;transition:all .2s;background:var(--gold);color:var(--bg);}
+.btn-launch:hover{opacity:.9;}
+.btn-launch:disabled{background:var(--border);color:var(--muted);cursor:not-allowed;}
+.btn-ghost{display:inline-flex;align-items:center;gap:5px;padding:8px 14px;border-radius:8px;font-family:"DM Sans",sans-serif;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;background:transparent;border:1px solid var(--border);color:var(--muted);}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+.q-section{animation:fadeUp .4s ease .1s both;margin-bottom:20px;}
+.cat-block{margin-bottom:14px;}
+.cat-header{display:flex;align-items:center;gap:8px;margin-bottom:7px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.cat-badge{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 9px;border-radius:12px;}
+.cat-badge.nat{background:rgba(240,180,41,0.1);color:var(--gold);border:1px solid rgba(240,180,41,0.2);}
+.cat-badge.pro{background:rgba(138,184,138,0.1);color:var(--muted);border:1px solid rgba(138,184,138,0.2);}
+.cat-badge.sta{background:rgba(231,76,60,0.1);color:var(--coral);border:1px solid rgba(231,76,60,0.15);}
+.cat-count{font-size:9px;color:var(--muted);margin-left:auto;}
+.q-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px;}
+.q-card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:13px 12px;cursor:pointer;transition:all .15s;}
+.q-card:hover{border-color:rgba(240,180,41,0.4);}
+.q-card.on{border-color:var(--gold);background:rgba(240,180,41,0.05);}
+.q-card.on.sta{border-color:var(--coral);background:rgba(231,76,60,0.04);}
+.q-num{font-size:8px;font-weight:600;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;}
+.q-text{font-size:11px;font-weight:500;color:var(--muted);line-height:1.3;}
+.q-card.on .q-text{color:var(--text);}
+
 .verdict-wrap{animation:fadeUp .4s ease both;}
-.verdict-card{border-radius:0;overflow:hidden;border:1px solid rgba(28,58,34,0.12);}
-.verdict-head{background:linear-gradient(135deg,#e8f5e8,#f0f7f0);padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(45,122,45,.1);}
-.vh-club{font-family:"Bebas Neue",cursive;font-size:24px;letter-spacing:2px;color:var(--dark);}
-.vh-q{font-size:12px;font-weight:500;color:var(--slate);margin-top:2px;max-width:480px;}
-.verdict-body{background:#f5fff5;padding:20px 24px;}
+.verdict-card{border-radius:8px;overflow:hidden;border:1px solid var(--border);}
+.verdict-head{background:var(--card);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--border);}
+.vh-club{font-family:"Bebas Neue",cursive;font-size:22px;letter-spacing:2px;color:var(--text);}
+.vh-q{font-size:11px;font-weight:400;color:var(--muted);margin-top:2px;max-width:480px;}
+.verdict-body{background:var(--bg);padding:18px 20px;}
 .scan-wrap{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
-.scan-beam{position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent);animation:scanDown .7s ease-in-out forwards;box-shadow:0 0 10px rgba(45,122,45,.5);}
-.scan-bg{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 8px,rgba(45,122,45,.02) 8px,rgba(45,122,45,.02) 9px);}
-.locked{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 0;text-align:center;}
-.locked-icon{font-size:30px;}
-.locked-t{font-family:"DM Sans",sans-serif;font-size:15px;font-weight:700;color:var(--slate);}
-.locked-s{font-size:12px;color:#aaa;}
-.rev-intro{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.rev-intro-line{width:18px;height:2px;background:var(--green);border-radius:2px;}
-.rev-intro-text{font-family:"DM Sans",sans-serif;font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--slate);}
-.rev-count{background:rgba(240,180,41,0.15);color:var(--gold);font-size:9px;font-weight:600;padding:2px 7px;border-radius:0;margin-left:4px;border:1px solid rgba(240,180,41,0.3);}
+.scan-beam{position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:scanDown .7s ease-in-out forwards;}
+.locked{display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px 0;text-align:center;}
+.locked-icon{font-size:26px;}
+.locked-t{font-size:14px;font-weight:600;color:var(--muted);}
+.locked-s{font-size:11px;color:#4a6a4a;}
+.rev-intro{display:flex;align-items:center;gap:8px;margin-bottom:12px;}
+.rev-intro-line{width:16px;height:2px;background:var(--gold);border-radius:2px;}
+.rev-intro-text{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
+.rev-count{background:rgba(240,180,41,0.12);color:var(--gold);font-size:9px;font-weight:600;padding:2px 6px;margin-left:3px;border:1px solid rgba(240,180,41,0.25);}
 .tags{display:flex;flex-wrap:wrap;gap:6px;}
-.tag{padding:6px 12px;border-radius:7px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:700;animation:tagIn .3s ease both;cursor:default;display:inline-flex;align-items:center;gap:5px;}
-.tag img{width:20px;height:20px;border-radius:50%;object-fit:cover;flex-shrink:0;}
-.tag-green{background:#e8f5e8;border:1.5px solid rgba(45,122,45,.25);color:var(--green);}
-.tag-gold{background:#fff8e1;border:1.5px solid rgba(232,168,0,.3);color:var(--gold);}
-.tag-lime2{background:#f1f8e9;border:1.5px solid rgba(61,156,61,.2);color:var(--green2);}
-.tag-coral{background:#fce4ec;border:1.5px solid rgba(231,76,60,.2);color:var(--coral);}
-.no-data-msg{font-size:12px;color:var(--slate);}
-.empty{text-align:center;padding:50px 20px;animation:fadeUp .5s ease both;}
-.empty-badge{width:80px;height:80px;border-radius:50%;background:rgba(45,122,45,.08);border:2px solid rgba(45,122,45,.15);display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 16px;}
-.empty-t{font-family:"Bebas Neue",cursive;font-size:28px;letter-spacing:3px;margin-bottom:6px;color:var(--dark);}
-.empty-s{font-size:13px;color:var(--slate);}
-.stepbar{display:flex;align-items:center;margin-bottom:26px;background:#f5fff5;border-radius:0;border:1px solid rgba(28,58,34,0.12);overflow:hidden;animation:fadeUp .4s ease both;}
-.step-item{flex:1;display:flex;align-items:center;gap:8px;padding:12px 16px;font-family:"DM Sans",sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;color:var(--slate);border-right:1px solid rgba(45,122,45,.08);transition:all .25s;}
+.tag{padding:6px 11px;border-radius:6px;font-size:12px;font-weight:600;animation:tagIn .3s ease both;cursor:default;display:inline-flex;align-items:center;gap:5px;}
+.tag img{width:18px;height:18px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+.tag-green{background:rgba(138,184,138,0.08);border:1px solid rgba(138,184,138,0.2);color:var(--muted);}
+.tag-gold{background:rgba(240,180,41,0.08);border:1px solid rgba(240,180,41,0.25);color:var(--gold);}
+.tag-lime2{background:rgba(100,160,100,0.08);border:1px solid rgba(100,160,100,0.2);color:#7ab87a;}
+.tag-coral{background:rgba(231,76,60,0.08);border:1px solid rgba(231,76,60,0.2);color:var(--coral);}
+.no-data-msg{font-size:12px;color:var(--muted);}
+
+.stepbar{display:flex;align-items:center;margin-bottom:22px;background:var(--card);border-radius:6px;border:1px solid var(--border);overflow:hidden;animation:fadeUp .4s ease both;}
+.step-item{flex:1;display:flex;align-items:center;gap:7px;padding:11px 14px;font-size:11px;font-weight:600;letter-spacing:1px;color:var(--muted);border-right:1px solid var(--border);transition:all .25s;}
 .step-item:last-child{border-right:none;}
-.step-item.on{color:var(--dark);background:rgba(45,122,45,.05);}
-.step-item.done{color:var(--green);}
-.step-num{width:32px;height:32px;border-radius:50%;background:rgba(28,58,34,0.08);border:1px solid rgba(28,58,34,0.2);display:flex;align-items:center;justify-content:center;font-family:"Bebas Neue",cursive;font-size:17px;letter-spacing:1px;color:#1c3a22;}
-.step-item.on .step-num{width:32px;height:32px;border-radius:50%;background:rgba(28,58,34,0.08);border:1px solid rgba(28,58,34,0.2);display:flex;align-items:center;justify-content:center;font-family:"Bebas Neue",cursive;font-size:17px;letter-spacing:1px;color:#1c3a22;}
-.step-item.done .step-num{width:32px;height:32px;border-radius:50%;background:rgba(28,58,34,0.08);border:1px solid rgba(28,58,34,0.2);display:flex;align-items:center;justify-content:center;font-family:"Bebas Neue",cursive;font-size:17px;letter-spacing:1px;color:#1c3a22;}
-.step-reset{margin-left:auto;padding-right:14px;}
-.reset-btn{background:none;border:none;font-size:11px;font-weight:600;color:var(--slate);cursor:pointer;text-decoration:underline;transition:color .15s;}
+.step-item.on{color:var(--text);background:rgba(240,180,41,0.04);}
+.step-item.done{color:var(--gold);}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:"Bebas Neue",cursive;font-size:15px;color:var(--muted);flex-shrink:0;}
+.step-item.on .step-num{border-color:rgba(240,180,41,0.4);color:var(--gold);}
+.step-item.done .step-num{border-color:var(--gold);color:var(--gold);}
+.step-reset{margin-left:auto;padding-right:12px;}
+.reset-btn{background:none;border:none;font-size:10px;font-weight:600;color:var(--muted);cursor:pointer;text-decoration:underline;transition:color .15s;font-family:"DM Sans",sans-serif;}
 .reset-btn:hover{color:var(--coral);}
-.expert-hero{text-align:center;padding:28px 0 20px;animation:fadeUp .5s ease both;}
-.expert-title{font-family:"Bebas Neue",cursive;font-size:clamp(40px,7vw,68px);letter-spacing:6px;line-height:1;color:#ffffff;margin-bottom:6px;}
-.expert-title span{color:#e74c3c;}
-.expert-sub{font-family:"DM Sans",sans-serif;font-size:14px;font-weight:600;letter-spacing:3px;color:var(--slate);text-transform:uppercase;}
-.expert-rule{width:48px;height:2px;background:linear-gradient(90deg,var(--green),var(--coral));border-radius:2px;margin:10px auto 0;}
-.selector-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:start;margin-bottom:26px;animation:fadeUp .5s ease .1s both;overflow:visible;}
-@media(max-width:660px){.selector-grid{grid-template-columns:1fr;}.selector-grid>div:first-child{order:1;}.vs-badge{order:3;padding-top:0;}.selector-grid>div:last-child{order:2;}}
-.vs-badge{display:flex;align-items:center;justify-content:center;padding-top:42px;}@media(max-width:660px){.vs-badge{padding-top:8px;padding-bottom:4px;flex-direction:row;gap:12px;}}
-.vs-inner{font-family:"Bebas Neue",cursive;font-size:36px;letter-spacing:3px;color:var(--green);}
-.picker-label{font-family:"DM Sans",sans-serif;font-size:10px;font-weight:800;letter-spacing:3px;color:var(--slate);text-transform:uppercase;margin-bottom:7px;}
-.launch-wrap{display:flex;justify-content:center;margin-bottom:28px;animation:fadeUp .5s ease .15s both;position:relative;z-index:0;}
-.btn-launch-expert{display:inline-flex;align-items:center;gap:10px;padding:14px 44px;border-radius:0;border:none;font-family:"DM Sans",sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;cursor:pointer;transition:all .2s;background:#e8a800;color:#1c3a22;}
-.btn-launch-expert:hover:not(:disabled){transform:translateY(-3px);}
-.btn-launch-expert:disabled{background:rgba(0,0,0,.08);color:var(--slate);box-shadow:none;cursor:not-allowed;}
-.score-banner{display:flex;align-items:center;justify-content:space-between;background:var(--bg3);border:1.5px solid rgba(45,122,45,.15);border-radius:var(--r);padding:16px 22px;margin-bottom:20px;box-shadow:none;animation:fadeUp .4s ease both;}
-.score-club{font-family:"Bebas Neue",cursive;font-size:18px;letter-spacing:2px;color:var(--dark);display:flex;align-items:center;gap:8px;}
-.score-stats{display:flex;gap:18px;}
+
+.empty{text-align:center;padding:48px 20px;animation:fadeUp .5s ease both;}
+.empty-badge{width:72px;height:72px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 14px;}
+.empty-t{font-family:"Bebas Neue",cursive;font-size:26px;letter-spacing:3px;margin-bottom:5px;color:var(--text);}
+.empty-s{font-size:12px;color:var(--muted);}
+
+/* ── EXPERT ── */
+.expert-hero{text-align:center;padding:24px 0 18px;animation:fadeUp .5s ease both;}
+.expert-title{font-family:"Bebas Neue",cursive;font-size:clamp(36px,6vw,60px);letter-spacing:5px;line-height:1;color:var(--text);margin-bottom:5px;}
+.expert-title span{color:var(--coral);}
+.expert-sub{font-size:12px;font-weight:500;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
+.expert-rule{width:40px;height:2px;background:linear-gradient(90deg,var(--gold),var(--coral));border-radius:2px;margin:8px auto 0;}
+.selector-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:start;margin-bottom:24px;animation:fadeUp .5s ease .1s both;overflow:visible;}
+@media(max-width:660px){.selector-grid{grid-template-columns:1fr;}.vs-badge{order:3;padding-top:0;flex-direction:row;gap:12px;}}
+.vs-badge{display:flex;align-items:center;justify-content:center;padding-top:38px;}
+.vs-inner{font-family:"Bebas Neue",cursive;font-size:30px;letter-spacing:3px;color:var(--border);}
+.picker-label{font-size:9px;font-weight:700;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:6px;}
+.launch-wrap{display:flex;justify-content:center;margin-bottom:26px;animation:fadeUp .5s ease .15s both;}
+.btn-launch-expert{display:inline-flex;align-items:center;gap:8px;padding:13px 40px;border:none;font-family:"DM Sans",sans-serif;font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;cursor:pointer;transition:all .2s;background:var(--gold);color:var(--bg);border-radius:8px;}
+.btn-launch-expert:hover:not(:disabled){opacity:.9;}
+.btn-launch-expert:disabled{background:var(--card);color:var(--muted);cursor:not-allowed;}
+
+.score-banner{display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 20px;margin-bottom:18px;animation:fadeUp .4s ease both;}
+.score-club{font-family:"Bebas Neue",cursive;font-size:16px;letter-spacing:2px;color:var(--text);display:flex;align-items:center;gap:8px;}
+.score-stats{display:flex;gap:16px;}
 .score-stat{text-align:center;}
-.score-stat-num{font-family:"Bebas Neue",cursive;font-size:26px;line-height:1;}
-.score-stat-num.direct{color:var(--green);}
-.score-stat-num.indirect{color:var(--green2);}
+.score-stat-num{font-family:"Bebas Neue",cursive;font-size:24px;line-height:1;}
+.score-stat-num.direct{color:var(--gold);}
+.score-stat-num.indirect{color:var(--muted);}
 .score-stat-num.total{color:var(--gold);}
-.score-stat-label{font-size:8px;font-weight:800;letter-spacing:2px;color:var(--slate);text-transform:uppercase;}
+.score-stat-label{font-size:8px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
 .results-section{animation:fadeUp .4s ease .1s both;}
-.section-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:7px;border-bottom:2px solid rgba(45,122,45,.1);}
-.section-badge{font-family:"DM Sans",sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:3px 12px;border-radius:14px;}
-.badge-direct{background:#e8f5e8;color:var(--green);border:1px solid rgba(45,122,45,.2);}
-.badge-indirect{background:#f1f8e9;color:var(--green2);border:1px solid rgba(61,156,61,.15);}
-.section-count{font-family:"Bebas Neue",cursive;font-size:24px;line-height:1;}
-.section-count.direct{color:var(--green);}
-.section-count.indirect{color:var(--green2);}
-.section-desc{font-size:11px;color:var(--slate);margin-left:auto;}
-.players-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:10px;margin-bottom:26px;}
-.player-card{background:var(--bg3);border:1.5px solid rgba(45,122,45,.1);border-radius:10px;padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:7px;animation:tagIn .3s ease both;transition:all .15s;box-shadow:0 2px 8px rgba(0,0,0,.06);}
-.player-card:hover{border-color:rgba(45,122,45,.3);transform:translateY(-2px);}
-.player-card.direct{border-color:rgba(45,122,45,.2);}
-.player-photo{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid rgba(45,122,45,.15);}
-.player-photo-placeholder{width:48px;height:48px;border-radius:50%;background:var(--bg);border:2px solid rgba(45,122,45,.1);display:flex;align-items:center;justify-content:center;font-size:18px;}
-.player-name{font-family:"DM Sans",sans-serif;font-weight:400;font-size:13px;color:#1c3a22;}
-.player-year{font-size:10px;color:var(--slate);font-weight:600;}
-.player-pts{font-family:"Bebas Neue",cursive;font-size:15px;letter-spacing:1px;}
-.player-pts.direct{color:var(--green);}
-.player-pts.indirect{color:var(--green2);}
-.scan-overlay{position:fixed;inset:0;background:rgba(240,247,240,.92);display:flex;align-items:center;justify-content:center;z-index:500;animation:fadeIn .2s ease both;}
-.scan-box{background:#f5fff5;border:1px solid rgba(232,168,0,0.4);border-radius:0;padding:30px 48px;text-align:center;position:relative;overflow:hidden;}
-.scan-beam-overlay{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent);animation:scanDown 1s ease-in-out infinite;}
-.scan-title{font-family:"Bebas Neue",cursive;font-size:28px;letter-spacing:4px;color:#e8a800;margin-bottom:6px;}
-.scan-sub{font-size:12px;color:var(--slate);font-weight:600;letter-spacing:2px;text-transform:uppercase;}
-.footer{text-align:center;margin-top:50px;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(26,46,26,.25);}
+.section-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.section-badge{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:12px;}
+.badge-direct{background:rgba(240,180,41,0.1);color:var(--gold);border:1px solid rgba(240,180,41,0.2);}
+.badge-indirect{background:rgba(138,184,138,0.1);color:var(--muted);border:1px solid rgba(138,184,138,0.2);}
+.section-count{font-family:"Bebas Neue",cursive;font-size:22px;line-height:1;}
+.section-count.direct{color:var(--gold);}
+.section-count.indirect{color:var(--muted);}
+.section-desc{font-size:10px;color:var(--muted);margin-left:auto;}
+.players-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:22px;}
+.player-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:13px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;animation:tagIn .3s ease both;transition:all .15s;}
+.player-card:hover{border-color:rgba(240,180,41,0.3);}
+.player-photo{width:44px;height:44px;border-radius:50%;object-fit:cover;border:1.5px solid var(--border);}
+.player-photo-placeholder{width:44px;height:44px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;}
+.player-name{font-size:12px;font-weight:400;color:var(--text);text-align:center;}
+.player-year{font-size:9px;color:var(--muted);font-weight:500;}
+.player-pts{font-family:"Bebas Neue",cursive;font-size:13px;letter-spacing:1px;}
+.player-pts.direct{color:var(--gold);}
+.player-pts.indirect{color:var(--muted);}
+
+.scan-overlay{position:fixed;inset:0;background:rgba(13,31,13,.92);display:flex;align-items:center;justify-content:center;z-index:500;animation:fadeIn .2s ease both;}
+.scan-box{background:var(--card);border:1px solid rgba(240,180,41,0.3);border-radius:8px;padding:28px 44px;text-align:center;position:relative;overflow:hidden;}
+.scan-beam-overlay{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:scanDown 1s ease-in-out infinite;}
+.scan-title{font-family:"Bebas Neue",cursive;font-size:26px;letter-spacing:4px;color:var(--gold);margin-bottom:5px;}
+.scan-sub{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:2px;text-transform:uppercase;}
+
+.footer{text-align:center;margin-top:48px;font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--border);}
 </style>
 </head>
 <body>
@@ -250,173 +324,235 @@ html,body{background:var(--bg);color:var(--dark);font-family:"DM Sans",sans-seri
 
 const EXPERT_API = "https://var-club-expert.vercel.app";
 
-const TRANSLATIONS = {
-  fr: {
-    back: "← Retour",
-    loading: "Chargement…",
-    search: "Rechercher…",
-    chooseClub: "CHOISIR UN CLUB",
-    reveal: "RÉVÉLER ▶",
-    nextClub: "⚽ Prochain club !",
-    launchVar: "▶ Lancer la VAR",
-    analyzing: "⏳ Analyse…",
-    restart: "↺ Recommencer",
-    hideAnswer: "↺ Masquer",
-    newQuestion: "→ Nouvelle question",
-    newSearch: "↺ Nouvelle recherche",
-    stepClub: "Club",
-    stepQuestion: "Question",
-    stepVerdict: "Verdict",
-    chooseClubStep: "Choisir un club",
-    chooseQuestionStep: "Choisir une question",
-    verdictVar: "Verdict VAR",
-    varReady: "La VAR est prête",
-    varReadySub: "Sélectionnez un club et une question",
-    ready: "Prêt",
-    selectQuestion: "→ Choisissez une question",
-    clubSelected: "Club sélectionné",
-    findCommon: "Trouvez les joueurs en commun",
-    club1: "Club 1",
-    club2: "Club 2",
-    noConnection: "Aucune connexion",
-    noConnectionSub: "Aucun joueur commun trouvé",
-    directTransfer: "Transfert direct",
-    indirectPassage: "Passage commun",
-    modeFamily: "L'Identité",
-    modeDuel: "Duel VAR",
-    modeExpert: "Pro Mercato",
-    modeDescFamily: "Révèle les infos de ton club préféré. Parfait pour jouer en famille !",
-    modeDescDuel: "Tire une carte Club + une carte Question. La VAR valide ou invalide ta réponse.",
-    modeDescExpert: "Trouve tous les joueurs ayant porté deux maillots. Pour les experts !",
-    badgeFamily: "FACILE",
-    badgeDuel: "INTERMÉDIAIRE",
-    badgeExpert: "EXPERT",
-    fieldVille: "VILLE",
-    fieldPays: "PAYS",
-    fieldContinent: "CONTINENT",
-    fieldStade: "STADE",
-    fieldSurnom: "SURNOM",
-    fieldCouleurs: "COULEURS",
-    fieldLegende: "LÉGENDE",
-    catNat: "Nationalités",
-    catPro: "Profil Joueurs",
-    catSta: "Statistiques",
-    legendSection: "⭐ Joueurs légendaires — 1 pt chacun",
-    q1s:"Joueurs Français", q1f:"Citez des joueurs Français passés par ce club.",
-    q2s:"Joueurs Espagnols", q2f:"Citez des joueurs Espagnols passés par ce club.",
-    q3s:"Joueurs Allemands", q3f:"Citez des joueurs Allemands passés par ce club.",
-    q4s:"Joueurs Italiens",  q4f:"Citez des joueurs Italiens passés par ce club.",
-    q5s:"Joueurs Anglais",   q5f:"Citez des joueurs Anglais passés par ce club.",
-    q6s:"Brésiliens / Argentins", q6f:"Citez des joueurs Brésiliens ou Argentins passés par ce club.",
-    q7s:"Joueurs Algériens", q7f:"Citez des joueurs Algériens passés par ce club.",
-    q8s:"Joueurs Marocains", q8f:"Citez des joueurs Marocains passés par ce club.",
-    q9s:"Gardiens de but",   q9f:"Citez des gardiens de but passés par ce club.",
-    q10s:"Recrutés libres",  q10f:"Citez des joueurs recrutés gratuitement par ce club.",
-    q11s:"Prêtés puis achetés", q11f:"Citez des joueurs d'abord prêtés puis achetés définitivement.",
-    q12s:"+120 buts",        q12f:"Citez des joueurs avec plus de 120 buts pour ce club.",
-    q13s:"+5 saisons consécutives", q13f:"Citez des joueurs restés plus de 5 saisons consécutives au club.",
-    q14s:"Transfert >50M€",  q14f:"Citez des joueurs achetés ou vendus pour plus de 50M€.",
-    announceTitle: "Annoncez votre réponse à voix haute",
-    announceSub: 'Puis cliquez sur "Lancer la VAR"',
-    homeSubtitle: "Choisissez votre mode de jeu",
-    refAnswers: "Réponses de référence",
-    noData: "Aucun joueur référencé.",
-    noDataFor: "Données non renseignées pour",
-    directsPts: "Directs · 2 pts",
-    passagesPts: "Passages · 1 pt",
-    total: "Total",
-    questionCount: "questions",
-    noResult: "Aucun résultat",
-    footer: "clubs",
-    badgeDuel2: "INTERMÉDIAIRE",
-    chooseTwoClubs: "Choisissez deux clubs",
-    chooseTwoClubsSub: "Sélectionnez deux clubs et lancez la VAR",
-    footerExpert: "clubs",
-  },
-  en: {
-    back: "← Back",
-    loading: "Loading…",
-    search: "Search…",
-    chooseClub: "CHOOSE A CLUB",
-    reveal: "REVEAL ▶",
-    nextClub: "⚽ Next club!",
-    launchVar: "▶ Launch VAR",
-    analyzing: "⏳ Analyzing…",
-    restart: "↺ Restart",
-    hideAnswer: "↺ Hide",
-    newQuestion: "→ New question",
-    newSearch: "↺ New search",
-    stepClub: "Club",
-    stepQuestion: "Question",
-    stepVerdict: "Verdict",
-    chooseClubStep: "Choose a club",
-    chooseQuestionStep: "Choose a question",
-    verdictVar: "VAR Verdict",
-    varReady: "VAR is ready",
-    varReadySub: "Select a club and a question",
-    ready: "Ready",
-    selectQuestion: "→ Choose a question",
-    clubSelected: "Selected club",
-    findCommon: "Find players in common",
-    club1: "Club 1",
-    club2: "Club 2",
-    noConnection: "No connection",
-    noConnectionSub: "No common player found",
-    directTransfer: "Direct transfer",
-    indirectPassage: "Common passage",
-    modeFamily: "The Identity",
-    modeDuel: "VAR Duel",
-    modeExpert: "Pro Mercato",
-    modeDescFamily: "Reveal your favourite club's info. Perfect for family play!",
-    modeDescDuel: "Draw a Club card + a Question card. VAR validates or invalidates your answer.",
-    modeDescExpert: "Find all players who wore two shirts. For the experts!",
-    badgeFamily: "EASY",
-    badgeDuel: "INTERMEDIATE",
-    badgeExpert: "EXPERT",
-    fieldVille: "CITY",
-    fieldPays: "COUNTRY",
-    fieldContinent: "CONTINENT",
-    fieldStade: "STADIUM",
-    fieldSurnom: "NICKNAME",
-    fieldCouleurs: "COLOURS",
-    fieldLegende: "LEGEND",
-    catNat: "Nationalities",
-    catPro: "Player Profile",
-    catSta: "Statistics",
-    legendSection: "⭐ Legendary players — 1 pt each",
-    q1s:"French Players",   q1f:"Name French players who played for this club.",
-    q2s:"Spanish Players",  q2f:"Name Spanish players who played for this club.",
-    q3s:"German Players",   q3f:"Name German players who played for this club.",
-    q4s:"Italian Players",  q4f:"Name Italian players who played for this club.",
-    q5s:"English Players",  q5f:"Name English players who played for this club.",
-    q6s:"Brazilians / Argentinians", q6f:"Name Brazilian or Argentinian players who played for this club.",
-    q7s:"Algerian Players", q7f:"Name Algerian players who played for this club.",
-    q8s:"Moroccan Players", q8f:"Name Moroccan players who played for this club.",
-    q9s:"Goalkeepers",      q9f:"Name goalkeepers who played for this club.",
-    q10s:"Free transfers",  q10f:"Name players recruited on a free transfer by this club.",
-    q11s:"Loan to buy",     q11f:"Name players first loaned then permanently signed.",
-    q12s:"+120 goals",      q12f:"Name players who scored more than 120 goals for this club.",
-    q13s:"+5 consecutive seasons", q13f:"Name players who stayed more than 5 consecutive seasons at the club.",
-    q14s:"Transfer >€50M",  q14f:"Name players bought or sold for more than €50M.",
-    announceTitle: "Announce your answer out loud",
-    announceSub: 'Then click "Launch VAR"',
-    homeSubtitle: "Choose your game mode",
-    refAnswers: "Reference answers",
-    noData: "No players on record.",
-    noDataFor: "No data available for",
-    directsPts: "Direct · 2 pts",
-    passagesPts: "Passages · 1 pt",
-    total: "Total",
-    questionCount: "questions",
-    noResult: "No results",
-    footer: "clubs",
-    badgeDuel2: "INTERMEDIATE",
-    chooseTwoClubs: "Choose two clubs",
-    chooseTwoClubsSub: "Select two clubs and launch VAR",
-    footerExpert: "clubs",
-  }
+/* ── LOGOS PAR CLUB ID ── */
+const CLUB_LOGOS = {
+  psg:       "https://upload.wikimedia.org/wikipedia/fr/thumb/8/86/Paris_Saint-Germain_Football_Club_2024.svg/120px-Paris_Saint-Germain_Football_Club_2024.svg.png",
+  marseille: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Olympique_Marseille_logo.svg/120px-Olympique_Marseille_logo.svg.png",
+  lyon:      "https://upload.wikimedia.org/wikipedia/fr/thumb/e/e8/Olympique_lyonnais_%28logo%29.svg/120px-Olympique_lyonnais_%28logo%29.svg.png",
+  real:      "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/120px-Real_Madrid_CF.svg.png",
+  barca:     "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/120px-FC_Barcelona_%28crest%29.svg.png",
+  atleti:    "https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Atletico_Madrid_2017_logo.svg/120px-Atletico_Madrid_2017_logo.svg.png",
+  liverpool: "https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/120px-Liverpool_FC.svg.png",
+  arsenal:   "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/120px-Arsenal_FC.svg.png",
+  chelsea:   "https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/120px-Chelsea_FC.svg.png",
+  manutd:    "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/120px-Manchester_United_FC_crest.svg.png",
+  mancity:   "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/120px-Manchester_City_FC_badge.svg.png",
+  bayern:    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/120px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png",
+  dortmund:  "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/120px-Borussia_Dortmund_logo.svg.png",
+  milan:     "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/120px-Logo_of_AC_Milan.svg.png",
+  inter:     "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/120px-FC_Internazionale_Milano_2021.svg.png",
+  juve:      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Juventus_FC_2017_icon_%28black%29.svg/120px-Juventus_FC_2017_icon_%28black%29.svg.png",
+  napoli:    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SSC_Napoli_%282023%29.svg/120px-SSC_Napoli_%282023%29.svg.png",
 };
 
+/* Sigle fallback */
+const CLUB_SIGLES = {
+  psg:"PSG",marseille:"OM",lyon:"OL",real:"RM",barca:"FCB",atleti:"ATM",
+  liverpool:"LIV",arsenal:"ARS",chelsea:"CHE",manutd:"MU",mancity:"MCI",
+  bayern:"FCB",dortmund:"BVB",milan:"MIL",inter:"INT",juve:"JUV",napoli:"NAP",
+};
+
+/* Composant logo réutilisable */
+function ClubLogo({id, nom, size=28, wrapCls="club-logo", imgSize}) {
+  const [err, setErr] = React.useState(false);
+  const url = CLUB_LOGOS[id];
+  const sigle = CLUB_SIGLES[id] || (nom||"").slice(0,3).toUpperCase();
+  const px = imgSize || size;
+  return (
+    <div className={wrapCls + ((!url || err) ? " fb" : "")}
+         style={{width: size+8, height: size+8}}>
+      {url && !err
+        ? <img src={url} width={px} height={px}
+               style={{objectFit:"contain"}}
+               onError={()=>setErr(true)}/>
+        : sigle
+      }
+    </div>
+  );
+}
+
+/* ── CLUB PICKER (remplace le <select> natif) ── */
+function ClubPicker({clubs, selected, onSelect}) {
+  const [search, setSearch] = React.useState("");
+  const [view, setView] = React.useState("grid"); // "grid" | "list"
+
+  const filtered = React.useMemo(()=>{
+    if (!search) return clubs;
+    const q = search.toLowerCase();
+    return clubs.filter(c => (c.nom||c.name||"").toLowerCase().includes(q));
+  }, [search, clubs]);
+
+  const grouped = React.useMemo(()=>{
+    const g = {};
+    filtered.forEach(c => {
+      const league = c.league || "Clubs";
+      if (!g[league]) g[league] = [];
+      g[league].push(c);
+    });
+    return g;
+  }, [filtered]);
+
+  const selClub = clubs.find(c => c.id === selected);
+
+  return (
+    <div>
+      {/* Barre de recherche */}
+      <div className="search-bar">
+        <svg viewBox="0 0 14 14" fill="none" width="14" height="14">
+          <circle cx="6" cy="6" r="4.5" stroke="var(--muted)" strokeWidth="1.2"/>
+          <path d="M9.5 9.5L12 12" stroke="var(--muted)" strokeWidth="1.2" strokeLinecap="round"/>
+        </svg>
+        <input className="search-input" placeholder="Rechercher…"
+               value={search} onChange={e=>setSearch(e.target.value)}/>
+        {search && <span onClick={()=>setSearch("")}
+          style={{cursor:"pointer",color:"var(--muted)",fontSize:"14px",lineHeight:1}}>×</span>}
+      </div>
+
+      {/* Toggle vue */}
+      <div className="view-toggle">
+        <div className={"vtog"+(view==="grid"?" active":"")} onClick={()=>setView("grid")}>⊞ Grille</div>
+        <div className={"vtog"+(view==="list"?" active":"")} onClick={()=>setView("list")}>☰ Liste</div>
+      </div>
+
+      {/* Contenu scrollable */}
+      <div style={{maxHeight:320,overflowY:"auto",paddingRight:2}}>
+        {Object.entries(grouped).map(([league, cls])=>(
+          <div key={league} className="league-section">
+            <div className="league-label">{league}</div>
+            {view==="grid"
+              ? <div className="clubs-grid">
+                  {cls.map(c=>(
+                    <div key={c.id}
+                         className={"club-tile"+(c.id===selected?" selected":"")}
+                         onClick={()=>onSelect(c.id)}>
+                      <ClubLogo id={c.id} nom={c.nom||c.name} size={28} wrapCls="club-logo"/>
+                      <div className="club-tile-name">{c.nom||c.name}</div>
+                    </div>
+                  ))}
+                </div>
+              : <div>
+                  {cls.map(c=>(
+                    <div key={c.id}
+                         className={"club-list-row"+(c.id===selected?" selected":"")}
+                         onClick={()=>onSelect(c.id)}>
+                      <ClubLogo id={c.id} nom={c.nom||c.name} size={24} wrapCls="club-list-logo"/>
+                      <div className="club-list-info">
+                        <div className="club-list-name">{c.nom||c.name}</div>
+                        <div className="club-list-league">{league}</div>
+                      </div>
+                      <div className="club-check">
+                        {c.id===selected && <div className="check-dot"/>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+            }
+          </div>
+        ))}
+        {filtered.length===0 && (
+          <div style={{textAlign:"center",padding:"24px",color:"var(--muted)",fontSize:"12px"}}>
+            Aucun résultat
+          </div>
+        )}
+      </div>
+
+      {/* CTA */}
+      <button className="cta-btn"
+              disabled={!selected}
+              onClick={()=>{}} /* géré par le parent */
+              style={{pointerEvents:"none"}}>
+        {selClub ? `Jouer avec ${selClub.nom||selClub.name} →` : "Sélectionner un club"}
+      </button>
+    </div>
+  );
+}
+
+const TRANSLATIONS = {
+  fr: {
+    back:"← Retour",loading:"Chargement…",search:"Rechercher…",chooseClub:"CHOISIR UN CLUB",
+    reveal:"RÉVÉLER ▶",nextClub:"⚽ Prochain club !",launchVar:"▶ Lancer la VAR",
+    analyzing:"⏳ Analyse…",restart:"↺ Recommencer",hideAnswer:"↺ Masquer",
+    newQuestion:"→ Nouvelle question",newSearch:"↺ Nouvelle recherche",
+    stepClub:"Club",stepQuestion:"Question",stepVerdict:"Verdict",
+    chooseClubStep:"Choisir un club",chooseQuestionStep:"Choisir une question",
+    verdictVar:"Verdict VAR",varReady:"La VAR est prête",varReadySub:"Sélectionnez un club et une question",
+    ready:"Prêt",selectQuestion:"→ Choisissez une question",clubSelected:"Club sélectionné",
+    findCommon:"Trouvez les joueurs en commun",club1:"Club 1",club2:"Club 2",
+    noConnection:"Aucune connexion",noConnectionSub:"Aucun joueur commun trouvé",
+    directTransfer:"Transfert direct",indirectPassage:"Passage commun",
+    modeFamily:"L'Identité",modeDuel:"Duel VAR",modeExpert:"Pro Mercato",
+    modeDescFamily:"Révèle les infos de ton club préféré. Parfait pour jouer en famille !",
+    modeDescDuel:"Sélectionne un club et une question. La VAR valide tes réponses.",
+    modeDescExpert:"Trouve tous les joueurs ayant porté deux maillots. Pour les experts !",
+    badgeFamily:"FACILE",badgeDuel:"INTERMÉDIAIRE",badgeExpert:"EXPERT",
+    fieldVille:"VILLE",fieldPays:"PAYS",fieldContinent:"CONTINENT",fieldStade:"STADE",
+    fieldSurnom:"SURNOM",fieldCouleurs:"COULEURS",fieldLegende:"LÉGENDE",
+    catNat:"Nationalités",catPro:"Profil Joueurs",catSta:"Statistiques",
+    legendSection:"⭐ Joueurs légendaires — 1 pt chacun",
+    q1s:"Joueurs Français",q1f:"Citez des joueurs Français passés par ce club.",
+    q2s:"Joueurs Espagnols",q2f:"Citez des joueurs Espagnols passés par ce club.",
+    q3s:"Joueurs Allemands",q3f:"Citez des joueurs Allemands passés par ce club.",
+    q4s:"Joueurs Italiens",q4f:"Citez des joueurs Italiens passés par ce club.",
+    q5s:"Joueurs Anglais",q5f:"Citez des joueurs Anglais passés par ce club.",
+    q6s:"Brésiliens / Argentins",q6f:"Citez des joueurs Brésiliens ou Argentins passés par ce club.",
+    q7s:"Joueurs Algériens",q7f:"Citez des joueurs Algériens passés par ce club.",
+    q8s:"Joueurs Marocains",q8f:"Citez des joueurs Marocains passés par ce club.",
+    q9s:"Gardiens de but",q9f:"Citez des gardiens de but passés par ce club.",
+    q10s:"Recrutés libres",q10f:"Citez des joueurs recrutés gratuitement par ce club.",
+    q11s:"Prêtés puis achetés",q11f:"Citez des joueurs d'abord prêtés puis achetés définitivement.",
+    q12s:"+120 buts",q12f:"Citez des joueurs avec plus de 120 buts pour ce club.",
+    q13s:"+5 saisons consécutives",q13f:"Citez des joueurs restés plus de 5 saisons consécutives au club.",
+    q14s:"Transfert >50M€",q14f:"Citez des joueurs achetés ou vendus pour plus de 50M€.",
+    announceTitle:"Annoncez votre réponse à voix haute",announceSub:'Puis cliquez sur "Lancer la VAR"',
+    homeSubtitle:"Choisissez votre mode de jeu",refAnswers:"Réponses de référence",
+    noData:"Aucun joueur référencé.",noDataFor:"Données non renseignées pour",
+    directsPts:"Directs · 2 pts",passagesPts:"Passages · 1 pt",total:"Total",
+    questionCount:"questions",noResult:"Aucun résultat",footer:"clubs",
+    chooseTwoClubs:"Choisissez deux clubs",chooseTwoClubsSub:"Sélectionnez deux clubs et lancez la VAR",
+  },
+  en: {
+    back:"← Back",loading:"Loading…",search:"Search…",chooseClub:"CHOOSE A CLUB",
+    reveal:"REVEAL ▶",nextClub:"⚽ Next club!",launchVar:"▶ Launch VAR",
+    analyzing:"⏳ Analyzing…",restart:"↺ Restart",hideAnswer:"↺ Hide",
+    newQuestion:"→ New question",newSearch:"↺ New search",
+    stepClub:"Club",stepQuestion:"Question",stepVerdict:"Verdict",
+    chooseClubStep:"Choose a club",chooseQuestionStep:"Choose a question",
+    verdictVar:"VAR Verdict",varReady:"VAR is ready",varReadySub:"Select a club and a question",
+    ready:"Ready",selectQuestion:"→ Choose a question",clubSelected:"Selected club",
+    findCommon:"Find players in common",club1:"Club 1",club2:"Club 2",
+    noConnection:"No connection",noConnectionSub:"No common player found",
+    directTransfer:"Direct transfer",indirectPassage:"Common passage",
+    modeFamily:"The Identity",modeDuel:"VAR Duel",modeExpert:"Pro Mercato",
+    modeDescFamily:"Reveal your favourite club's info. Perfect for family play!",
+    modeDescDuel:"Select a club and a question. VAR validates your answers.",
+    modeDescExpert:"Find all players who wore two shirts. For the experts!",
+    badgeFamily:"EASY",badgeDuel:"INTERMEDIATE",badgeExpert:"EXPERT",
+    fieldVille:"CITY",fieldPays:"COUNTRY",fieldContinent:"CONTINENT",fieldStade:"STADIUM",
+    fieldSurnom:"NICKNAME",fieldCouleurs:"COLOURS",fieldLegende:"LEGEND",
+    catNat:"Nationalities",catPro:"Player Profile",catSta:"Statistics",
+    legendSection:"⭐ Legendary players — 1 pt each",
+    q1s:"French Players",q1f:"Name French players who played for this club.",
+    q2s:"Spanish Players",q2f:"Name Spanish players who played for this club.",
+    q3s:"German Players",q3f:"Name German players who played for this club.",
+    q4s:"Italian Players",q4f:"Name Italian players who played for this club.",
+    q5s:"English Players",q5f:"Name English players who played for this club.",
+    q6s:"Brazilians / Argentinians",q6f:"Name Brazilian or Argentinian players who played for this club.",
+    q7s:"Algerian Players",q7f:"Name Algerian players who played for this club.",
+    q8s:"Moroccan Players",q8f:"Name Moroccan players who played for this club.",
+    q9s:"Goalkeepers",q9f:"Name goalkeepers who played for this club.",
+    q10s:"Free transfers",q10f:"Name players recruited on a free transfer by this club.",
+    q11s:"Loan to buy",q11f:"Name players first loaned then permanently signed.",
+    q12s:"+120 goals",q12f:"Name players who scored more than 120 goals for this club.",
+    q13s:"+5 consecutive seasons",q13f:"Name players who stayed more than 5 consecutive seasons at the club.",
+    q14s:"Transfer >€50M",q14f:"Name players bought or sold for more than €50M.",
+    announceTitle:"Announce your answer out loud",announceSub:'Then click "Launch VAR"',
+    homeSubtitle:"Choose your game mode",refAnswers:"Reference answers",
+    noData:"No players on record.",noDataFor:"No data available for",
+    directsPts:"Direct · 2 pts",passagesPts:"Passages · 1 pt",total:"Total",
+    questionCount:"questions",noResult:"No results",footer:"clubs",
+    chooseTwoClubs:"Choose two clubs",chooseTwoClubsSub:"Select two clubs and launch VAR",
+  }
+};
 
 const CATS=["nat","pro","sta"];
 const QUESTIONS_BASE=[
@@ -427,102 +563,126 @@ const QUESTIONS_BASE=[
   {id:12,cat:"sta",qk:"q12"},{id:13,cat:"sta",qk:"q13"},{id:14,cat:"sta",qk:"q14"},
 ];
 
+/* ═══════════════════════════════════════════
+   FAMILY MODE — L'Identité
+═══════════════════════════════════════════ */
 function FamilyMode({onBack,t}) {
   const [clubs,setClubs]=React.useState([]);
-  const [selected,setSelected]=React.useState(null);
+  const [selectedId,setSelectedId]=React.useState(null);
   const [revealed,setRevealed]=React.useState({});
+  const [pickerDone,setPickerDone]=React.useState(false);
 
   React.useEffect(()=>{
-    fetch("./dataFamily.json")
-      .then(r=>r.json())
-      .then(d=>setClubs(d.clubs||[]))
-      .catch(()=>{});
+    fetch("./dataFamily.json").then(r=>r.json()).then(d=>setClubs(d.clubs||[])).catch(()=>{});
   },[]);
 
-  const allRevealed=selected&&["ville","pays","continent","stade","surnom","couleurs","l0","l1","l2","l3","l4"].every(f=>revealed[f]);
-  const pickClub=(id)=>{setSelected(clubs.find(c=>c.id===id)||null);setRevealed({});};
-  const reveal=(field)=>setRevealed(p=>({...p,[field]:true}));
-  const next=()=>{setSelected(null);setRevealed({});};
-  const baseFields=[
-    {key:"ville",    label:t("fieldVille"),    icon:"📍", pts:1},
-    {key:"pays",     label:t("fieldPays"),     icon:"🌍", pts:1},
-    {key:"continent",label:t("fieldContinent"),icon:"🗺️", pts:1},
-    {key:"stade",    label:t("fieldStade"),    icon:"🏟️", pts:1},
-    {key:"surnom",   label:t("fieldSurnom"),   icon:"🏷️", pts:2},
-    {key:"couleurs", label:t("fieldCouleurs"), icon:"🎨", pts:1},
-  ];
-  const legendeFields=selected?(selected.legendes||[]).map((leg,i)=>{
-    const name=typeof leg==="object"?leg.name:leg;
-    return {key:"l"+i, label:t("fieldLegende")+" "+(i+1), icon:"⭐", pts:1, value:name};
-  }):[];
-  const fields=[...baseFields,...legendeFields];
+  const selected = clubs.find(c=>c.id===selectedId)||null;
 
-  return(
-    <div className="family-page">
-      <div style={{maxWidth:640,margin:"0 auto",padding:"24px 20px 60px",width:"100%"}}>
-        <div className="back-btn" onClick={onBack}>{t("back")}</div>
-        <div className="family-wrap">
-          <div className="family-hero">
-            <div className="family-hero-icon">🏆</div>
-            <div className="family-hero-title">L'IDENTITÉ</div>
-          </div>
-          <div className="family-select-wrap">
-            <select className="family-select" value={selected?.id||""} onChange={e=>pickClub(e.target.value)}>
-              <option value="">{`— ${t("chooseClub")} (${clubs.length}) —`}</option>
-              {clubs.map(c=><option key={c.id} value={c.id}>{c.nom}</option>)}
-            </select>
-          </div>
-          {selected&&(
-            <div className="family-card">
-              <div className="family-card-header">
-                <div className="family-club-name">{selected.nom}</div>
-              </div>
-              <div className="family-rows">
-                {baseFields.map((f,i)=>(
-                  <div className="family-row" key={f.key} style={{animationDelay:`${i*.06}s`}}>
-                    <div style={{display:"flex",alignItems:"center",gap:"6px",flexShrink:0}}>
-                      <span style={{fontSize:"14px"}}>{f.icon}</span>
-                      <span className="family-label">{f.label}</span>
-                
-                    </div>
-                    {revealed[f.key]
-                      ?<span className="family-value">{selected[f.key]}</span>
-                      :<button className="btn-reveal" onClick={()=>reveal(f.key)}>RÉVÉLER ▶</button>
-                    }
-                  </div>
-                ))}
-                {legendeFields.length>0&&(
-                  <div style={{padding:"8px 20px 4px",background:"rgba(232,168,0,0.06)",borderTop:"0.5px solid rgba(232,168,0,0.25)"}}>
-                    <span style={{fontSize:"9px",fontWeight:600,letterSpacing:"3px",color:"var(--gold2)",textTransform:"uppercase"}}>{t("legendSection")}</span>
-                  </div>
-                )}
-                {legendeFields.map((f,i)=>(
-                  <div className="family-row" key={f.key} style={{animationDelay:`${(baseFields.length+i)*.06}s`,background:"rgba(232,168,0,0.03)"}}>
-                    <div style={{display:"flex",alignItems:"center",gap:"6px",flexShrink:0}}>
-                      <span style={{fontSize:"13px"}}>{f.icon}</span>
-                      <span className="family-label" style={{color:"var(--gold2)"}}>{f.label}</span>
-                    </div>
-                    {revealed[f.key]
-                      ?<span className="family-value" style={{display:"flex",alignItems:"center",gap:"8px",color:"var(--gold2)"}}>
-                          {f.photo&&<img src={f.photo} alt={f.value}
-                            style={{width:"36px",height:"36px",borderRadius:"50%",objectFit:"cover",objectPosition:"center 15%",border:"2px solid rgba(232,168,0,0.6)",flexShrink:0}}
-                            onError={e=>{e.target.style.display="none";}}/>}
-                          {f.value}
-                        </span>
-                      :<button className="btn-reveal" onClick={()=>reveal(f.key)}>{t("reveal")}</button>
-                    }
-                  </div>
-                ))}
-              </div>
+  const handleSelect = (id) => { setSelectedId(id); };
+  const handlePlay = () => { if(selectedId) { setRevealed({}); setPickerDone(true); }};
+  const reveal = (field)=>setRevealed(p=>({...p,[field]:true}));
+  const next = ()=>{ setSelectedId(null); setRevealed({}); setPickerDone(false); };
+
+  const baseFields=[
+    {key:"ville",    label:t("fieldVille"),    icon:"📍"},
+    {key:"pays",     label:t("fieldPays"),     icon:"🌍"},
+    {key:"continent",label:t("fieldContinent"),icon:"🗺️"},
+    {key:"stade",    label:t("fieldStade"),    icon:"🏟️"},
+    {key:"surnom",   label:t("fieldSurnom"),   icon:"🏷️"},
+    {key:"couleurs", label:t("fieldCouleurs"), icon:"🎨"},
+  ];
+  const legendeFields = selected
+    ? (selected.legendes||[]).map((leg,i)=>({
+        key:"l"+i, label:t("fieldLegende")+" "+(i+1), icon:"⭐",
+        value: typeof leg==="object"?leg.name:leg,
+        photo: typeof leg==="object"?leg.photo:null,
+      }))
+    : [];
+  const allRevealed = selected && [...baseFields,...legendeFields].every(f=>revealed[f.key]);
+
+  /* Étape 1 : sélection du club */
+  if (!pickerDone) {
+    return (
+      <div className="picker-page">
+        <div className="picker-wrap">
+          <div className="back-btn" onClick={onBack}>{t("back")}</div>
+          <div className="picker-hero">
+            <div className="picker-hero-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"
+                      stroke="var(--gold)" strokeWidth="1.5" strokeLinejoin="round"/>
+              </svg>
             </div>
-          )}
-          {allRevealed&&<button className="btn-next" onClick={next}>{t("nextClub")}</button>}
+            <div className="picker-hero-title">L'IDENTITÉ</div>
+            <div className="picker-hero-sub">{clubs.length} clubs disponibles</div>
+          </div>
+
+          <ClubPicker clubs={clubs} selected={selectedId} onSelect={handleSelect}/>
+
+          <button className="cta-btn" disabled={!selectedId} onClick={handlePlay}
+                  style={{pointerEvents: selectedId?"auto":"none", marginTop:14}}>
+            {selected ? `Jouer avec ${selected.nom} →` : "Sélectionner un club"}
+          </button>
         </div>
+      </div>
+    );
+  }
+
+  /* Étape 2 : carte du club */
+  return (
+    <div className="family-page">
+      <div className="family-wrap">
+        <div className="back-btn" onClick={()=>setPickerDone(false)}>{t("back")}</div>
+        <div className="family-card">
+          <div className="family-card-header">
+            <ClubLogo id={selected.id} nom={selected.nom} size={32} wrapCls="family-club-logo"/>
+            <div className="family-club-name">{selected.nom}</div>
+          </div>
+          <div className="family-rows">
+            {baseFields.map((f,i)=>(
+              <div className="family-row" key={f.key} style={{animationDelay:`${i*.06}s`}}>
+                <div style={{display:"flex",alignItems:"center",gap:"6px",flexShrink:0}}>
+                  <span style={{fontSize:"13px"}}>{f.icon}</span>
+                  <span className="family-label">{f.label}</span>
+                </div>
+                {revealed[f.key]
+                  ? <span className="family-value">{selected[f.key]}</span>
+                  : <button className="btn-reveal" onClick={()=>reveal(f.key)}>{t("reveal")}</button>
+                }
+              </div>
+            ))}
+            {legendeFields.length>0&&(
+              <div style={{padding:"7px 20px 4px",background:"rgba(240,180,41,0.04)",borderTop:".5px solid rgba(240,180,41,0.15)"}}>
+                <span style={{fontSize:"8px",fontWeight:600,letterSpacing:"3px",color:"var(--gold)",textTransform:"uppercase"}}>{t("legendSection")}</span>
+              </div>
+            )}
+            {legendeFields.map((f,i)=>(
+              <div className="family-row" key={f.key} style={{animationDelay:`${(baseFields.length+i)*.06}s`}}>
+                <div style={{display:"flex",alignItems:"center",gap:"6px",flexShrink:0}}>
+                  <span style={{fontSize:"12px"}}>{f.icon}</span>
+                  <span className="family-label" style={{color:"var(--gold)"}}>{f.label}</span>
+                </div>
+                {revealed[f.key]
+                  ? <span className="family-value" style={{display:"flex",alignItems:"center",gap:"8px",color:"var(--gold)"}}>
+                      {f.photo&&<img src={f.photo} alt={f.value} onError={e=>e.target.style.display="none"}
+                        style={{width:"32px",height:"32px",borderRadius:"50%",objectFit:"cover",objectPosition:"center 15%",border:"1.5px solid rgba(240,180,41,0.4)",flexShrink:0}}/>}
+                      {f.value}
+                    </span>
+                  : <button className="btn-reveal" onClick={()=>reveal(f.key)}>{t("reveal")}</button>
+                }
+              </div>
+            ))}
+          </div>
+        </div>
+        {allRevealed&&<button className="btn-next" onClick={next}>{t("nextClub")}</button>}
       </div>
     </div>
   );
 }
 
+/* ═══════════════════════════════════════════
+   INTER MODE — Duel VAR
+═══════════════════════════════════════════ */
 function InterMode({onBack,t}) {
   const QUESTIONS=QUESTIONS_BASE.map(q=>({...q,short:t(q.qk+"s"),full:t(q.qk+"f")}));
   const catMeta={
@@ -541,25 +701,42 @@ function InterMode({onBack,t}) {
   const dropRef=React.useRef(null);
   const inputRef=React.useRef(null);
   const verdictRef=React.useRef(null);
+
   React.useEffect(()=>{fetch("./database.json").then(r=>r.json()).then(d=>{setDb(d);setLoading(false);}).catch(()=>setLoading(false));},[]);
-  React.useEffect(()=>{const fn=e=>{if(dropRef.current&&!dropRef.current.contains(e.target)&&inputRef.current&&!inputRef.current.contains(e.target))setDropOpen(false);};document.addEventListener("mousedown",fn);return()=>document.removeEventListener("mousedown",fn);},[]);
+  React.useEffect(()=>{
+    const fn=e=>{
+      if(dropRef.current&&!dropRef.current.contains(e.target)&&inputRef.current&&!inputRef.current.contains(e.target))setDropOpen(false);
+    };
+    document.addEventListener("mousedown",fn);return()=>document.removeEventListener("mousedown",fn);
+  },[]);
   React.useEffect(()=>{if(question&&verdictRef.current){setTimeout(()=>verdictRef.current.scrollIntoView({behavior:"smooth",block:"center"}),150);}},[question]);
+
   const clubs=db?.clubs||[];
   const answers=db?.answers||{};
   const filtered=React.useMemo(()=>{if(!search)return clubs;const s=search.toLowerCase();return clubs.filter(c=>c.name.toLowerCase().includes(s)||(c.league||"").toLowerCase().includes(s));},[search,clubs]);
   const grouped=React.useMemo(()=>{const o={};filtered.forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;},[filtered]);
+
   const pickClub=c=>{setClub(c);setQuestion(null);setRevealed(false);setSearch("");setDropOpen(false);};
   const pickQ=q=>{setQuestion(q);setRevealed(false);};
   const launch=()=>{setScanning(true);setTimeout(()=>{setScanning(false);setRevealed(true);},900);};
   const reset=()=>{setClub(null);setQuestion(null);setRevealed(false);setSearch("");};
-  const resetBtn=<button className="reset-btn" onClick={reset}>{t("restart")}</button>;
   const getAns=(cid,qid)=>{if(!answers||!answers[cid])return null;const d=answers[cid];return d[String(qid)]!==undefined?d[String(qid)]:(d[qid]!==undefined?d[qid]:null);};
-  const renderPlayer=(p,i,tagCls)=>{const name=p&&typeof p==="object"?(p.name||"?"):String(p);const photo=p&&typeof p==="object"?p.photo:null;return(<span key={i} className={"tag "+tagCls} style={{animationDelay:`${i*.04}s`}}>{photo&&<img src={photo} style={{width:"20px",height:"20px",borderRadius:"50%",objectFit:"cover"}} onError={e=>{e.target.style.display="none";}}/>}{name}</span>);};
+  const renderPlayer=(p,i,tagCls)=>{
+    const name=p&&typeof p==="object"?(p.name||"?"):String(p);
+    const photo=p&&typeof p==="object"?p.photo:null;
+    return(<span key={i} className={"tag "+tagCls} style={{animationDelay:`${i*.04}s`}}>
+      {photo&&<img src={photo} style={{width:"18px",height:"18px",borderRadius:"50%",objectFit:"cover"}} onError={e=>{e.target.style.display="none";}}/>}
+      {name}
+    </span>);
+  };
+
   const ans=club&&question?getAns(club.id,question.id):null;
   const step=!club?1:!question?2:3;
   const qCat=question?.cat||"nat";
   const tagCls=catMeta[qCat]?.tagCls||"tag-green";
-  if(loading)return<div className="page"><div className="back-btn" onClick={onBack}>← Retour</div><div className="loading"><div className="spinner"/><div className="loading-text">Chargement…</div></div></div>;
+
+  if(loading)return<div className="page"><div className="back-btn" onClick={onBack}>{t("back")}</div><div className="loading"><div className="spinner"/><div className="loading-text">{t("loading")}</div></div></div>;
+
   return(
     <div className="inter-page">
       <div className="page">
@@ -570,50 +747,149 @@ function InterMode({onBack,t}) {
               <div className="step-num">{step>val?"✓":n}</div><span>{label}</span>
             </div>
           ))}
-          {(club||question)&&<div className="step-reset">{resetBtn}</div>}
+          {(club||question)&&<div className="step-reset"><button className="reset-btn" onClick={reset}>{t("restart")}</button></div>}
         </div>
         <div className="two-col">
           <div>
             <div className="sh"><span className="sh-num">①</span><span className="sh-label">{t("chooseClubStep")}</span></div>
             <div className="picker-box">
               <div className="picker-inner">
-                <span className="search-ico">🔍</span>
-                <input ref={inputRef} className="search-inp" placeholder={t("search")} value={search} onChange={e=>{setSearch(e.target.value);setDropOpen(true);}} onFocus={()=>setDropOpen(true)}/>
-                {dropOpen&&(<div className="dropdown" ref={dropRef}>{Object.entries(grouped).map(([league,cls])=>(<div key={league}><div className="dg-label">{league}</div>{cls.map(c=>(<div key={c.id} className={"di"+(club?.id===c.id?" sel":"")} onMouseDown={()=>pickClub(c)}><span style={{fontSize:"15px"}}>{c.flag}</span><span>{c.name}</span></div>))}</div>))}{!Object.keys(grouped).length&&<div style={{padding:"14px",color:"var(--slate)",fontSize:"12px",textAlign:"center"}}>{t("noResult")}</div>}</div>)}
-                {club&&(<div className="club-chip"><span className="chip-flag">{club.flag}</span><div className="chip-info"><div className="chip-name">{club.name}</div><div className="chip-league">{club.league}</div></div><span className="chip-x" onClick={()=>{setClub(null);setRevealed(false);}}>×</span></div>)}
+                <input ref={inputRef} className="search-inp" placeholder={t("search")}
+                       value={search} onChange={e=>{setSearch(e.target.value);setDropOpen(true);}} onFocus={()=>setDropOpen(true)}/>
+                {dropOpen&&(
+                  <div className="dropdown" ref={dropRef}>
+                    {Object.entries(grouped).map(([league,cls])=>(
+                      <div key={league}>
+                        <div className="dg-label">{league}</div>
+                        {cls.map(c=>(
+                          <div key={c.id} className={"di"+(club?.id===c.id?" sel":"")}
+                               onMouseDown={()=>pickClub(c)}>
+                            <ClubLogo id={c.id} nom={c.name} size={18} wrapCls="di-logo" imgSize={14}/>
+                            <span>{c.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                    {!Object.keys(grouped).length&&<div style={{padding:"12px",color:"var(--muted)",fontSize:"12px",textAlign:"center"}}>{t("noResult")}</div>}
+                  </div>
+                )}
+                {club&&(
+                  <div className="club-chip">
+                    <ClubLogo id={club.id} nom={club.name} size={22} wrapCls="chip-logo" imgSize={16}/>
+                    <div className="chip-info">
+                      <div className="chip-name">{club.name}</div>
+                      <div className="chip-league">{club.league}</div>
+                    </div>
+                    <span className="chip-x" onClick={()=>{setClub(null);setRevealed(false);}}>×</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
           <div>
             <div className="sh"><span className="sh-num">③</span><span className="sh-label">{t("verdictVar")}</span></div>
             <div className="status-box">
-              {!club&&<div className="status-idle">{t("varReadySub")}<br/><br/>{t("ready")} → <strong style={{color:"var(--green)"}}>{t("launchVar")}</strong></div>}
-              {club&&!question&&(<div style={{animation:"fadeUp .25s ease both"}}><div style={{fontSize:"9px",fontWeight:700,letterSpacing:"2px",textTransform:"uppercase",color:"var(--slate)",marginBottom:"4px"}}>{t("clubSelected")}</div><div className="status-club-name">{club.flag} {club.name}</div><div style={{fontSize:"12px",color:"var(--green)",fontWeight:600,marginTop:"6px"}}>{t("selectQuestion")}</div></div>)}
-              {club&&question&&(<div style={{animation:"fadeUp .25s ease both"}}><div style={{fontSize:"9px",fontWeight:700,letterSpacing:"2px",textTransform:"uppercase",color:"var(--slate)",marginBottom:"3px"}}>Prêt</div><div className="status-club-name">{club.flag} {club.name}</div><div className="status-q-text">Q{question.id} — {question.short}</div>{!revealed&&!scanning&&<button className="btn-launch" onClick={launch}>{t("launchVar")}</button>}{scanning&&<button className="btn-launch" disabled>{t("analyzing")}</button>}{revealed&&(<div style={{display:"flex",gap:"8px",flexWrap:"wrap"}}><button className="btn-ghost" onClick={()=>setRevealed(false)}>{t("hideAnswer")}</button><button className="btn-ghost" onClick={()=>{setQuestion(null);setRevealed(false);}}>{t("newQuestion")}</button></div>)}</div>)}
+              {!club&&<div className="status-idle">{t("varReadySub")}<br/><br/>{t("ready")} → <strong style={{color:"var(--gold)"}}>{t("launchVar")}</strong></div>}
+              {club&&!question&&(
+                <div style={{animation:"fadeUp .25s ease both"}}>
+                  <div style={{fontSize:"8px",fontWeight:700,letterSpacing:"2px",textTransform:"uppercase",color:"var(--muted)",marginBottom:"4px"}}>{t("clubSelected")}</div>
+                  <div className="status-club-name">{club.name}</div>
+                  <div style={{fontSize:"11px",color:"var(--gold)",fontWeight:600,marginTop:"5px"}}>{t("selectQuestion")}</div>
+                </div>
+              )}
+              {club&&question&&(
+                <div style={{animation:"fadeUp .25s ease both"}}>
+                  <div style={{fontSize:"8px",fontWeight:700,letterSpacing:"2px",textTransform:"uppercase",color:"var(--muted)",marginBottom:"3px"}}>Prêt</div>
+                  <div className="status-club-name">{club.name}</div>
+                  <div className="status-q-text">Q{question.id} — {question.short}</div>
+                  {!revealed&&!scanning&&<button className="btn-launch" onClick={launch}>{t("launchVar")}</button>}
+                  {scanning&&<button className="btn-launch" disabled>{t("analyzing")}</button>}
+                  {revealed&&(
+                    <div style={{display:"flex",gap:"7px",flexWrap:"wrap"}}>
+                      <button className="btn-ghost" onClick={()=>setRevealed(false)}>{t("hideAnswer")}</button>
+                      <button className="btn-ghost" onClick={()=>{setQuestion(null);setRevealed(false);}}>{t("newQuestion")}</button>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
+
         <div className="q-section">
           <div className="sh"><span className="sh-num">②</span><span className="sh-label">{t("chooseQuestionStep")}</span></div>
-          {CATS.map(cat=>{const meta=catMeta[cat];const qs=QUESTIONS.filter(q=>q.cat===cat&&!q.hidden);return(<div key={cat} className="cat-block"><div className="cat-header"><span className={meta.badgeCls}>{meta.label}</span><span className="cat-count">{qs.length} {t("questionCount")}</span></div><div className="q-grid">{qs.map(q=>(<div key={q.id} className={"q-card"+(question?.id===q.id?" on "+cat:"")} onClick={()=>pickQ(q)}><div className="q-num">Q{q.id}</div><div className="q-text">{q.short}</div></div>))}</div></div>);})}
+          {CATS.map(cat=>{
+            const meta=catMeta[cat];
+            const qs=QUESTIONS.filter(q=>q.cat===cat);
+            return(
+              <div key={cat} className="cat-block">
+                <div className="cat-header">
+                  <span className={meta.badgeCls}>{meta.label}</span>
+                  <span className="cat-count">{qs.length} {t("questionCount")}</span>
+                </div>
+                <div className="q-grid">
+                  {qs.map(q=>(
+                    <div key={q.id} className={"q-card"+(question?.id===q.id?" on "+cat:"")} onClick={()=>pickQ(q)}>
+                      <div className="q-num">Q{q.id}</div>
+                      <div className="q-text">{q.short}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
+
         {club&&question?(
           <div className="verdict-wrap" ref={verdictRef}>
             <div className="sh"><span className="sh-num">③</span><span className="sh-label">{t("verdictVar")}</span></div>
             <div className="verdict-card">
               <div className="verdict-head">
-                <div><div className="vh-club">{club.flag} {club.name}</div><div className="vh-q">{question.full}</div></div>
-                <div>{!revealed&&!scanning&&<button className="btn-launch" onClick={launch}>{t("launchVar")}</button>}{scanning&&<button className="btn-launch" disabled>{t("analyzing")}</button>}{revealed&&<button className="btn-ghost" onClick={()=>setRevealed(false)}>{t("hideAnswer")}</button>}</div>
+                <div>
+                  <div className="vh-club">{club.name}</div>
+                  <div className="vh-q">{question.full}</div>
+                </div>
+                <div>
+                  {!revealed&&!scanning&&<button className="btn-launch" onClick={launch}>{t("launchVar")}</button>}
+                  {scanning&&<button className="btn-launch" disabled>{t("analyzing")}</button>}
+                  {revealed&&<button className="btn-ghost" onClick={()=>setRevealed(false)}>{t("hideAnswer")}</button>}
+                </div>
               </div>
-              <div className="verdict-body">
-                {scanning&&<div className="scan-wrap"><div className="scan-bg"/><div className="scan-beam"/></div>}
-                {!revealed&&!scanning&&(<div className="locked"><div className="locked-icon">🔒</div><div className="locked-t">{t("announceTitle")}</div><div className="locked-s">{t("announceSub")}</div></div>)}
-                {revealed&&(<div style={{animation:"fadeUp .35s ease both"}}>{ans===null?<div className="no-data-msg">⚠️ {t("noDataFor")} {club.name}</div>:!Array.isArray(ans)||ans.length===0?<div className="no-data-msg">{t("noData")}</div>:(<><div className="rev-intro"><div className="rev-intro-line"/><span className="rev-intro-text">{t("refAnswers")}</span><span className="rev-count">{ans.length}</span></div><div className="tags">{ans.map((p,i)=>renderPlayer(p,i,tagCls))}</div></>)}</div>)}
+              <div className="verdict-body" style={{position:"relative"}}>
+                {scanning&&<div className="scan-wrap"><div className="scan-beam"/></div>}
+                {!revealed&&!scanning&&(
+                  <div className="locked">
+                    <div className="locked-icon">🔒</div>
+                    <div className="locked-t">{t("announceTitle")}</div>
+                    <div className="locked-s">{t("announceSub")}</div>
+                  </div>
+                )}
+                {revealed&&(
+                  <div style={{animation:"fadeUp .35s ease both"}}>
+                    {ans===null
+                      ? <div className="no-data-msg">⚠️ {t("noDataFor")} {club.name}</div>
+                      : !Array.isArray(ans)||ans.length===0
+                        ? <div className="no-data-msg">{t("noData")}</div>
+                        : <>
+                            <div className="rev-intro">
+                              <div className="rev-intro-line"/>
+                              <span className="rev-intro-text">{t("refAnswers")}</span>
+                              <span className="rev-count">{ans.length}</span>
+                            </div>
+                            <div className="tags">{ans.map((p,i)=>renderPlayer(p,i,tagCls))}</div>
+                          </>
+                    }
+                  </div>
+                )}
               </div>
             </div>
           </div>
         ):(
-          <div className="empty"><div className="empty-badge">⚽</div><div className="empty-t">{t("varReady")}</div><div className="empty-s">{t("varReadySub")}</div></div>
+          <div className="empty">
+            <div className="empty-badge">⚽</div>
+            <div className="empty-t">{t("varReady")}</div>
+            <div className="empty-s">{t("varReadySub")}</div>
+          </div>
         )}
         <div className="footer">VAR CLUB · {t("modeDuel")} · {clubs.length} {t("footer")}</div>
       </div>
@@ -621,18 +897,27 @@ function InterMode({onBack,t}) {
   );
 }
 
-function PlayerCard({player,type,pts2,pts1}) {
+/* ═══════════════════════════════════════════
+   PLAYER CARD (Expert)
+═══════════════════════════════════════════ */
+function PlayerCard({player,type}) {
   const [imgErr,setImgErr]=React.useState(false);
   return(
-    <div className={"player-card "+type} style={{animationDelay:`${Math.random()*.25}s`}}>
-      {player.photo_url&&!imgErr?<img className="player-photo" src={player.photo_url} alt={player.nom} onError={()=>setImgErr(true)}/>:<div className="player-photo-placeholder">⚽</div>}
+    <div className={"player-card "+type} style={{animationDelay:`${Math.random()*.2}s`}}>
+      {player.photo_url&&!imgErr
+        ?<img className="player-photo" src={player.photo_url} alt={player.nom} onError={()=>setImgErr(true)}/>
+        :<div className="player-photo-placeholder">⚽</div>
+      }
       <div className="player-name">{player.nom}</div>
       {player.annee&&parseInt(player.annee)>1950&&parseInt(player.annee)<2030&&<div className="player-year">{player.annee}</div>}
-      <div className={"player-pts "+type}>{type==="direct"?(pts2||"2 pts"):(pts1||"1 pt")}</div>
+      <div className={"player-pts "+type}>{type==="direct"?"2 pts":"1 pt"}</div>
     </div>
   );
 }
 
+/* ═══════════════════════════════════════════
+   EXPERT MODE — Pro Mercato
+═══════════════════════════════════════════ */
 function ExpertMode({onBack,t}) {
   const [clubs,setClubs]=React.useState([]);
   const [loading,setLoading]=React.useState(true);
@@ -647,107 +932,228 @@ function ExpertMode({onBack,t}) {
   const [error,setError]=React.useState(null);
   const ref1=React.useRef(null);
   const ref2=React.useRef(null);
-  React.useEffect(()=>{fetch(`${EXPERT_API}/api/clubs`).then(r=>r.json()).then(d=>{setClubs(d.clubs||[]);setLoading(false);}).catch(e=>{setError(e.message);setLoading(false);});},[]);
-  React.useEffect(()=>{const fn=e=>{if(ref1.current&&!ref1.current.contains(e.target))setDrop1(false);if(ref2.current&&!ref2.current.contains(e.target))setDrop2(false);};document.addEventListener("mousedown",fn);return()=>document.removeEventListener("mousedown",fn);},[]);
+
+  React.useEffect(()=>{
+    fetch(`${EXPERT_API}/api/clubs`).then(r=>r.json()).then(d=>{setClubs(d.clubs||[]);setLoading(false);}).catch(e=>{setError(e.message);setLoading(false);});
+  },[]);
+  React.useEffect(()=>{
+    const fn=e=>{
+      if(ref1.current&&!ref1.current.contains(e.target))setDrop1(false);
+      if(ref2.current&&!ref2.current.contains(e.target))setDrop2(false);
+    };
+    document.addEventListener("mousedown",fn);return()=>document.removeEventListener("mousedown",fn);
+  },[]);
+
   const grouped=React.useMemo(()=>{const o={};clubs.forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;},[clubs]);
-  const filter=(s)=>{if(!s)return grouped;const q=s.toLowerCase();const o={};clubs.filter(c=>c.name.toLowerCase().includes(q)||c.league.toLowerCase().includes(q)).forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});return o;};
-  const launch=async()=>{if(!club1||!club2)return;setScanning(true);setResults(null);try{const r=await fetch(`${EXPERT_API}/api/var?club1=${club1.id}&club2=${club2.id}`);const d=await r.json();setResults(d);}catch(e){setError(e.message);}setScanning(false);};
-  if(loading)return<div className="page"><div className="back-btn" onClick={onBack}>← Retour</div><div className="loading"><div className="spinner"/><div className="loading-text">Chargement…</div></div></div>;
+  const filter=(s)=>{
+    if(!s)return grouped;
+    const q=s.toLowerCase();
+    const o={};
+    clubs.filter(c=>c.name.toLowerCase().includes(q)||c.league.toLowerCase().includes(q))
+         .forEach(c=>{if(!o[c.league])o[c.league]=[];o[c.league].push(c);});
+    return o;
+  };
+
+  const launch=async()=>{
+    if(!club1||!club2)return;
+    setScanning(true);setResults(null);
+    try{
+      const r=await fetch(`${EXPERT_API}/api/var?club1=${club1.id}&club2=${club2.id}`);
+      const d=await r.json();setResults(d);
+    }catch(e){setError(e.message);}
+    setScanning(false);
+  };
+
+  if(loading)return<div className="page"><div className="back-btn" onClick={onBack}>{t("back")}</div><div className="loading"><div className="spinner"/><div className="loading-text">{t("loading")}</div></div></div>;
+
   const totalDirect=results?.direct?.length||0;
   const totalIndirect=results?.indirect?.length||0;
   const totalPoints=totalDirect*2+totalIndirect;
+
+  const PickerDropdown = ({label,club,setClub,search,setSearch,drop,setDrop,refEl,other})=>(
+    <div>
+      <div className="picker-label">{label}</div>
+      <div className="picker-box" ref={refEl} style={{position:"relative",overflow:"visible",zIndex:drop?200:10}}>
+        <div className="picker-inner">
+          <input className="search-inp" placeholder={t("search")}
+                 value={search}
+                 onChange={e=>{setSearch(e.target.value);setDrop(true);}}
+                 onFocus={()=>setDrop(true)}/>
+          {drop&&(
+            <div className="dropdown">
+              {Object.entries(filter(search)).map(([league,cls])=>(
+                <div key={league}>
+                  <div className="dg-label">{league}</div>
+                  {cls.filter(c=>!other||c.id!==other.id).map(c=>(
+                    <div key={c.id} className={"di"+(club?.id===c.id?" sel":"")}
+                         onMouseDown={()=>{setClub(c);setSearch("");setDrop(false);setResults(null);}}>
+                      <ClubLogo id={c.id} nom={c.name} size={18} wrapCls="di-logo" imgSize={14}/>
+                      <span>{c.name}</span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
+          {club&&(
+            <div className="club-chip">
+              <ClubLogo id={club.id} nom={club.name} size={22} wrapCls="chip-logo" imgSize={16}/>
+              <div className="chip-info">
+                <div className="chip-name">{club.name}</div>
+                <div className="chip-league">{club.league}</div>
+              </div>
+              <span className="chip-x" onClick={()=>{setClub(null);setResults(null);}}>×</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
   return(
     <div className="inter-page">
       <div className="page">
         <div className="back-btn" onClick={onBack}>{t("back")}</div>
-        {error&&<div style={{background:"#fce4ec",border:"1px solid rgba(231,76,60,.2)",borderRadius:"10px",padding:"12px 16px",marginBottom:"16px",fontSize:"12px",color:"var(--coral)"}}>⚠️ {error}</div>}
+        {error&&<div style={{background:"rgba(231,76,60,.08)",border:"1px solid rgba(231,76,60,.2)",borderRadius:"8px",padding:"10px 14px",marginBottom:"14px",fontSize:"11px",color:"var(--coral)"}}>⚠️ {error}</div>}
         <div className="expert-hero">
           <div className="expert-title">PRO <span>MERCATO</span></div>
           <div className="expert-sub">{t("findCommon")}</div>
           <div className="expert-rule"/>
         </div>
-        {scanning&&(<div className="scan-overlay"><div className="scan-box"><div className="scan-beam-overlay" style={{top:0}}/><div className="scan-title">Analyse VAR</div><div className="scan-sub">Recherche des connexions…</div></div></div>)}
+        {scanning&&(
+          <div className="scan-overlay">
+            <div className="scan-box">
+              <div className="scan-beam-overlay" style={{top:0}}/>
+              <div className="scan-title">Analyse VAR</div>
+              <div className="scan-sub">Recherche des connexions…</div>
+            </div>
+          </div>
+        )}
         <div className="selector-grid">
-          <div>
-            <div className="picker-label">{t("club1")}</div>
-            <div className="picker-box" ref={ref1} style={{position:"relative",overflow:"visible",zIndex:drop1?200:10}}>
-              <div className="picker-inner">
-                <span className="search-ico">🔍</span>
-                <input className="search-inp" placeholder={t("search")} value={search1} onChange={e=>{setSearch1(e.target.value);setDrop1(true);}} onFocus={()=>setDrop1(true)}/>
-                {drop1&&(<div className="dropdown">{Object.entries(filter(search1)).map(([league,cls])=>(<div key={league}><div className="dg-label">{league}</div>{cls.filter(c=>!club2||c.id!==club2.id).map(c=>(<div key={c.id} className={"di"+(club1?.id===c.id?" sel":"")} onMouseDown={()=>{setClub1(c);setSearch1("");setDrop1(false);setResults(null);}}><span>{c.flag}</span><span>{c.name}</span></div>))}</div>))}</div>)}
-                {club1&&(<div className="club-chip"><span className="chip-flag">{club1.flag}</span><div className="chip-info"><div className="chip-name">{club1.name}</div><div className="chip-league">{club1.league}</div></div><span className="chip-x" onClick={()=>{setClub1(null);setResults(null);}}>×</span></div>)}
-              </div>
+          <PickerDropdown label={t("club1")} club={club1} setClub={setClub1}
+            search={search1} setSearch={setSearch1} drop={drop1} setDrop={setDrop1}
+            refEl={ref1} other={club2}/>
+          <div className="vs-badge">
+            <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"14px"}}>
+              <div className="vs-inner">VS</div>
+              {!results
+                ? <button className="btn-launch-expert" onClick={launch} disabled={!club1||!club2||scanning}>
+                    {scanning?t("analyzing"):t("launchVar")}
+                  </button>
+                : <button className="btn-launch-expert"
+                    style={{background:"var(--card)",color:"var(--muted)"}}
+                    onClick={()=>setResults(null)}>{t("newSearch")}</button>
+              }
             </div>
           </div>
-          <div className="vs-badge"><div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"16px"}}><div className="vs-inner">VS</div>{!results?<button className="btn-launch-expert" onClick={launch} disabled={!club1||!club2||scanning}>{scanning?t("analyzing"):t("launchVar")}</button>:<button className="btn-launch-expert" style={{background:"rgba(0,0,0,.08)",color:"var(--slate)",boxShadow:"none"}} onClick={()=>setResults(null)}>{t("newSearch")}</button>}</div></div>
-          <div>
-            <div className="picker-label">{t("club2")}</div>
-            <div className="picker-box" ref={ref2} style={{position:"relative",overflow:"visible",zIndex:drop2?200:10}}>
-              <div className="picker-inner">
-                <span className="search-ico">🔍</span>
-                <input className="search-inp" placeholder={t("search")} value={search2} onChange={e=>{setSearch2(e.target.value);setDrop2(true);}} onFocus={()=>setDrop2(true)}/>
-                {drop2&&(<div className="dropdown">{Object.entries(filter(search2)).map(([league,cls])=>(<div key={league}><div className="dg-label">{league}</div>{cls.filter(c=>!club1||c.id!==club1.id).map(c=>(<div key={c.id} className={"di"+(club2?.id===c.id?" sel":"")} onMouseDown={()=>{setClub2(c);setSearch2("");setDrop2(false);setResults(null);}}><span>{c.flag}</span><span>{c.name}</span></div>))}</div>))}</div>)}
-                {club2&&(<div className="club-chip"><span className="chip-flag">{club2.flag}</span><div className="chip-info"><div className="chip-name">{club2.name}</div><div className="chip-league">{club2.league}</div></div><span className="chip-x" onClick={()=>{setClub2(null);setResults(null);}}>×</span></div>)}
-              </div>
-            </div>
-          </div>
+          <PickerDropdown label={t("club2")} club={club2} setClub={setClub2}
+            search={search2} setSearch={setSearch2} drop={drop2} setDrop={setDrop2}
+            refEl={ref2} other={club1}/>
         </div>
 
         {results&&(<>
           <div className="score-banner">
-            <div className="score-club"><span>{club1.flag}</span>{club1.name}</div>
+            <div className="score-club">
+              <ClubLogo id={club1.id} nom={club1.name} size={24} wrapCls="di-logo" imgSize={18}/>
+              {club1.name}
+            </div>
             <div className="score-stats">
               <div className="score-stat"><div className="score-stat-num direct">{totalDirect}</div><div className="score-stat-label">{t("directsPts")}</div></div>
               <div className="score-stat"><div className="score-stat-num indirect">{totalIndirect}</div><div className="score-stat-label">{t("passagesPts")}</div></div>
               <div className="score-stat"><div className="score-stat-num total">{totalPoints}</div><div className="score-stat-label">{t("total")}</div></div>
             </div>
-            <div className="score-club"><span>{club2.flag}</span>{club2.name}</div>
+            <div className="score-club">
+              <ClubLogo id={club2.id} nom={club2.name} size={24} wrapCls="di-logo" imgSize={18}/>
+              {club2.name}
+            </div>
           </div>
           {totalDirect===0&&totalIndirect===0
             ?<div className="empty"><div className="empty-badge">🔍</div><div className="empty-t">{t("noConnection")}</div><div className="empty-s">{t("noConnectionSub")}</div></div>
             :<div className="results-section">
-              {totalDirect>0&&(<><div className="section-header"><span className="section-badge badge-direct">Transferts directs</span><span className="section-count direct">{totalDirect}</span><span className="section-desc">2 points chacun</span></div><div className="players-grid">{[...new Map(results.direct.map(p=>[p.id_joueur,p])).values()].map((p,i)=><PlayerCard key={p.id_joueur||i} player={p} type="direct" pts2={t("directsPts").split("·")[0].trim()} pts1={t("passagesPts").split("·")[0].trim()}/>)}</div></>)}
-              {totalIndirect>0&&(<><div className="section-header"><span className="section-badge badge-indirect">Passages communs</span><span className="section-count indirect">{totalIndirect}</span><span className="section-desc">1 point chacun</span></div><div className="players-grid">{[...new Map(results.indirect.map(p=>[p.id_joueur,p])).values()].map((p,i)=><PlayerCard key={p.id_joueur||i} player={p} type="indirect" pts2={t("directsPts").split("·")[0].trim()} pts1={t("passagesPts").split("·")[0].trim()}/>)}</div></>)}
+              {totalDirect>0&&(<>
+                <div className="section-header">
+                  <span className="section-badge badge-direct">Transferts directs</span>
+                  <span className="section-count direct">{totalDirect}</span>
+                  <span className="section-desc">2 points chacun</span>
+                </div>
+                <div className="players-grid">
+                  {[...new Map(results.direct.map(p=>[p.id_joueur,p])).values()].map((p,i)=><PlayerCard key={p.id_joueur||i} player={p} type="direct"/>)}
+                </div>
+              </>)}
+              {totalIndirect>0&&(<>
+                <div className="section-header">
+                  <span className="section-badge badge-indirect">Passages communs</span>
+                  <span className="section-count indirect">{totalIndirect}</span>
+                  <span className="section-desc">1 point chacun</span>
+                </div>
+                <div className="players-grid">
+                  {[...new Map(results.indirect.map(p=>[p.id_joueur,p])).values()].map((p,i)=><PlayerCard key={p.id_joueur||i} player={p} type="indirect"/>)}
+                </div>
+              </>)}
             </div>
           }
         </>)}
-        {!results&&!scanning&&(<div className="empty"><div className="empty-badge">⚽</div><div className="empty-t">{t("chooseTwoClubs")}</div><div className="empty-s">{t("chooseTwoClubsSub")}</div></div>)}
-        <div className="footer">VAR CLUB · {t("modeExpert")} · {clubs.length} {t("footerExpert")}</div>
+        {!results&&!scanning&&(
+          <div className="empty">
+            <div className="empty-badge">⚽</div>
+            <div className="empty-t">{t("chooseTwoClubs")}</div>
+            <div className="empty-s">{t("chooseTwoClubsSub")}</div>
+          </div>
+        )}
+        <div className="footer">VAR CLUB · {t("modeExpert")} · {clubs.length} {t("footer")}</div>
       </div>
     </div>
   );
 }
 
+/* ═══════════════════════════════════════════
+   HOME
+═══════════════════════════════════════════ */
 function Home({onSelect,t}) {
   return(
     <div className="home">
-      <div className="home-mascot">⚽</div>
+      <div className="home-ball">⚽</div>
       <div className="home-title">VAR<br/><span>CLUB</span></div>
       <div className="home-sub">{t("homeSubtitle")}</div>
       <div className="mode-cards">
         <div className="mode-card family" onClick={()=>onSelect("family")}>
-          <div className="mode-icon-wrap">🌟</div>
-          <div className="mode-title">{t("modeFamily")}</div>
-          <div className="mode-desc">{t("modeDescFamily")}</div>
-          <span className="mode-badge badge-family">{t("badgeFamily")}</span>
+          <div className="mode-icon-wrap">
+            <svg viewBox="0 0 22 22" fill="none"><path d="M11 2l2.2 6.8H20l-5.7 4.1 2.2 6.8L11 15.5l-5.5 4.2 2.2-6.8L2 8.8h6.8z" stroke="var(--gold)" strokeWidth="1.3" strokeLinejoin="round"/></svg>
+          </div>
+          <div className="mode-body">
+            <div className="mode-title">{t("modeFamily")}</div>
+            <div className="mode-desc">{t("modeDescFamily")}</div>
+            <span className="mode-badge badge-family">{t("badgeFamily")}</span>
+          </div>
         </div>
         <div className="mode-card inter" onClick={()=>onSelect("inter")}>
-          <div className="mode-icon-wrap">🛡️</div>
-          <div className="mode-title">{t("modeDuel")}</div>
-          <div className="mode-desc">Sélectionne un club et une question. La VAR valide tes réponses.</div>
-          <span className="mode-badge badge-inter">{t("badgeDuel2")}</span>
+          <div className="mode-icon-wrap">
+            <svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="var(--gold)" strokeWidth="1.3"/><path d="M7 11h8M11 7l4 4-4 4" stroke="var(--gold)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </div>
+          <div className="mode-body">
+            <div className="mode-title">{t("modeDuel")}</div>
+            <div className="mode-desc">{t("modeDescDuel")}</div>
+            <span className="mode-badge badge-inter">{t("badgeDuel")}</span>
+          </div>
         </div>
         <div className="mode-card expert" onClick={()=>onSelect("expert")}>
-          <div className="mode-icon-wrap">🔥</div>
-          <div className="mode-title" style={{color:"#e74c3c"}}>PRO <span style={{color:"#ffffff"}}>MERCATO</span></div>
-          <div className="mode-desc">{t("modeDescExpert")}</div>
-          <span className="mode-badge badge-expert">{t("badgeExpert")}</span>
+          <div className="mode-icon-wrap" style={{borderColor:"var(--coral)"}}>
+            <svg viewBox="0 0 22 22" fill="none"><path d="M11 3l2 6h6l-5 3.5 2 6L11 15l-5 3.5 2-6L3 9h6z" stroke="var(--coral)" strokeWidth="1.3" strokeLinejoin="round"/></svg>
+          </div>
+          <div className="mode-body">
+            <div className="mode-title">{t("modeExpert")}</div>
+            <div className="mode-desc">{t("modeDescExpert")}</div>
+            <span className="mode-badge badge-expert">{t("badgeExpert")}</span>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
+/* ═══════════════════════════════════════════
+   APP ROOT
+═══════════════════════════════════════════ */
 function App() {
   const [mode,setMode]=React.useState(null);
   const [lang,setLang]=React.useState('fr');
@@ -760,7 +1166,10 @@ function App() {
           <span className="brand-name">VAR <span className="brand-accent">CLUB</span></span>
           {mode&&<><div className="brand-pipe"/><span className="mode-chip">{MODE_LABELS[mode]}</span></>}
         </div>
-        <div style={{display:"flex",alignItems:"center",gap:"8px"}}><button onClick={()=>setLang(l=>l==="fr"?"en":"fr")} style={{background:"transparent",border:"1px solid rgba(240,180,41,0.4)",borderRadius:"4px",padding:"3px 9px",fontSize:"10px",fontWeight:600,letterSpacing:"2px",cursor:"pointer",color:"var(--gold)",fontFamily:"'DM Sans',sans-serif"}}>{lang==="fr"?"EN":"FR"}</button><div className="live-pill"><div className="live-dot"/>LIVE</div></div>
+        <div style={{display:"flex",alignItems:"center",gap:"8px"}}>
+          <button className="lang-btn" onClick={()=>setLang(l=>l==="fr"?"en":"fr")}>{lang==="fr"?"EN":"FR"}</button>
+          <div className="live-pill"><div className="live-dot"/>LIVE</div>
+        </div>
       </div>
       {!mode&&<Home onSelect={setMode} t={t}/>}
       {mode==="family"&&<FamilyMode onBack={()=>setMode(null)} t={t}/>}
