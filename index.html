@@ -120,7 +120,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 .club-tile.selected{border-color:var(--gold);background:rgba(240,180,41,0.06);}
 
 .club-logo{width:36px;height:36px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
-.club-logo img{width:36px;height:36px;object-fit:contain;mix-blend-mode:multiply;}
+.club-logo img{width:36px;height:36px;object-fit:contain;mix-blend-mode:screen;}
 .club-logo.fb{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:.03em;}
 .club-tile-name{font-size:9px;color:var(--muted);text-align:center;line-height:1.3;}
 .club-tile.selected .club-tile-name{color:var(--gold);}
@@ -130,10 +130,10 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 .club-list-row:hover{border-color:rgba(240,180,41,0.35);}
 .club-list-row.selected{border-color:var(--gold);background:rgba(240,180,41,0.05);}
 .club-list-logo{width:32px;height:32px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
-.club-list-logo img{width:32px;height:32px;object-fit:contain;mix-blend-mode:multiply;}
+.club-list-logo img{width:32px;height:32px;object-fit:contain;mix-blend-mode:screen;}
 .club-list-logo.fb{font-size:9px;font-weight:700;color:var(--gold);}
 .club-list-info{flex:1;}
-.club-list-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px;}
+.club-list-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}
 .club-list-league{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;}
 .club-check{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;}
 .club-list-row.selected .club-check{border-color:var(--gold);background:var(--gold);}
@@ -148,7 +148,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 .family-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;animation:fadeUp .4s ease both;}
 .family-card-header{background:rgba(240,180,41,0.08);padding:16px 20px;border-bottom:1px solid rgba(240,180,41,0.15);display:flex;align-items:center;gap:12px;}
 .family-club-logo{width:40px;height:40px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
-.family-club-logo img{width:40px;height:40px;object-fit:contain;mix-blend-mode:multiply;}
+.family-club-logo img{width:40px;height:40px;object-fit:contain;mix-blend-mode:screen;}
 .family-club-logo.fb{font-size:11px;font-weight:700;color:var(--gold);}
 .family-club-name{font-family:"Bebas Neue",cursive;font-size:24px;letter-spacing:3px;color:var(--gold);}
 .family-rows{display:flex;flex-direction:column;}
@@ -181,12 +181,12 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 .di{padding:11px 12px;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);transition:background .1s;color:var(--text);min-height:44px;}
 .di:hover,.di.sel{background:rgba(240,180,41,0.08);}
 .di-logo{width:24px;height:24px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
-.di-logo img{width:24px;height:24px;object-fit:contain;mix-blend-mode:multiply;}
+.di-logo img{width:24px;height:24px;object-fit:contain;mix-blend-mode:screen;}
 .di-logo.fb{font-size:8px;font-weight:700;color:var(--gold);}
 
 .club-chip{margin-top:8px;display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 12px;animation:fadeUp .2s ease both;width:100%;}
 .chip-logo{width:28px;height:28px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
-.chip-logo img{width:28px;height:28px;object-fit:contain;mix-blend-mode:multiply;}
+.chip-logo img{width:28px;height:28px;object-fit:contain;mix-blend-mode:screen;}
 .chip-logo.fb{font-size:8px;font-weight:700;color:var(--gold);}
 .chip-info{flex:1;}
 .chip-name{font-size:13px;font-weight:500;color:var(--text);}
@@ -437,7 +437,6 @@ function ClubPicker({clubs, selected, onSelect}) {
                       <ClubLogo id={c.id} nom={c.nom||c.name} size={24} wrapCls="club-list-logo"/>
                       <div className="club-list-info">
                         <div className="club-list-name">{c.nom||c.name}</div>
-                        <div className="club-list-league">{league}</div>
                       </div>
                       <div className="club-check">
                         {c.id===selected && <div className="check-dot"/>}
