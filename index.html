@@ -991,45 +991,69 @@ function ExpertMode({onBack,t}) {
   const totalIndirect=results?.indirect?.length||0;
   const totalPoints=totalDirect*2+totalIndirect;
 
-  const PickerDropdown = ({label,club,setClub,search,setSearch,drop,setDrop,refEl,other})=>(
-    <div>
-      <div className="picker-label">{label}</div>
-      <div className="picker-box" ref={refEl} style={{position:"relative",overflow:"visible",zIndex:drop?200:10}}>
-        <div className="picker-inner">
-          <input className="search-inp" placeholder={t("search")}
-                 value={search}
-                 onChange={e=>{setSearch(e.target.value);setDrop(true);}}
-                 onFocus={()=>setDrop(true)}/>
-          {drop&&(
-            <div className="dropdown">
-              {Object.entries(filter(search)).map(([league,cls])=>(
-                <div key={league}>
-                  <div className="dg-label">{league}</div>
-                  {cls.filter(c=>!other||c.id!==other.id).map(c=>(
-                    <div key={c.id} className={"di"+(club?.id===c.id?" sel":"")}
-                         onMouseDown={()=>{setClub(c);setSearch("");setDrop(false);setResults(null);}}>
-                      <ClubLogo id={c.id} nom={c.name} size={18} wrapCls="di-logo" imgSize={14}/>
-                      <span>{c.name}</span>
-                    </div>
-                  ))}
+  const PickerDropdown = ({label,club,setClub,search,setSearch,drop,setDrop,wrapRef,other})=>{
+    const inputRef=React.useRef(null);
+    const [rect,setRect]=React.useState(null);
+    const openDrop=()=>{
+      if(inputRef.current){
+        const r=inputRef.current.getBoundingClientRect();
+        setRect({top:r.bottom+window.scrollY+2,left:r.left+window.scrollX,width:r.width});
+      }
+      setDrop(true);
+    };
+    React.useEffect(()=>{
+      if(!drop)return;
+      const onScroll=()=>{
+        if(inputRef.current){
+          const r=inputRef.current.getBoundingClientRect();
+          setRect({top:r.bottom+window.scrollY+2,left:r.left+window.scrollX,width:r.width});
+        }
+      };
+      window.addEventListener('scroll',onScroll,true);
+      return()=>window.removeEventListener('scroll',onScroll,true);
+    },[drop]);
+    return(
+      <div ref={wrapRef}>
+        <div className="picker-label">{label}</div>
+        <div className="picker-box">
+          <div className="picker-inner">
+            <input ref={inputRef} className="search-inp" placeholder={t("search")}
+                   value={search}
+                   onChange={e=>{setSearch(e.target.value);openDrop();}}
+                   onFocus={openDrop}/>
+            {drop&&rect&&ReactDOM.createPortal(
+              <div className="dropdown"
+                   style={{position:"absolute",top:rect.top,left:rect.left,width:rect.width,zIndex:9999}}>
+                {Object.entries(filter(search)).map(([league,cls])=>(
+                  <div key={league}>
+                    <div className="dg-label">{league}</div>
+                    {cls.filter(c=>!other||c.id!==other.id).map(c=>(
+                      <div key={c.id} className={"di"+(club?.id===c.id?" sel":"")}
+                           onMouseDown={()=>{setClub(c);setSearch("");setDrop(false);setResults(null);}}>
+                        <ClubLogo id={c.id} nom={c.name} size={18} wrapCls="di-logo" imgSize={14}/>
+                        <span>{c.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>,
+              document.body
+            )}
+            {club&&(
+              <div className="club-chip">
+                <ClubLogo id={club.id} nom={club.name} size={22} wrapCls="chip-logo" imgSize={16}/>
+                <div className="chip-info">
+                  <div className="chip-name">{club.name}</div>
+                  <div className="chip-league">{club.league}</div>
                 </div>
-              ))}
-            </div>
-          )}
-          {club&&(
-            <div className="club-chip">
-              <ClubLogo id={club.id} nom={club.name} size={22} wrapCls="chip-logo" imgSize={16}/>
-              <div className="chip-info">
-                <div className="chip-name">{club.name}</div>
-                <div className="chip-league">{club.league}</div>
+                <span className="chip-x" onClick={()=>{setClub(null);setResults(null);}}>×</span>
               </div>
-              <span className="chip-x" onClick={()=>{setClub(null);setResults(null);}}>×</span>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return(
     <div className="inter-page">
@@ -1053,7 +1077,7 @@ function ExpertMode({onBack,t}) {
         <div className="selector-grid">
           <PickerDropdown label={t("club1")} club={club1} setClub={setClub1}
             search={search1} setSearch={setSearch1} drop={drop1} setDrop={setDrop1}
-            refEl={ref1} other={club2}/>
+            wrapRef={ref1} other={club2}/>
           <div className="vs-badge">
             <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"14px"}}>
               <div className="vs-inner">VS</div>
@@ -1069,7 +1093,7 @@ function ExpertMode({onBack,t}) {
           </div>
           <PickerDropdown label={t("club2")} club={club2} setClub={setClub2}
             search={search2} setSearch={setSearch2} drop={drop2} setDrop={setDrop2}
-            refEl={ref2} other={club1}/>
+            wrapRef={ref2} other={club1}/>
         </div>
 
         {results&&(<>
