@@ -119,10 +119,9 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 .club-tile:hover{border-color:rgba(240,180,41,0.4);}
 .club-tile.selected{border-color:var(--gold);background:rgba(240,180,41,0.06);}
 
-.club-logo{width:36px;height:36px;border-radius:50%;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
-.club-logo img{width:28px;height:28px;object-fit:contain;}
+.club-logo{width:36px;height:36px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.club-logo img{width:36px;height:36px;object-fit:contain;}
 .club-logo.fb{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:.03em;}
-.club-tile.selected .club-logo{border-color:rgba(240,180,41,0.5);}
 .club-tile-name{font-size:9px;color:var(--muted);text-align:center;line-height:1.3;}
 .club-tile.selected .club-tile-name{color:var(--gold);}
 
@@ -130,8 +129,8 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 .club-list-row{display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:7px;cursor:pointer;transition:border-color .15s;}
 .club-list-row:hover{border-color:rgba(240,180,41,0.35);}
 .club-list-row.selected{border-color:var(--gold);background:rgba(240,180,41,0.05);}
-.club-list-logo{width:32px;height:32px;border-radius:50%;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
-.club-list-logo img{width:24px;height:24px;object-fit:contain;}
+.club-list-logo{width:32px;height:32px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.club-list-logo img{width:32px;height:32px;object-fit:contain;}
 .club-list-logo.fb{font-size:9px;font-weight:700;color:var(--gold);}
 .club-list-info{flex:1;}
 .club-list-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px;}
@@ -148,8 +147,8 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 .family-wrap{max-width:560px;margin:0 auto;padding:24px 16px 60px;display:flex;flex-direction:column;gap:18px;}
 .family-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;animation:fadeUp .4s ease both;}
 .family-card-header{background:rgba(240,180,41,0.08);padding:16px 20px;border-bottom:1px solid rgba(240,180,41,0.15);display:flex;align-items:center;gap:12px;}
-.family-club-logo{width:40px;height:40px;border-radius:50%;background:var(--bg);border:1px solid rgba(240,180,41,0.3);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
-.family-club-logo img{width:30px;height:30px;object-fit:contain;}
+.family-club-logo{width:40px;height:40px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.family-club-logo img{width:40px;height:40px;object-fit:contain;}
 .family-club-logo.fb{font-size:11px;font-weight:700;color:var(--gold);}
 .family-club-name{font-family:"Bebas Neue",cursive;font-size:24px;letter-spacing:3px;color:var(--gold);}
 .family-rows{display:flex;flex-direction:column;}
@@ -181,13 +180,13 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 .dg-label{padding:6px 12px 4px;font-size:8px;font-weight:600;letter-spacing:4px;color:var(--muted);text-transform:uppercase;border-bottom:1px solid var(--border);}
 .di{padding:11px 12px;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);transition:background .1s;color:var(--text);min-height:44px;}
 .di:hover,.di.sel{background:rgba(240,180,41,0.08);}
-.di-logo{width:24px;height:24px;border-radius:50%;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
-.di-logo img{width:18px;height:18px;object-fit:contain;}
+.di-logo{width:24px;height:24px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.di-logo img{width:24px;height:24px;object-fit:contain;}
 .di-logo.fb{font-size:8px;font-weight:700;color:var(--gold);}
 
 .club-chip{margin-top:8px;display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 12px;animation:fadeUp .2s ease both;width:100%;}
-.chip-logo{width:28px;height:28px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
-.chip-logo img{width:20px;height:20px;object-fit:contain;}
+.chip-logo{width:28px;height:28px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.chip-logo img{width:28px;height:28px;object-fit:contain;}
 .chip-logo.fb{font-size:8px;font-weight:700;color:var(--gold);}
 .chip-info{flex:1;}
 .chip-name{font-size:13px;font-weight:500;color:var(--text);}
@@ -326,23 +325,23 @@ const EXPERT_API = "https://var-club-expert.vercel.app";
 
 /* ── LOGOS PAR CLUB ID ── */
 const CLUB_LOGOS = {
-  psg:       "https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg",
-  marseille: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Olympique_Marseille_logo.svg",
-  lyon:      "https://upload.wikimedia.org/wikipedia/fr/e/e8/Olympique_lyonnais_%28logo%29.svg",
-  real:      "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg",
-  barca:     "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
-  atleti:    "https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_2017_logo.svg",
-  liverpool: "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
-  arsenal:   "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
-  chelsea:   "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
-  manutd:    "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
-  mancity:   "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
-  bayern:    "https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg",
-  dortmund:  "https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg",
-  milan:     "https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg",
-  inter:     "https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg",
-  juve:      "https://upload.wikimedia.org/wikipedia/commons/b/bc/Juventus_FC_2017.svg",
-  napoli:    "https://upload.wikimedia.org/wikipedia/commons/2/2d/SSC_Napoli_%282023%29.svg",
+  psg:       "https://crests.football-data.org/524.svg",
+  marseille: "https://crests.football-data.org/516.svg",
+  lyon:      "https://crests.football-data.org/523.svg",
+  real:      "https://crests.football-data.org/86.svg",
+  barca:     "https://crests.football-data.org/81.svg",
+  atleti:    "https://crests.football-data.org/78.svg",
+  liverpool: "https://crests.football-data.org/64.svg",
+  arsenal:   "https://crests.football-data.org/57.svg",
+  chelsea:   "https://crests.football-data.org/61.svg",
+  manutd:    "https://crests.football-data.org/66.svg",
+  mancity:   "https://crests.football-data.org/65.svg",
+  bayern:    "https://crests.football-data.org/5.svg",
+  dortmund:  "https://crests.football-data.org/4.svg",
+  milan:     "https://crests.football-data.org/98.svg",
+  inter:     "https://crests.football-data.org/108.svg",
+  juve:      "https://crests.football-data.org/109.svg",
+  napoli:    "https://crests.football-data.org/113.svg",
 };
 
 /* Sigle fallback */
