@@ -55,7 +55,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 
 .mode-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px 18px 22px;cursor:pointer;transition:border-color .2s,transform .2s;display:flex;flex-direction:column;align-items:center;gap:12px;}
 .mode-card:hover{transform:translateY(-3px);}
-.mode-card.family:hover{border-color:var(--gold);}
+.mode-card.family:hover{border-color:var(--text);}
 .mode-card.inter:hover{border-color:var(--gold);}
 .mode-card.expert:hover{border-color:var(--coral);}
 
@@ -691,14 +691,23 @@ function InterMode({onBack,t}) {
   const [scanning,setScanning]=React.useState(false);
   const [search,setSearch]=React.useState("");
   const [dropOpen,setDropOpen]=React.useState(false);
+  const [dropRect,setDropRect]=React.useState(null);
   const dropRef=React.useRef(null);
   const inputRef=React.useRef(null);
   const verdictRef=React.useRef(null);
 
+  const openDrop=()=>{
+    if(inputRef.current){
+      const r=inputRef.current.getBoundingClientRect();
+      setDropRect({top:r.bottom+2,left:r.left,width:r.width});
+    }
+    setDropOpen(true);
+  };
+
   React.useEffect(()=>{fetch("./database.json").then(r=>r.json()).then(d=>{setDb(d);setLoading(false);}).catch(()=>setLoading(false));},[]);
   React.useEffect(()=>{
     const fn=e=>{
-      if(dropRef.current&&!dropRef.current.contains(e.target)&&inputRef.current&&!inputRef.current.contains(e.target))setDropOpen(false);
+      if(dropRef.current&&!dropRef.current.contains(e.target))setDropOpen(false);
     };
     document.addEventListener("mousedown",fn);return()=>document.removeEventListener("mousedown",fn);
   },[]);
@@ -743,14 +752,16 @@ function InterMode({onBack,t}) {
           {(club||question)&&<div className="step-reset"><button className="reset-btn" onClick={reset}>{t("restart")}</button></div>}
         </div>
         <div className="two-col">
-          <div style={{position:"relative",zIndex:dropOpen?300:1}}>
+          <div ref={dropRef}>
             <div className="sh"><span className="sh-num">①</span><span className="sh-label">{t("chooseClubStep")}</span></div>
-            <div className="picker-box" ref={dropRef}>
+            <div className="picker-box">
               <div className="picker-inner">
                 <input ref={inputRef} className="search-inp" placeholder={t("search")}
-                       value={search} onChange={e=>{setSearch(e.target.value);setDropOpen(true);}} onFocus={()=>setDropOpen(true)}/>
-                {dropOpen&&(
-                  <div className="dropdown">
+                       value={search}
+                       onChange={e=>{setSearch(e.target.value);openDrop();}}
+                       onFocus={openDrop}/>
+                {dropOpen&&dropRect&&(
+                  <div className="dropdown" style={{position:"fixed",top:dropRect.top,left:dropRect.left,width:dropRect.width,zIndex:9999}}>
                     {Object.entries(grouped).map(([league,cls])=>(
                       <div key={league}>
                         <div className="dg-label">{league}</div>
