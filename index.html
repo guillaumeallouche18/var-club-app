@@ -168,7 +168,7 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 .sh{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
 .sh-num{font-family:"Bebas Neue",cursive;font-size:26px;color:var(--gold);line-height:1;}
 .sh-label{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px;overflow:visible;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px;}
 @media(max-width:700px){.two-col{grid-template-columns:1fr;}}
 
 .picker-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);animation:fadeUp .4s ease both;position:relative;overflow:visible;}
@@ -743,14 +743,14 @@ function InterMode({onBack,t}) {
           {(club||question)&&<div className="step-reset"><button className="reset-btn" onClick={reset}>{t("restart")}</button></div>}
         </div>
         <div className="two-col">
-          <div>
+          <div style={{position:"relative",zIndex:dropOpen?300:1}}>
             <div className="sh"><span className="sh-num">①</span><span className="sh-label">{t("chooseClubStep")}</span></div>
-            <div className="picker-box">
+            <div className="picker-box" ref={dropRef}>
               <div className="picker-inner">
                 <input ref={inputRef} className="search-inp" placeholder={t("search")}
                        value={search} onChange={e=>{setSearch(e.target.value);setDropOpen(true);}} onFocus={()=>setDropOpen(true)}/>
                 {dropOpen&&(
-                  <div className="dropdown" ref={dropRef}>
+                  <div className="dropdown">
                     {Object.entries(grouped).map(([league,cls])=>(
                       <div key={league}>
                         <div className="dg-label">{league}</div>
