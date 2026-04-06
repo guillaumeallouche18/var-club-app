@@ -314,24 +314,24 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 
 const EXPERT_API = "https://var-club-expert.vercel.app";
 
-const CLUB_LOGOS = {
-  psg:       "https://crests.football-data.org/524.svg",
-  marseille: "https://crests.football-data.org/516.svg",
-  lyon:      "https://crests.football-data.org/523.svg",
-  real:      "https://crests.football-data.org/86.svg",
-  barca:     "https://crests.football-data.org/81.svg",
-  atleti:    "https://crests.football-data.org/78.svg",
-  liverpool: "https://crests.football-data.org/64.svg",
-  arsenal:   "https://crests.football-data.org/57.svg",
-  chelsea:   "https://crests.football-data.org/61.svg",
-  manutd:    "https://crests.football-data.org/66.svg",
-  mancity:   "https://crests.football-data.org/65.svg",
-  bayern:    "https://crests.football-data.org/5.svg",
-  dortmund:  "https://crests.football-data.org/4.svg",
-  milan:     "https://crests.football-data.org/98.svg",
-  inter:     "https://crests.football-data.org/108.svg",
-  juve:      "https://crests.football-data.org/109.svg",
-  napoli:    "https://media.api-sports.io/football/teams/492.png",
+const EXPERT_TO_VAR_ID = {
+  "Paris Saint-Germain": "psg",
+  "Olympique de Marseille": "marseille",
+  "Olympique Lyonnais": "lyon",
+  "Real Madrid": "real",
+  "FC Barcelona": "barca",
+  "Atletico de Madrid": "atleti",
+  "Liverpool FC": "liverpool",
+  "Arsenal FC": "arsenal",
+  "Chelsea FC": "chelsea",
+  "Manchester United": "manutd",
+  "Manchester City": "mancity",
+  "Bayern Munich": "bayern",
+  "Borussia Dortmund": "dortmund",
+  "AC Milan": "milan",
+  "Inter Milan": "inter",
+  "Juventus FC": "juve",
+  "SSC Napoli": "napoli",
 };
 
 const CLUB_SIGLES = {
@@ -767,7 +767,7 @@ function InterMode({onBack,t}) {
                         {cls.map(c=>(
                           <div key={c.id} className={"di"+(club?.id===c.id?" sel":"")}
                                onMouseDown={()=>pickClub(c)}>
-                            <ClubLogo id={c.id} nom={c.name} size={18} wrapCls="di-logo" imgSize={14}/>
+                            <ClubLogo id={EXPERT_TO_VAR_ID[c.name] || c.id} nom={c.name} size={18} wrapCls="di-logo" imgSize={14}/>
                             <span>{c.name}</span>
                           </div>
                         ))}
