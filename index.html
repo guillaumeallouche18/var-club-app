@@ -42,8 +42,6 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 
 .home{min-height:calc(100vh - 56px);display:flex;flex-direction:column;align-items:center;padding:48px 20px 60px;background:var(--bg);}
 .home-ball{font-size:64px;animation:float 3s ease-in-out infinite;margin-bottom:8px;line-height:1;}
-.home-title{font-family:"Bebas Neue",cursive;font-size:clamp(64px,12vw,104px);letter-spacing:8px;text-align:center;line-height:.9;color:var(--text);animation:fadeUp .5s ease .1s both;}
-.home-title span{color:var(--gold);}
 .home-sub{font-size:10px;font-weight:400;letter-spacing:5px;color:var(--muted);text-transform:uppercase;margin-top:10px;margin-bottom:48px;animation:fadeUp .5s ease .2s both;}
 
 .mode-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%;max-width:860px;animation:fadeUp .6s ease .3s both;}
@@ -314,6 +312,26 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 
 const EXPERT_API = "https://var-club-expert.vercel.app";
 
+const CLUB_LOGOS = {
+  psg:       "https://crests.football-data.org/524.svg",
+  marseille: "https://crests.football-data.org/516.svg",
+  lyon:      "https://crests.football-data.org/523.svg",
+  real:      "https://crests.football-data.org/86.svg",
+  barca:     "https://crests.football-data.org/81.svg",
+  atleti:    "https://crests.football-data.org/78.svg",
+  liverpool: "https://crests.football-data.org/64.svg",
+  arsenal:   "https://crests.football-data.org/57.svg",
+  chelsea:   "https://crests.football-data.org/61.svg",
+  manutd:    "https://crests.football-data.org/66.svg",
+  mancity:   "https://crests.football-data.org/65.svg",
+  bayern:    "https://crests.football-data.org/5.svg",
+  dortmund:  "https://crests.football-data.org/4.svg",
+  milan:     "https://crests.football-data.org/98.svg",
+  inter:     "https://crests.football-data.org/108.svg",
+  juve:      "https://crests.football-data.org/109.svg",
+  napoli:    "https://media.api-sports.io/football/teams/492.png",
+};
+
 const EXPERT_TO_VAR_ID = {
   "Paris Saint-Germain": "psg",
   "Olympique de Marseille": "marseille",
@@ -469,8 +487,8 @@ const TRANSLATIONS = {
     q9s:"Joueurs Marocains",q9f:"Citez des joueurs Marocains passés par ce club (depuis 1990/91).",
     q10s:"Gardiens de but",q10f:"Citez des gardiens de but passés par ce club (depuis 1990/91).",
     q11s:"Recruté libre",q11f:"Citez des joueurs recrutés libres par ce club (depuis 1990/91).",
-    q12s:"+20 buts en une saison",q12f:"Citez des joueurs ayant marqué 20+ buts en une saison dans ce club (depuis 1990/91)",
-    q13s:"+120 buts en carrière",q13f:"Citez des joueurs ayant marqué plus de 120 buts pour ce club (toute l'histoire du club).",
+    q12s:"+20 buts en une saison",q12f:"Citez des joueurs ayant marqué 20+ buts en une saison dans ce club (depuis 1990/91).",
+    q13s:"+120 buts au club",q13f:"Citez des joueurs ayant marqué plus de 120 buts pour ce club (toute l'histoire du club).",
     q14s:"+400 matchs au club",q14f:"Citez des joueurs ayant disputé plus de 400 matchs avec ce club (toute l'histoire du club).",
     q15s:"Transfert >50M€",q15f:"Citez des joueurs achetés ou vendus pour plus de 50M€ (depuis 1990/91).",
     announceTitle:"Annoncez votre réponse à voix haute",announceSub:'Puis cliquez sur "Lancer la VAR"',
@@ -514,8 +532,8 @@ const TRANSLATIONS = {
     q10s:"Goalkeepers",q10f:"Name goalkeepers who played for this club (since 1990/91).",
     q11s:"Free transfer",q11f:"Name players signed on a free transfer by this club (since 1990/91).",
     q12s:"20+ goals in a season",q12f:"Name players who scored 20+ goals in a single season at this club (since 1990/91).",
-    q13s:"+120 career goals",q13f:"Name players who scored 120+ goals for this club (all-time)",
-    q14s:"400+ appearances",q14f:"Name players who made 400+ appearances for this club (all-time)",
+    q13s:"120+ goals for the club",q13f:"Name players who scored 120+ goals for this club (all-time).",
+    q14s:"400+ appearances",q14f:"Name players who made 400+ appearances for this club (all-time).",
     q15s:"Transfer >€50M",q15f:"Name players bought or sold for more than €50M (since 1990/91).",
     announceTitle:"Announce your answer out loud",announceSub:'Then click "Launch VAR"',
     homeSubtitle:"Choose your game mode",refAnswers:"Reference answers",
@@ -535,9 +553,6 @@ const QUESTIONS_BASE=[
   {id:13,cat:"sta",qk:"q13"},{id:14,cat:"sta",qk:"q14"},{id:15,cat:"sta",qk:"q15"},
 ];
 
-/* ═══════════════════════════════════════════
-   FAMILY MODE
-═══════════════════════════════════════════ */
 function FamilyMode({onBack,t,lang}) {
   const [clubs,setClubs]=React.useState([]);
   const [selectedId,setSelectedId]=React.useState(null);
@@ -555,12 +570,12 @@ function FamilyMode({onBack,t,lang}) {
   const next = ()=>{ setSelectedId(null); setRevealed({}); setPickerDone(false); };
 
   const baseFields=[
-    {key:"ville",    label:t("fieldVille"),    icon:"📍"},
-    {key:"pays",     label:t("fieldPays"),     icon:"🌍"},
+    {key:"ville",label:t("fieldVille"),icon:"📍"},
+    {key:"pays",label:t("fieldPays"),icon:"🌍"},
     {key:"continent",label:t("fieldContinent"),icon:"🗺️"},
-    {key:"stade",    label:t("fieldStade"),    icon:"🏟️"},
-    {key:"surnom",   label:t("fieldSurnom"),   icon:"🏷️"},
-    {key:"couleurs", label:t("fieldCouleurs"), icon:"🎨"},
+    {key:"stade",label:t("fieldStade"),icon:"🏟️"},
+    {key:"surnom",label:t("fieldSurnom"),icon:"🏷️"},
+    {key:"couleurs",label:t("fieldCouleurs"),icon:"🎨"},
   ];
   const legendeFields = selected
     ? (selected.legendes||[]).map((leg,i)=>({
@@ -647,9 +662,6 @@ function FamilyMode({onBack,t,lang}) {
   );
 }
 
-/* ═══════════════════════════════════════════
-   INTER MODE — Duel VAR
-═══════════════════════════════════════════ */
 function InterMode({onBack,t}) {
   const QUESTIONS=QUESTIONS_BASE.map(q=>({...q,short:t(q.qk+"s"),full:t(q.qk+"f")}));
   const catMeta={
@@ -699,16 +711,16 @@ function InterMode({onBack,t}) {
     };
     tryNext(0);
   },[]);
+
   React.useEffect(()=>{
     const fn=e=>{
-      if(
-        dropRef.current&&!dropRef.current.contains(e.target)&&
-        inputRef.current&&!inputRef.current.contains(e.target)
-      ) setDropOpen(false);
+      if(dropRef.current&&!dropRef.current.contains(e.target)&&
+        inputRef.current&&!inputRef.current.contains(e.target)) setDropOpen(false);
     };
     document.addEventListener("mousedown",fn);
     return()=>document.removeEventListener("mousedown",fn);
   },[]);
+
   React.useEffect(()=>{if(question&&verdictRef.current){setTimeout(()=>verdictRef.current.scrollIntoView({behavior:"smooth",block:"center"}),150);}},[question]);
 
   const clubs=db?.clubs||[];
@@ -767,7 +779,7 @@ function InterMode({onBack,t}) {
                         {cls.map(c=>(
                           <div key={c.id} className={"di"+(club?.id===c.id?" sel":"")}
                                onMouseDown={()=>pickClub(c)}>
-                            <ClubLogo id={EXPERT_TO_VAR_ID[c.name] || c.id} nom={c.name} size={18} wrapCls="di-logo" imgSize={14}/>
+                            <ClubLogo id={c.id} nom={c.name} size={18} wrapCls="di-logo" imgSize={14}/>
                             <span>{c.name}</span>
                           </div>
                         ))}
@@ -908,9 +920,6 @@ function InterMode({onBack,t}) {
   );
 }
 
-/* ═══════════════════════════════════════════
-   PLAYER CARD (Expert)
-═══════════════════════════════════════════ */
 function PlayerCard({player,type}) {
   const [imgErr,setImgErr]=React.useState(false);
   return(
@@ -926,9 +935,6 @@ function PlayerCard({player,type}) {
   );
 }
 
-/* ═══════════════════════════════════════════
-   EXPERT MODE — Pro Mercato
-═══════════════════════════════════════════ */
 function ExpertMode({onBack,t}) {
   const [clubs,setClubs]=React.useState([]);
   const [loading,setLoading]=React.useState(true);
@@ -1020,7 +1026,7 @@ function ExpertMode({onBack,t}) {
                     {cls.filter(c=>!other||c.id!==other.id).map(c=>(
                       <div key={c.id} className={"di"+(club?.id===c.id?" sel":"")}
                            onMouseDown={()=>{setClub(c);setSearch("");setDrop(false);setResults(null);}}>
-                        <ClubLogo id={c.id} nom={c.name} size={18} wrapCls="di-logo" imgSize={14}/>
+                        <ClubLogo id={EXPERT_TO_VAR_ID[c.name] || c.id} nom={c.name} size={18} wrapCls="di-logo" imgSize={14}/>
                         <span>{c.name}</span>
                       </div>
                     ))}
@@ -1031,7 +1037,7 @@ function ExpertMode({onBack,t}) {
             )}
             {club&&(
               <div className="club-chip">
-                <ClubLogo id={club.id} nom={club.name} size={22} wrapCls="chip-logo" imgSize={16}/>
+                <ClubLogo id={EXPERT_TO_VAR_ID[club.name] || club.id} nom={club.name} size={22} wrapCls="chip-logo" imgSize={16}/>
                 <div className="chip-info">
                   <div className="chip-name">{club.name}</div>
                   <div className="chip-league">{club.league}</div>
@@ -1089,7 +1095,7 @@ function ExpertMode({onBack,t}) {
         {results&&(<>
           <div className="score-banner">
             <div className="score-club">
-              <ClubLogo id={club1.id} nom={club1.name} size={24} wrapCls="di-logo" imgSize={18}/>
+              <ClubLogo id={EXPERT_TO_VAR_ID[club1.name] || club1.id} nom={club1.name} size={24} wrapCls="di-logo" imgSize={18}/>
               {club1.name}
             </div>
             <div className="score-stats">
@@ -1098,7 +1104,7 @@ function ExpertMode({onBack,t}) {
               <div className="score-stat"><div className="score-stat-num total">{totalPoints}</div><div className="score-stat-label">{t("total")}</div></div>
             </div>
             <div className="score-club">
-              <ClubLogo id={club2.id} nom={club2.name} size={24} wrapCls="di-logo" imgSize={18}/>
+              <ClubLogo id={EXPERT_TO_VAR_ID[club2.name] || club2.id} nom={club2.name} size={24} wrapCls="di-logo" imgSize={18}/>
               {club2.name}
             </div>
           </div>
@@ -1141,18 +1147,15 @@ function ExpertMode({onBack,t}) {
   );
 }
 
-/* ═══════════════════════════════════════════
-   HOME
-═══════════════════════════════════════════ */
 function Home({onSelect,t}) {
   return(
     <div className="home">
       <div className="home-ball">⚽</div>
-      <img 
-  src="VAR_CLUB_TRANSPARENT_2.svg" 
-  alt="VAR CLUB" 
-  style={{height:"180px", width:"auto", animation:"fadeUp .5s ease .1s both"}}
-/>
+      <img
+        src="VAR_CLUB_TRANSPARENT_2.svg"
+        alt="VAR CLUB"
+        style={{height:"180px",width:"auto",animation:"fadeUp .5s ease .1s both"}}
+      />
       <div className="home-sub">{t("homeSubtitle")}</div>
       <div className="mode-cards">
         <div className="mode-card family" onClick={()=>onSelect("family")}>
@@ -1190,9 +1193,6 @@ function Home({onSelect,t}) {
   );
 }
 
-/* ═══════════════════════════════════════════
-   APP ROOT
-═══════════════════════════════════════════ */
 function App() {
   const [mode,setMode]=React.useState(null);
   const [lang,setLang]=React.useState('fr');
@@ -1201,14 +1201,10 @@ function App() {
   return(
     <div>
       <div className="topbar">
-       <div className="brand" onClick={()=>setMode(null)}>
-  <img 
-    src="VAR_CLUB_TRANSPARENT_2.svg" 
-    alt="VAR CLUB" 
-    style={{height:"32px", width:"auto"}}
-  />
-  {mode&&<><div className="brand-pipe"/><span className="mode-chip">{MODE_LABELS[mode]}</span></>}
-</div>
+        <div className="brand" onClick={()=>setMode(null)}>
+          <img src="VAR_CLUB_TRANSPARENT_2.svg" alt="VAR CLUB" style={{height:"32px",width:"auto"}}/>
+          {mode&&<><div className="brand-pipe"/><span className="mode-chip">{MODE_LABELS[mode]}</span></>}
+        </div>
         <div style={{display:"flex",alignItems:"center",gap:"8px"}}>
           <button className="lang-btn" onClick={()=>setLang(l=>l==="fr"?"en":"fr")}>{lang==="fr"?"EN":"FR"}</button>
           <div className="live-pill"><div className="live-dot"/>LIVE</div>
