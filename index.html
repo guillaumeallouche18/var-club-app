@@ -1148,7 +1148,11 @@ function Home({onSelect,t}) {
   return(
     <div className="home">
       <div className="home-ball">⚽</div>
-      <div className="home-title">VAR<br/><span>CLUB</span></div>
+      <img 
+  src="VAR_CLUB_TRANSPARENT_2.svg" 
+  alt="VAR CLUB" 
+  style={{height:"180px", width:"auto", animation:"fadeUp .5s ease .1s both"}}
+/>
       <div className="home-sub">{t("homeSubtitle")}</div>
       <div className="mode-cards">
         <div className="mode-card family" onClick={()=>onSelect("family")}>
