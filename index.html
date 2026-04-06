@@ -34,8 +34,6 @@ html,body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-seri
 
 .topbar{background:var(--bg2);border-bottom:2px solid var(--gold);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;}
 .brand{display:flex;align-items:center;gap:10px;cursor:pointer;}
-.brand-name{font-family:"Bebas Neue",cursive;font-size:28px;letter-spacing:4px;color:var(--text);line-height:1;}
-.brand-accent{color:var(--gold);}
 .brand-pipe{width:1px;height:22px;background:var(--border);}
 .mode-chip{font-size:9px;font-weight:500;letter-spacing:3px;text-transform:uppercase;padding:3px 10px;background:rgba(240,180,41,0.08);color:var(--gold);border:1px solid rgba(240,180,41,0.25);}
 .live-pill{display:flex;align-items:center;gap:5px;background:var(--coral);padding:3px 10px;border-radius:20px;font-size:9px;font-weight:700;letter-spacing:2px;color:#fff;}
@@ -1199,10 +1197,14 @@ function App() {
   return(
     <div>
       <div className="topbar">
-        <div className="brand" onClick={()=>setMode(null)}>
-          <span className="brand-name">VAR <span className="brand-accent">CLUB</span></span>
-          {mode&&<><div className="brand-pipe"/><span className="mode-chip">{MODE_LABELS[mode]}</span></>}
-        </div>
+       <div className="brand" onClick={()=>setMode(null)}>
+  <img 
+    src="VAR_CLUB_TRANSPARENT_2.svg" 
+    alt="VAR CLUB" 
+    style={{height:"32px", width:"auto"}}
+  />
+  {mode&&<><div className="brand-pipe"/><span className="mode-chip">{MODE_LABELS[mode]}</span></>}
+</div>
         <div style={{display:"flex",alignItems:"center",gap:"8px"}}>
           <button className="lang-btn" onClick={()=>setLang(l=>l==="fr"?"en":"fr")}>{lang==="fr"?"EN":"FR"}</button>
           <div className="live-pill"><div className="live-dot"/>LIVE</div>
